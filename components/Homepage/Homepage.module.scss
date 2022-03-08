@@ -1,0 +1,15 @@
+.serviceCard {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 35px;
+    .serviceIcon {
+        img {
+            max-width: 55px;
+        }
+    }
+    .serviceTitle {
+        color: #222222;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
