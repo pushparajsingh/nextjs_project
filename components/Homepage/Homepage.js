@@ -3,8 +3,9 @@ import Header from '../common/Header/Header'
 import Footer from '../common/Footer/Footer'
 import { Container, Row, Col } from 'react-bootstrap'
 import styles from './Homepage.module.scss'
-import ServiceData from './services'
+// import ServiceData from './services'
 
+const ServiceData = []
 const Homepage = () => {
     return(
         <div>
@@ -13,7 +14,7 @@ const Homepage = () => {
             {/* Services starts */}
             <Container>
 				<Row>
-					{ServiceData.map((item, index) =>(
+					{ServiceData?.map((item, index) =>(
 							<Col lg={3} key={index}>
 								<div className={styles.serviceCard}>
 									<div className={styles.serviceIcon}>
