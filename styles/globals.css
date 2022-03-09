@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 html,
 body {
   padding: 0;
@@ -13,4 +14,47 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --primary: #ed3237;
+  --primary-10: #ed32371a;
+  --secondary: #222222;
+  --light-black: #4e5a62;
+  --poppins: "Poppins", sans-serif;
+}
+.themeTitle {
+  display: flex;
+  flex-direction: column;
+}
+.themeTitle h4 {
+  background-color: var(--primary-10);
+  color: var(--primary);
+  text-transform: uppercase;
+  font-family: var(--poppins);
+  font-size: 16px;
+  border-radius: 22.5px;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.themeTitle h3 {
+  color: var(--light-black);
+  text-transform: capitalize;
+  font-family: var(--poppins);
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+.themeTitle h3 span {
+  color: var(--primary);
+}
+.themeButton{
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 15px 30px !important;
+  display: flex !important;
+  margin: 0 auto;
 }
