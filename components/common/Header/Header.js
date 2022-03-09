@@ -5,15 +5,18 @@ import {
     Navbar,
     NavDropdown
 } from 'react-bootstrap'
-import styles from './Header.module.scss'
+import Image from 'next/image'
+
+import Logo from '../../../assets/images/yuvasoft-logo.png'
+import styles from './Header.module.css'
 
 const Header = () => {
     return (
         <div>
             <Navbar className={styles.HeaderPrimary} expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <img src="../../../images/yuvasoft-logo.png" alt="logo" className='img-fluid' />
+                    <Navbar.Brand href="#home" className={styles.logo}>
+                        <Image src={Logo} className='img-fluid' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
