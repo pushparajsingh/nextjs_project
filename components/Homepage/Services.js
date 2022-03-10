@@ -2,13 +2,12 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import styles from './Homepage.module.css'
 import ServiceIconImg from '../../assets/images/Ruby-on-rails.svg'
 import Image from 'next/image'
-import ourServices from '../Utils/ourServices';
+import {ServiceIcon} from '../Utils/ourServices';
 
 
 const Services = () => {
     const series = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-    console.log(777, ourServices);
  
     return (
         <>
@@ -22,13 +21,14 @@ const Services = () => {
                                 <h3><span>our</span> domain expertise</h3>
                             </div>
                         </Col>
-                        {ourServices.map((value, index)=>{
+                        {ServiceIcon?.map((value, index)=>{
                             return(
-                            <Col lg={3} id={index}>
+                            <Col lg={3} key={index}>
                                 <div className={styles.serviceCard}>
                                     <div className={styles.serviceIcon}>
                                         <Image
-                                            src='/images/react-js.svg'
+                                            alt={value.service}
+                                            src={value.icon}
                                             className='img-fluid'
                                             // layout='fill'
                                             height={58}

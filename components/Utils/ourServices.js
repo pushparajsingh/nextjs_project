@@ -1,8 +1,10 @@
-[
+import Ruby from '../../assets/images/Ruby-on-rails.svg'
+
+export const ServiceIcon = [
     {
         "id": 1,
         "service": "Ruby On Rails",
-        "icon": "/images/react-js.svg"
+        "icon": Ruby
     },
     {
         "id": 2,
