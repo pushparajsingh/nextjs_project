@@ -1,49 +1,126 @@
-
 .serviceTitle {
   color: var(--secondary);
   font-size: 24px;
   font-weight: bold;
 }
-.servicesContainerBg{
-    background: url(../../assets/images/Services-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 200px 0 50px;
-    width: 100%;
-    height: 100%;
-    margin-top: 30px;
-    /* background-color: ; */
+.servicesContainerBg {
+  background: url(../../assets/images/Services-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 200px 0 50px;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  /* background-color: ; */
 }
 .serviceCard {
   background: var(--white);
   padding: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
   border-radius: 10px;
+  box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
+  min-height: 167px;
+  position: relative;
 }
 .serviceIcon img {
   max-width: 58px;
   margin-bottom: 10px;
 }
-.serviceCard h5{
+.serviceCard h5 {
   color: var(--light-black);
-  font-size: 24px;
+  font-size: 18px;
   text-transform: capitalize;
+  margin: 0;
 }
-.aboutUsSec{
+.serviceAction {
+  display: none;
+  color: var(--white);
+  box-shadow: 6px 6px 13px 0px rgb(42 67 113 / 15%);
+  background: var(--primary);
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: max-content;
+  position: absolute;
+  bottom: -18px;
+  left: 24px;
+  border: none;
+}
+/* .serviceAction button{
+  background-color: transparent;
+  border: none;
+} */
+.serviceAction span {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s linear;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.serviceCard:hover .serviceAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.serviceAction:hover{
+  background: var(--secondary);
+}
+.serviceAction:focus{
+  box-shadow: none;
+  border: none;
+}
+.aboutUsSec {
+  background-image: url(../../assets/images/whyYuvasoftImg.png);
+  background-repeat: no-repeat;
+  margin-bottom: 0;
   padding: 100px 0;
+  background-position: right;
 }
-.themeTitleCenter h4{
+.themeTitleCenter h4 {
   margin: 0 auto 12px;
 }
-.themeTitleCenter h3{
+.themeTitleCenter h3 {
   text-align: center;
 }
-.accordionContainer{
+.accordionContainer {
   border: none;
 }
-.accordionCard{
-  border-radius: 10px;
+.accordionCard {
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 8px 8px 25px 0px rgb(42 67 113 / 15%);
+  border-radius: 28px !important;
   border: none;
-  margin-bottom: 10px;
-  box-shadow: rgb(0 0 0 / 10%) 1.5px 2.6px 59px 0;
+}
+.accordionCard [class~="accordion-header"] [class~="collapsed"] {
+  border-radius: 28px !important;
+  color: var(--light-black);
+  font-weight: 500;
+}
+.accordionCard [class~="accordion-header"] button {
+  border-top-left-radius: 28px !important;
+  border-top-right-radius: 28px !important;
+  background-color: var(--white);
+  color: var(--primary);
+  font-weight: 500;
+  box-shadow: none;
+}
+.accordionCard [class~="accordion-header"] button::after{
+  /* background-color: var(--primary); */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  /* background-image: url(../../assets/images/up_icon.svg);   */
+  /* fill: #fff; */
+}
+.accordionCard [class~="accordion-header"] button:focus{
+  border: none;
+  box-shadow: none;
+}
+.workflowWrapper{
+  padding: 100px 0;
 }
