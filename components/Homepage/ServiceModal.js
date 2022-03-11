@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Modal,Button } from "bootstrap";
+import { Modal, Button } from "react-bootstrap";
 
 const ServiceModal = (props) => {
-    
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    
+
+    const handleClose = () => props.setShow(false);
+
     return (
         <>
-        <h1>model</h1>
-            <Modal show={show} onHide={handleClose}>
+
+            <Modal show={props.show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
@@ -24,6 +22,7 @@ const ServiceModal = (props) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
         </>
     )
 }

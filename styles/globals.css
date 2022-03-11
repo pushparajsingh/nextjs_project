@@ -19,9 +19,10 @@ a {
 :root {
   --white: #ffffff;
   --primary: #ed3237;
-  --primary-10: #ed32371a;
+  --primary-10: #fdeaeb;
   --secondary: #222222;
   --light-black: #4e5a62;
+  --bg-secondary: #F3F2F8;
   --poppins: "Poppins", sans-serif;
 }
 .themeTitle {

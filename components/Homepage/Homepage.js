@@ -4,8 +4,8 @@ import Header from '../common/Header/Header'
 import Services from './Services'
 import AboutUs from './AboutUs'
 import WorkFlow from './Work'
+import WhatWeDo from './whatWedo'
 
-const ServiceData = []
 const Homepage = () => {
     return(
         <div>
@@ -13,6 +13,7 @@ const Homepage = () => {
 			<Services />
 			<AboutUs />
 			<WorkFlow />
+			<WhatWeDo />
             {/* <Footer /> */}
         </div>
     )

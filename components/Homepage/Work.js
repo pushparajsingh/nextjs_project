@@ -1,8 +1,11 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import styles from './Homepage.module.css'
 import Title from '../common/Titles/Titles'
-
-
+import Planning from '../../assets/images/Planning.svg'
+import Research from '../../assets/images/Research.svg'
+import Design from '../../assets/images/Design.svg'
+import Start from '../../assets/images/Start.svg'
+import Image from 'next/image';
 const WorkFlow = () => {
     return (
         <>
@@ -17,6 +20,38 @@ const WorkFlow = () => {
                                     subTitle="Work Flow"
                                 />
                             </div>
+                        </Col>
+                        <Col lg={3}>
+                            <Card className={styles.workCard}>
+                                <Card.Body>
+                                    <Image src={Planning} className="img-fluid" />
+                                    <Card.Title>Meetup</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col lg={3}>
+                            <Card className={styles.workCard}>
+                                <Card.Body>
+                                    <Image src={Research} className="img-fluid" />
+                                    <Card.Title>Research</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col lg={3}>
+                            <Card className={styles.workCard}>
+                                <Card.Body>
+                                    <Image src={Design} className="img-fluid" />
+                                    <Card.Title>Design</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col lg={3}>
+                            <Card className={styles.workCard}>
+                                <Card.Body>
+                                    <Image src={Start} className="img-fluid" />
+                                    <Card.Title>Start</Card.Title>
+                                </Card.Body>
+                            </Card>
                         </Col>
                     </Row>
                 </Container>
