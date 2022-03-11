@@ -181,3 +181,21 @@
   opacity: 0;
   transition: all 0.35s ease;
 }
+.weDoSliderBox:hover .weDoInfoBox{
+  right: 62px;
+  opacity: 1;
+}
+.weDoInfoInfoInner{
+  background-color: var(--primary);
+  color: var(--white);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+}
+.weDoInfoInfoInner h5{
+  font-size: 22px;
+}
+.weDoInfoInfoInner p{
+  font-size: 14px;
+  margin-bottom: 0;
+}

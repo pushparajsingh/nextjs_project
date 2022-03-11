@@ -13,6 +13,7 @@ const WhatWeDo = () => {
         slidesToShow: 3,
         slidesToScroll: 1
     };
+    const series = [1,2,3,4,5,6]
     return (
 
         <>
@@ -33,34 +34,24 @@ const WhatWeDo = () => {
                     <Row>
                         <Col lg={12}>
                             <Slider {...settings}>
-                                <div>
-                                    <div className={styles.weDoSliderBox}>
-                                        <div className={styles.weDoSliderImage}>
-                                            <Image src={WebDesigning} alt="WebDesigning" />
-                                        </div>
-                                        <div className={styles.weDoInfoBox}>
-                                            <div className={styles.weDoInfoInfoInner}>
-                                                <h5>New Soft for Watch</h5>
-                                                <p className={styles.portfolioCates}>Media Optimizations</p>
+                                {series.map((item,index) => {
+                                    return (
+                                        <div key={index}>
+                                            <div className={styles.weDoSliderBox}>
+                                                <div className={styles.weDoSliderImage}>
+                                                    <Image src={WebDesigning} alt="WebDesigning" />
+                                                </div>
+                                                <div className={styles.weDoInfoBox}>
+                                                    <div className={styles.weDoInfoInfoInner}>
+                                                        <h5>Web Design</h5>
+                                                        <p className={styles.portfolioCates}>The web is the most popular and far-reaching application...</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3>2</h3>
-                                </div>
-                                <div>
-                                    <h3>3</h3>
-                                </div>
-                                <div>
-                                    <h3>4</h3>
-                                </div>
-                                <div>
-                                    <h3>5</h3>
-                                </div>
-                                <div>
-                                    <h3>6</h3>
-                                </div>
+                                    )
+                                })}
+
                             </Slider>
                         </Col>
                     </Row>
