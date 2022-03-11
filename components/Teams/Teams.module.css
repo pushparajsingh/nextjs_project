@@ -1,0 +1,56 @@
+.teamsBgWrapper {
+    padding: 125px 0px;
+    background-color: var(--primary-10);
+}
+.TeamCard {
+    /* background: #fff; */
+    border-radius: 10px;
+}
+.TeamCard .TeamPic {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.TeamCard img {
+    border-radius: 10px;
+}
+.TeamCard .TeamInfo {
+    background: #fff;
+    margin: -80px 30px 0;
+    padding: 25px 25px 35px;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 8px 8px 30px 0px rgba(42, 67, 113, 0.15);
+    text-align: center;
+}
+.TeamCard .TeamInfo .TeamName {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.TeamCard .TeamInfo .TeamPost {
+    color: var(--light-black);
+    margin: 0px;
+}
+.TeamCard .TeamSocial {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 100%;
+}
+.TeamHeadBg {
+    padding: 125px 0px;
+}
+.teamHeadDescription {
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--light-black);
+}
+.teamHeadList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.teamHeadList li {
+    font-size: 16px;
+    font-weight: 600;
+}
