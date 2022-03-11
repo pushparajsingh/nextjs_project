@@ -56,10 +56,20 @@
     transition: all 0.3s linear;
     cursor: pointer;
 }
+.TeamCard .TeamSocial [class~=facebook] {
+    background-color: #3b5998;
+}
+.TeamCard .TeamSocial [class~=linkedin] {
+    background-color: #0077b5;
+}
+.TeamCard .TeamSocial [class~=twitter] {
+    background-color: #15b7ec;
+}
 .TeamCard .TeamSocial [class~=iconToggle] {
     opacity: 1;
     visibility: visible;
     transform: none;
+    left: 0;
 }
 .TeamCard .activeSocial [class~=icon] {
     opacity: 1;
@@ -123,12 +133,12 @@
     display: block;
     color: #fff;
 }
-.teamSlideCard .teamSocial .facebook{
+.teamSlideCard .teamSocial .facebook {
     background-color: #3b5998;
 }
-.teamSlideCard .teamSocial .twitter{
+.teamSlideCard .teamSocial .twitter {
     background-color: #15b7ec;
 }
-.teamSlideCard .teamSocial .linkedin{
+.teamSlideCard .teamSocial .linkedin {
     background-color: #0077b5;
 }

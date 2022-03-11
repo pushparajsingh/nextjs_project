@@ -102,14 +102,14 @@ const Teams = () => {
 											<h4 className={styles.TeamName}>{value.name}</h4>
 											<p className={styles.TeamPost}>{value.post}</p>
 											<div className={` ${buttonActive === true ? styles.activeSocial : ''} ${styles.TeamSocial}`}>
-												<Link href="javascript:void(0)">
-													<a><FaFacebookF className='icon' /></a>
+												<Link href='https://www.google.com'>
+													<a><FaFacebookF className='icon facebook' /></a>
 												</Link>
-												<Link href="javascript:void(0)">
-													<a><FaLinkedinIn className='icon' /></a>
+												<Link href='https://www.google.com'>
+													<a><FaLinkedinIn className='icon linkedin' /></a>
 												</Link>
-												<Link href="javascript:void(0)">
-													<BsTwitter className='icon' />
+												<Link href='https://www.google.com'>
+													<a><BsTwitter className='icon twitter' /></a>
 												</Link>
 												<BsPlusLg onClick={() => setButtonActive(!buttonActive)} className='icon iconToggle' />
 											</div>
