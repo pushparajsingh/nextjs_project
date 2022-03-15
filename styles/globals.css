@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Poppins:wght@200;300;400;500;600&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--primary-font)
 }
 
 a {
@@ -18,10 +19,12 @@ a {
 :root {
   --white: #ffffff;
   --primary: #ed3237;
-  --primary-10: #ed32371a;
+  --primary-10: #fdeaeb;
   --secondary: #222222;
   --light-black: #4e5a62;
-  --poppins: "Poppins", sans-serif;
+  --bg-secondary: #F3F2F8;
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: 'Frank Ruhl Libre', serif;
 }
 .themeTitle {
   display: flex;
