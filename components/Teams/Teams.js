@@ -38,7 +38,11 @@ const Teams = () => {
 						</Col>
 						<Col md={6}>
 							<div className={styles.teamSlideCard}>
-								<Title />
+								<Title
+									value="Founder/CEO"
+									span="Member"
+									subTitle="Name"
+								/>
 								<p className={styles.teamHeadDescription}>
 									Our clients’ interests are ours as well. We strive to deliver valuable products and services for both our clients and their customers. We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. That’s not some tagline, It’s a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the company’s technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.
 								</p>
@@ -82,7 +86,11 @@ const Teams = () => {
 				<Container>
 					<Row className='justify-content-center text-center'>
 						<Col sm={6}>
-							<Title />
+							<Title
+								value="Professional People"
+								span="Our"
+								subTitle="Leadership Team"
+							/>
 						</Col>
 					</Row>
 					<Row>

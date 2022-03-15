@@ -1,4 +1,3 @@
-import Ruby from '../../assets/images/Ruby-on-rails.svg';
 import Team1 from '../../assets/images/teams/team-1.jpg';
 
 export const ourTeams = [

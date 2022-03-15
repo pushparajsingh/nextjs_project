@@ -4,92 +4,94 @@ import styles from './Footer.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import Title from '../Titles/Titles';
+import { RatingCards } from '../../Utils/ourRatings';
+import Slider from "react-slick";
 
 import FooterLogo from '../../../assets/images/yuvasoft-logo-white.png'
 import Facebook from '../../../assets/images/footer/facebook.png'
 import Linkedin from '../../../assets/images/footer/linkedin.png'
 import Twitter from '../../../assets/images/footer/twitter.png'
 import Instagram from '../../../assets/images/footer/instagram.png'
-import Ratings from '../../../assets/images/footer/ratings.png'
-import upworkLogo from '../../../assets/images/footer/upwork-logo.png'
-import clutchLogo from '../../../assets/images/footer/clutch-logo.png'
-import freelancerLogo from '../../../assets/images/footer/freelancer-logo.png'
 
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
 import { FiMail } from "react-icons/fi"
 
 const Footer = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        cssEase: "linear",
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+        ]    
+    };  
     return (
         <section>
             <div className={styles.reviewsWrapper}>
                 <Container>
-                    <Row>
-                        <Col lg={3}>
-                            <Title />
+                    <Row className='align-items-center'>
+                        <Col lg={12} xl={3}>
+                            <Title
+                                value="Ratings"
+                                span="Our"
+                                subTitle="Reviews"
+                            />
                         </Col>
-                        <Col lg={9}>
+                        <Col lg={12} xl={9}>
                             <Row>
-                                <Col>
-                                    <Card className={styles.reviewCard}>
-                                        <div className={styles.reviewLogo}>
-                                            <Image
-                                                src={upworkLogo}
-                                                alt="Review"
-                                                className='img-fluid review-logo'
-                                            />
-                                        </div>
-                                        <div className={styles.reviewContent}>
-                                            <h5 className={styles.title}>Reviews</h5>
-                                            <h4 className={styles.rating}>5/5</h4>
-                                            <Image
-                                                src={Ratings}
-                                                alt="stars"
-                                                className="img-fluid"
-                                            />
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col>
-                                    <Card className={styles.reviewCard}>
-                                        <div className={styles.reviewLogo}>
-                                            <Image
-                                                src={clutchLogo}
-                                                alt="Review"
-                                                className='img-fluid review-logo'
-                                            />
-                                        </div>
-                                        <div className={styles.reviewContent}>
-                                            <h5 className={styles.title}>Reviews</h5>
-                                            <h4 className={styles.rating}>4.9/5</h4>
-                                            <Image
-                                                src={Ratings}
-                                                alt="stars"
-                                                className="img-fluid"
-                                            />
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col>
-                                    <Card className={styles.reviewCard}>
-                                        <div className={styles.reviewLogo}>
-                                            <Image
-                                                src={freelancerLogo}
-                                                alt="Review"
-                                                className='img-fluid review-logo'
-                                            />
-                                        </div>
-                                        <div className={styles.reviewContent}>
-                                            <h5 className={styles.title}>Reviews</h5>
-                                            <h4 className={styles.rating}>4.4/5</h4>
-                                            <Image
-                                                src={Ratings}
-                                                alt="stars"
-                                                className="img-fluid"
-                                            />
-                                        </div>
-                                    </Card>
-                                </Col>
+                                <Slider {...settings} className={styles.reviewCardSlider}>
+                                    {RatingCards && RatingCards.map((value, index) => {
+                                        return (
+                                            <Col md={6} lg={4} key={index}>
+                                                <Card className={styles.reviewCard}>
+                                                    <div className={styles.reviewLogo}>
+                                                        <Image
+                                                            src={value.icon}
+                                                            alt={value.icon}
+                                                            className='img-fluid review-logo'
+                                                        />
+                                                    </div>
+                                                    <div className={styles.reviewContent}>
+                                                        <h5 className={styles.title}>{value.title}</h5>
+                                                        <h4 className={styles.rating}>{value.rating}</h4>
+                                                        <Image
+                                                            src={value.stars}
+                                                            alt="stars"
+                                                            className="img-fluid"
+                                                        />
+                                                    </div>
+                                                </Card>
+                                            </Col>
+                                        )
+                                    })}
+                                </Slider>
                             </Row>
                         </Col>
                     </Row>
