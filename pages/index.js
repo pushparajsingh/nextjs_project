@@ -2,18 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-// import {Link} from 'react-bootstrap'
 import Homepage from '../components/Homepage/Homepage.js';
 
 
 export default function Home() {
-  // const history = useNavigate();
   return (
     <div className={styles.container}>
       <Head>
@@ -22,11 +14,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Homepage />
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-        </Routes>
-      </BrowserRouter> */}
     </div>
   )
 }
