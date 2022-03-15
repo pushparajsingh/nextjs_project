@@ -92,7 +92,7 @@ const Teams = () => {
 									<div className={styles.TeamCard}>
 										<div className={styles.TeamPic}>
 											<Image
-												src={Team1}
+												src={value.thumb}
 												alt={value.thumb}
 												className='img-fluid'
 											// layout='fill'
