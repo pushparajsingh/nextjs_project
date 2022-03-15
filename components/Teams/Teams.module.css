@@ -1,0 +1,144 @@
+.teamsBgWrapper {
+    padding: 125px 0px;
+    background-color: #f3f2f8;
+}
+.TeamCard {
+    /* background: #fff; */
+    border-radius: 10px;
+    margin-bottom: 55px;
+}
+.TeamCard .TeamPic {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.TeamCard img {
+    border-radius: 10px;
+}
+.TeamCard .TeamInfo {
+    background: #fff;
+    margin: -80px 30px 0;
+    padding: 25px 25px 35px;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 8px 8px 30px 0px rgba(42, 67, 113, 0.15);
+    text-align: center;
+}
+.TeamCard .TeamInfo .TeamName {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.TeamCard .TeamInfo .TeamPost {
+    color: var(--light-black);
+    margin: 0px;
+}
+.TeamCard .TeamSocial {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 100%;
+}
+.TeamCard .TeamSocial [class~=icon] {
+    opacity: 0;
+    right: -40px;
+    position: relative;
+    visibility: hidden;
+    font-size: 15px;
+    margin-right: 12px;
+    color: #fff;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50px;
+    padding: 10px;
+    background: var(--primary);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.TeamCard .TeamSocial [class~=facebook] {
+    background-color: #3b5998;
+}
+.TeamCard .TeamSocial [class~=linkedin] {
+    background-color: #0077b5;
+}
+.TeamCard .TeamSocial [class~=twitter] {
+    background-color: #15b7ec;
+}
+.TeamCard .TeamSocial [class~=iconToggle] {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    left: 0;
+}
+.TeamCard .activeSocial [class~=icon] {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+    box-shadow: 5px 5px 18px 0px rgb(42 67 113 / 15%);
+}
+.TeamCard .activeSocial [class~=iconToggle] {
+     transform: rotate(135deg);
+}
+.TeamHeadBg {
+    padding: 125px 0px;
+}
+.teamHeadDescription {
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--light-black);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 20px;
+}
+.teamHeadList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.teamHeadList li {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--light-black);
+    gap: 20px;
+    width: 50%;
+    display: inline-block;
+}
+.teamHeadList li:not(:last-child) {
+    margin-bottom: 30px;
+}
+.teamHeadList li span {
+    display: block;
+    color: var(--primary);
+    font-weight: bold;
+}
+.teamSlideCard .teamSocial {
+    margin-top: 15px;
+    clear: both;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.teamSlideCard .teamSocial a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+.teamSlideCard .teamSocial a svg {
+    display: block;
+    color: #fff;
+}
+.teamSlideCard .teamSocial .facebook {
+    background-color: #3b5998;
+}
+.teamSlideCard .teamSocial .twitter {
+    background-color: #15b7ec;
+}
+.teamSlideCard .teamSocial .linkedin {
+    background-color: #0077b5;
+}

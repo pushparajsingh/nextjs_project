@@ -2,8 +2,7 @@ import {React} from 'react'
 import {
     Container,
     Nav,
-    Navbar,
-    NavDropdown
+    Navbar
 } from 'react-bootstrap'
 import Image from 'next/image'
 

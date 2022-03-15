@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Homepage from '../components/Homepage/Homepage.js';
 
+// import {Link} from 'react-bootstrap'
+import Homepage from '../components/Homepage/Homepage.js';
 
 export default function Home() {
   return (
