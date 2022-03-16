@@ -353,31 +353,32 @@
 }
 
 .carouseItemContainer{
-  padding: 100px 0 100px 0;
-  
+  /* padding: 140px 0 140px 0; */
+  height: 800px;
+  display: flex;
 }
 .carouseItemContainer:after{
-  background-image: url(../../assets/images/yuva-home-banner.png);
   background-repeat: no-repeat;
   margin-bottom: 0;
-  background-position: right;
-  background-size: cover;
+  background-position: top right ;
+  /* background-size: cover; */
+  background-size: contain;
   width: 50%;
   content: "";
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 999;
 }
-.carouseItemContainer1{
-  background-image: url(../../assets/images/yuva-home-banner-2.png);
-  background-repeat: no-repeat;
-  margin-bottom: 0;
-  padding: 100px 0 100px 0;
-  background-position: right;
-  background-size: contain;
+/* .carouseItemContainer1:after{
+  position: relative;
+} */
+.bannerImgWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-.carouseItemContainer2{
-  background-image: url(../../assets/images/yuva-home-banner-3.png);
-  background-repeat: no-repeat;
-  margin-bottom: 0;
-  padding: 100px 0 100px 0;
-  background-position: right;
-  background-size: contain;
-}
+.bannerImgWrapper img {
+  height: 100vh;
+} 
