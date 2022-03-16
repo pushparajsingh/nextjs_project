@@ -34,7 +34,7 @@ a {
   background-color: var(--primary-10);
   color: var(--primary);
   text-transform: uppercase;
-  font-family: var(--poppins);
+  font-family: var(--primary-font);
   font-size: 16px;
   border-radius: 22.5px;
   padding: 10px 15px;
@@ -44,7 +44,8 @@ a {
 .themeTitle h3 {
   color: var(--light-black);
   text-transform: capitalize;
-  font-family: var(--poppins);
+  font-family: var(--secondary-font);
+  font-weight: 900;
   font-size: 45px;
   margin-bottom: 30px;
 }

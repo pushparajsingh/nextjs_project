@@ -1,19 +1,19 @@
 import Footer from "../../components/common/Footer/Footer";
 import Header from "../../components/common/Header/Header";
 import BreadCrumb from "../../components/common/BreadCrumb/BreadCrumb";
-import Teams from "../../components/Teams/Teams";
+import Portfolio from "../../components/Portfolio/Portfolio";
 
 
-const TeamsRoute = () => {
+const PortfolioRoute = () => {
     return (
         <>
             <Header />
-            <BreadCrumb spanValue="Our" titleValue="Teams" breadCrumbItem="Home" activeBreadcrumb="Teams" />
-            <Teams />
+            <BreadCrumb spanValue="Our" titleValue="Portfolio" breadCrumbItem="Home" activeBreadcrumb="Portfolio" />
+            <Portfolio />
             <Footer />
         </>
 
     )
 }
 
-export default TeamsRoute;
+export default PortfolioRoute;

@@ -1,6 +1,9 @@
 .teamsBgWrapper {
     padding: 125px 0px;
-    background-color: #f3f2f8;
+    background-color: var(--bg-secondary);
+}
+.teamsBgWrapper [class~=themeTitle] {
+    align-items: center;
 }
 .TeamCard {
     /* background: #fff; */
@@ -10,9 +13,14 @@
 .TeamCard .TeamPic {
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
 }
 .TeamCard img {
     border-radius: 10px;
+    transition: all 0.3s linear;
+}
+.TeamCard .TeamPic:hover img {
+    transform: scale(1.05);
 }
 .TeamCard .TeamInfo {
     background: #fff;
