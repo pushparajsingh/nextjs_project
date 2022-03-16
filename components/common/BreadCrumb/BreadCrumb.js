@@ -1,4 +1,4 @@
-import styles from './breadCrumb.module.css'
+import styles from './breadCrumb.module.scss'
 import {
     Breadcrumb
 } from 'react-bootstrap'

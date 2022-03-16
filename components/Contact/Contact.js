@@ -1,7 +1,13 @@
+import { Container, Row } from "react-bootstrap";
+
 const Contact = () => {
     return (
         <section>
-            Contact
+            <Container>
+                <Row>
+                    
+                </Row>
+            </Container>
         </section>
     )
 }

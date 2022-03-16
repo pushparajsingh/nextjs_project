@@ -61,3 +61,6 @@ a {
   display: flex !important;
   margin: 0 auto;
 }
+.theme-padding {
+  padding: 120px 0px;
+}
