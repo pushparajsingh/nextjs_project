@@ -224,7 +224,7 @@
   display: flex;
   justify-content: flex-end;
 }
-.whatweDoSliderControl button{
+.whatweDoSliderControl button {
   border-radius: 50%;
   font-size: 28px;
   width: 45px;
@@ -241,7 +241,7 @@
 .whatweDoSliderControl button:nth-child(2) {
   background-color: var(--primary);
 }
-.whatweDoSliderControl [class~="slick-arrow"]{
+.whatweDoSliderControl [class~="slick-arrow"] {
   display: none !important;
 }
 .testimonialWrapper {
@@ -309,15 +309,15 @@
   display: flex;
   align-items: center;
 }
-.clientFeedbackBox{
+.clientFeedbackBox {
   color: var(--light-black);
   font-size: 16px;
   line-height: 30px;
 }
-.clientTestimonialSliderControl{
+.clientTestimonialSliderControl {
   display: flex;
 }
-.clientTestimonialSliderControl button{
+.clientTestimonialSliderControl button {
   border-radius: 50%;
   font-size: 28px;
   width: 45px;
@@ -336,31 +336,34 @@
 .clientTestimonialSlider [class~="slick-dots"] li button:before {
   font-size: 18px;
   color: var(--primary-10);
-  opacity: .25;
+  opacity: 0.25;
 }
-.clientTestimonialSlider [class~="slick-dots"] li[class~="slick-active"] button:before {
+.clientTestimonialSlider
+  [class~="slick-dots"]
+  li[class~="slick-active"]
+  button:before {
   color: var(--primary-10);
   opacity: 1;
 }
-.clientTestimonialSlider [class~="slick-arrow"]{
+.clientTestimonialSlider [class~="slick-arrow"] {
   display: none !important;
 }
-.whyUsContainer{
+.whyUsContainer {
   padding: 100px 0;
 }
-.whyusTitle h3{
+.whyusTitle h3 {
   margin-bottom: 0;
 }
 
-.carouseItemContainer{
+.carouseItemContainer {
   /* padding: 140px 0 140px 0; */
   height: 800px;
   display: flex;
 }
-.carouseItemContainer:after{
+.carouseItemContainer:after {
   background-repeat: no-repeat;
   margin-bottom: 0;
-  background-position: top right ;
+  background-position: top right;
   /* background-size: cover; */
   background-size: contain;
   width: 50%;
@@ -381,4 +384,30 @@
 }
 .bannerImgWrapper img {
   height: 100vh;
-} 
+}
+.achievementSection {
+  background-image: url(../../assets/images/clientDetailBg.png);
+  background-repeat: no-repeat;
+  height: 177px;
+  margin: 20px 0;
+  width: 100%;
+  background-size: cover;
+  border-radius: 10px;
+}
+.achievementcontainer {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.achieventContent {
+  color: var(--white);
+}
+.achieventContent h3 {
+  margin-bottom: 0;
+}
+.achieventContent p {
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
