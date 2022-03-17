@@ -5,7 +5,7 @@ import {
 	Row,
 	Col
 } from 'react-bootstrap'
-import styles from './Teams.module.css'
+import styles from './Teams.module.scss'
 import Title from '../common/Titles/Titles'
 import Image from 'next/image'
 import TeamMember1 from '../../assets/images/teams/team-1.jpg'
