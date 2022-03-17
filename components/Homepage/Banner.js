@@ -5,11 +5,15 @@ import Image from 'next/image'
 import bannerImg from '../../assets/images/yuva-home-banner.png'
 import bannerImg1 from '../../assets/images/yuva-home-banner-2.png'
 import bannerImg2 from '../../assets/images/yuva-home-banner-3.png'
-
+import { html } from "../../assets/html"
+import Script from 'next/script'
 const Banner = () => {
     return (
         <>
-            <Carousel fade>
+        <Script src="../../assets/sliderJs.js" />
+            <div dangerouslySetInnerHTML={{__html:html }} />
+            
+            {/* <Carousel fade>
                 <Carousel.Item className={`${styles.carouseItemContainer} ${styles.carouseItemContainer1}`}>
                     <Container>
                         <Row className="align-items-center vh-100">
@@ -77,7 +81,7 @@ const Banner = () => {
                         </Row>
                     </Container>
                 </Carousel.Item>
-            </Carousel>
+            </Carousel> */}
         </>
     )
 }
