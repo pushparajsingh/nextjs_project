@@ -419,7 +419,6 @@ export const html=`<div id="page" class="site">
                                     href="tel:1 -800-456-478-23" class="rev-phonenum"> +1 -800-456-478-23 </a></div>
                         </li>
 
-
                     </ul>
                     <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0);"></div>
 
