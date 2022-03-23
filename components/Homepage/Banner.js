@@ -7,10 +7,17 @@ import bannerImg1 from '../../assets/images/yuva-home-banner-2.png'
 import bannerImg2 from '../../assets/images/yuva-home-banner-3.png'
 import { html } from "../../assets/html"
 import Script from 'next/script'
+
+
 const Banner = () => {
     return (
         <>
-        <Script src="../../assets/sliderJs.js" />
+        <Script src="/sliderJs.js" />
+        <Script
+  src="/jquery.js"/>
+        {/* <Script >
+            
+        </Script> */}
             <div dangerouslySetInnerHTML={{__html:html }} />
             
             {/* <Carousel fade>
