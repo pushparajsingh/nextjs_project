@@ -8,16 +8,17 @@
   max-width: 270px !important;
 }
 
-.HeaderPrimary [class~="navbar-nav"] [class~="nav-link"] {
+.HeaderPrimary [class~="navbar-nav"] a {
   font-size: 18px;
   color: #333333;
   padding: 0px;
   font-weight: 600;
+  text-decoration: none;
 }
-.HeaderPrimary [class~="navbar-nav"] [class~="nav-link"]:not(:last-child) {
+.HeaderPrimary [class~="navbar-nav"] a:not(:last-child) {
   padding-right: 30px;
 }
-.HeaderPrimary [class~="navbar-nav"] [class~="nav-link"] [class~="active"] {
+.HeaderPrimary [class~="navbar-nav"] a.active {
   color: var(--primary);
 }
 

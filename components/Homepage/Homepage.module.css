@@ -411,3 +411,6 @@
   text-transform: capitalize;
   font-weight: 500;
 }
+.CircularProgressbar .CircularProgressbar-path{
+  background: red;
+}
