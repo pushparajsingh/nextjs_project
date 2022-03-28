@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
                             <div style={{ width: "80%" }}>
                                 <CircularProgressbarWithChildren value={percentage} text={`${percentage}%`} styles={buildStyles({
                                     trailColor: "#fff",
-                                    pathColor: "yellow",
+                                    fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
                                 })}>
                                     <div style={{ width: "60%" }}>
                                         <CircularProgressbar
@@ -37,7 +37,11 @@ const WhyChooseUs = () => {
                                             strokeWidth={15}
                                             styles={buildStyles({
                                                 pathColor: "#F0F6FF",
+                                                // textColor: "red",
+                                                // pathColor: "turquoise",
+                                                // trailColor: "gold"
                                             })}
+
                                         />
                                     </div>
                                 </CircularProgressbarWithChildren>

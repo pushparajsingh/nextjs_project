@@ -68,7 +68,7 @@ website:   	http://www.themepunch.com
     div .custom.tp-bullets .tp-bullet:hover,
     div .custom.tp-bullets .tp-bullet.selected {
         background: none;
-        color: #1a1b1e;
+        color: var(--light-black);
     }
 
     div .custom.tp-bullets .tp-bullet.selected:after {
@@ -86,7 +86,7 @@ website:   	http://www.themepunch.com
         width: calc(100% + 2px);
         height: 5px;
         border-radius: 2.5px;
-        background: #00c3ff;
+        background: var(--primary);
         position: absolute;
         left: -1px;
         bottom: -5px;
@@ -157,4 +157,5 @@ website:   	http://www.themepunch.com
     div.tp-simpleresponsive img {
         max-width: 100% !important;
         height: auto !important;
+        width: 100% !important;
     }
