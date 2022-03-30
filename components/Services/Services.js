@@ -7,7 +7,7 @@ import {
 } from "react-icons/Bs";
 import styles from "./Services.module.scss";
 import Link from "next/link";
-import Image from "next/Image";
+import Image from "next/image";
 import serviceGraphic from "../../assets/images/serviceIcon/ruby-on-rails.svg";
 import { ServiceIcon } from "../Utils/ourServices";
 
