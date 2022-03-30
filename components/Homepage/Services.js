@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import styles from "./Homepage.module.css";
-// import ServiceIconImg from '../..'
 import Image from "next/image";
 import { ServiceIcon } from "../Utils/ourServices";
-import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import Title from "../common/Titles/Titles";
-import ServiceModal from "./serviceModal";
+import ServiceModal from "./ServiceModal";
 const Services = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
@@ -28,7 +26,7 @@ const Services = () => {
           </svg>
         </div>
         <Container>
-          {show && <ServiceModal show={show} setShow={setShow} />}
+          <ServiceModal show={show} setShow={setShow} />
           <Row>
             <Col lg={12}>
               <div className={styles.themeTitleCenter}>
