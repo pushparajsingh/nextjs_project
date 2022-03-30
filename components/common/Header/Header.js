@@ -1,3 +1,4 @@
+
 import { React } from 'react'
 import {
     Container,
@@ -8,8 +9,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../../../assets/images/yuvasoft-logo.png'
 import styles from './Header.module.css'
-
+import { useRouter } from 'next/router'
 const Header = () => {
+    const router = useRouter()
+    
+    const headerLinks=[
+        {name:"Home",path:"/"},
+        {name:"About",path:"/about"},
+        {name:"Services",path:"/services"},
+        {name:"Portfolio",path:"/portfolio"},
+        {name:"Team",path:"/teams"},
+        {name:"Career",path:"/career"},
+        {name:"Contact",path:"/contact"},
+    ]
+
     return (
         <div>
             <Navbar className={styles.HeaderPrimary} expand="lg">
@@ -19,14 +32,13 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Link href="/" className={styles.active}>Home</Link>
-                            <Link href="/about">About</Link>
-                            <Link href="/services">Services</Link>
-                            <Link href="/portfolio">Portfolio</Link>
-                            <Link href="/teams">Team</Link>
-                            <Link href="/career">Career</Link>
-                            <Link href="/contact">Contact</Link>
+                        <Nav className="ms-auto ">
+                       { headerLinks.map((item, index)=>(
+                           <>
+                            <Link href={item.path} key={index} ><a className={`${router.pathname==item.path?styles.active:"active"}`}>{item.name}</a></Link>
+                    
+                            </>
+                       ))}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

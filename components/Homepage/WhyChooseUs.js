@@ -4,9 +4,16 @@ import styles from './Homepage.module.css'
 import {
     CircularProgressbar, buildStyles, CircularProgressbarWithChildren,
 } from 'react-circular-progressbar';
+import VisibilitySensor from "react-visibility-sensor";
+import CountUp from "react-countup";
+import { useState } from "react";
 
 const WhyChooseUs = () => {
-    const percentage = 66;
+    const [percentage,setPercentage]= useState(0)
+    const handleChange=()=>{
+        debugger
+        setPercentage(66)
+    }
     return (
         <>
             <div className={styles.whyUsContainer}>
@@ -25,48 +32,84 @@ const WhyChooseUs = () => {
                             </div>
                         </Col>
                         <div className="clearfix"></div>
-                        <Col lg={2}>
+                        {/* <Col lg={2}>
                             <div style={{ width: "80%" }}>
-                                <CircularProgressbarWithChildren value={percentage} text={`${percentage}%`} styles={buildStyles({
-                                    trailColor: "#fff",
-                                    fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
-                                })}>
-                                    <div style={{ width: "60%" }}>
-                                        <CircularProgressbar
-                                            value={100}
-                                            strokeWidth={15}
-                                            styles={buildStyles({
-                                                pathColor: "#F0F6FF",
-                                                // textColor: "red",
-                                                // pathColor: "turquoise",
-                                                // trailColor: "gold"
-                                            })}
+                                <CountUp end={60} redraw={true}>
+                                    {({ countUpRef, start }) => ( 
+                                        <VisibilitySensor delayedCall>
+                                        <>
+                                        {handleChange()}
+                                            <CircularProgressbarWithChildren value={percentage} text={`${percentage}%`} styles={buildStyles({
+                                                trailColor: "#fff",
+                                                fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
+                                            })}>
+                                                <div style={{ width: "60%" }}>
 
-                                        />
-                                    </div>
-                                </CircularProgressbarWithChildren>
+                                                    <CircularProgressbar
+                                                        value={100}
+                                                        strokeWidth={15}
+                                                        styles={buildStyles({
+                                                            pathColor: "#F0F6FF",
+                                                           
+                                                        })}
+
+                                                    />
+                                                </div>
+                                            </CircularProgressbarWithChildren>
+                                            </>
+                                        </VisibilitySensor>
+                                    )}
+                                </CountUp>
                             </div>
-                        </Col>
+                        </Col> */}
 
                         {/* Achievement Section Start */}
                         <div className={styles.achievementSection}>
                             <div className={styles.achievementcontainer}>
-                                <div className={styles.achieventContent}>
-                                    <h3>60*</h3>
-                                    <p>client Served</p>
-                                </div>
-                                <div className={styles.achieventContent}>
-                                    <h3>140*</h3>
-                                    <p>Project Completed</p>
-                                </div>
-                                <div className={styles.achieventContent}>
-                                    <h3>97%</h3>
-                                    <p>Project Succeses</p>
-                                </div>
-                                <div className={styles.achieventContent}>
-                                    <h3>250M</h3>
-                                    <p>revenue from client</p>
-                                </div>
+                                <CountUp end={60} redraw={true}>
+                                    {({ countUpRef, start }) => (
+                                        <VisibilitySensor onChange={start} delayedCall>
+
+                                            <div className={styles.achieventContent}>
+                                                <h3><span ref={countUpRef} />*</h3>
+                                                <p>client Served</p>
+                                            </div>
+                                        </VisibilitySensor>
+                                    )}
+                                </CountUp>
+                                <CountUp end={140} redraw={true}>
+                                    {({ countUpRef, start }) => (
+                                        <VisibilitySensor onChange={start} delayedCall>
+
+                                            <div className={styles.achieventContent}>
+                                                <h3><span ref={countUpRef} />*</h3>
+                                                <p>Project Completed</p>
+                                            </div>
+                                        </VisibilitySensor>
+                                    )}
+                                </CountUp>
+                                <CountUp end={97} redraw={true}>
+                                    {({ countUpRef, start }) => (
+                                        <VisibilitySensor onChange={start} delayedCall>
+
+                                            <div className={styles.achieventContent}>
+                                                <h3><span ref={countUpRef} />%</h3>
+                                                <p>Project Succeses</p>
+                                            </div>
+                                        </VisibilitySensor>
+                                    )}
+                                </CountUp>
+                                <CountUp end={250} redraw={true}>
+                                    {({ countUpRef, start }) => (
+                                        <VisibilitySensor onChange={start} delayedCall>
+
+                                            <div className={styles.achieventContent}>
+                                                <h3><span ref={countUpRef} />M</h3>
+                                                <p>revenue from client</p>
+                                            </div>
+                                        </VisibilitySensor>
+                                    )}
+                                </CountUp>
                             </div>
                         </div>
                         {/* Achievement Section End */}
