@@ -74,7 +74,7 @@ const ServicesPage = () => {
               <Col md={6}>
                 <Title span="Ruby" subTitle="on Rails" />
                 <p>
-                  Ruby on Rails, or simply Rails, is a web application framework
+                  {/* Ruby on Rails, or simply Rails, is a web application framework
                   written in Ruby under the MIT License. Rails is a
                   model–view–controller (MVC) framework, providing default
                   structures for a database, a web service, and web pages. It
@@ -93,7 +93,7 @@ const ServicesPage = () => {
                   differing names for their models, files, and database table,
                   this is not common practice and is usually discouraged in
                   accordance with the "convention-over-configuration"
-                  philosophy.
+                  philosophy. */}
                 </p>
               </Col>
               <Col md={6} className="text-center">
