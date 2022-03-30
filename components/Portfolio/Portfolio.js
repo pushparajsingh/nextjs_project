@@ -60,7 +60,7 @@ const Portfolio = () => {
                           <Link href="/">
                             <a>
                               <div className={styles.portfolioThumb}>
-                                <Image src={item.thumb} altt={item.title} />
+                                <Image src={item.thumb} alt={item.title} />
                               </div>
                               <Card.Body>
                                 <div className={styles.cardContent}>
