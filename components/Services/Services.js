@@ -4,7 +4,7 @@ import Title from "../common/Titles/Titles";
 import {
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
-} from "react-icons/Bs";
+} from "react-icons/bs";
 import styles from "./Services.module.scss";
 import Link from "next/link";
 import Image from "next/image";
