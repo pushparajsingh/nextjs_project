@@ -19,7 +19,7 @@ export const ServiceIcon = [
     },
     {
         "id": 2,
-        "service": "React JS",
+        "service": "React",
         "icon": ReactJs
     },
     {
