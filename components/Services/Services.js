@@ -92,8 +92,8 @@ const ServicesPage = () => {
                   developers are free to ignore this convention and choose
                   differing names for their models, files, and database table,
                   this is not common practice and is usually discouraged in
-                  accordance with the `&ldquo` convention-over-configuration
-                  &ldquo philosophy.
+                  accordance with the "convention-over-configuration"
+                  philosophy.
                 </p>
               </Col>
               <Col md={6} className="text-center">
