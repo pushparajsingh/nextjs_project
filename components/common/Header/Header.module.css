@@ -21,7 +21,9 @@
 .HeaderPrimary [class~="navbar-nav"] a.active {
   color: var(--primary);
 }
-
+.abc{
+  display: none;
+}
 
 /* Responsive CSS */
 @media screen and (max-width: 767px) {
