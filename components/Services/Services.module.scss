@@ -21,6 +21,10 @@
             justify-content: flex-end;
             gap: 25px;
             margin-bottom: 20px;
+            @media screen and (max-width: 767px) {
+                justify-content: flex-start;
+                margin-top: 25px;
+            }
             [class~=themeButton] {
                 margin: 0;
                 padding: 10px !important;
@@ -57,11 +61,19 @@
             width: 50px;
             height: 50px;
             opacity: 0;
+            @media screen and (max-width: 767px) {
+                right: auto;
+                left: 0;
+            }
             &::before {
                 font-size: 55px;
             }
             &[class~=slick-prev] {
                 right: 80px;
+                @media screen and (max-width: 767px) {
+                    right: auto;
+                    left: 80px;
+                }
             }
         }
         [class~=slick-dots] {
