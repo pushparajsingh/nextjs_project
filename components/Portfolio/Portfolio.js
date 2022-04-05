@@ -32,7 +32,7 @@ const Portfolio = () => {
 										return (
 											<Col lg={4} key={index}>
 												<Card className={styles.portfolioCard}>
-													<Link href="/">
+													<Link href="PortfolioDetails">
 														<a>
 															<div className={styles.portfolioThumb}>
 																<Image src={item.thumb} alt={item.title} />

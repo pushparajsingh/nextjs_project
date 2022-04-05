@@ -119,6 +119,9 @@
                 color: var(--primary);
                 font-weight: bold;
             }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
         }
     }
     .teamSlideCard {
