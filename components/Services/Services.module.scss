@@ -1,11 +1,11 @@
 .serviceWrapper {
-    max-width: 75%;
-    margin: 50px auto -250px;
+    // max-width: 75%;
+    // margin: 50px auto -250px;
     position: relative;
     z-index: 1;
     background-image: linear-gradient(145deg,#f02334 47%,#ff3b4b 100%);
-    border-radius: 15px;
-    padding: 110px 20px 90px 20px;
+    border-radius: 0px;
+    padding: 110px 0px;
     .serviceHead {
         [class~=themeTitle] {
             h3 {
@@ -21,6 +21,10 @@
             justify-content: flex-end;
             gap: 25px;
             margin-bottom: 20px;
+            @media screen and (max-width: 767px) {
+                justify-content: flex-start;
+                margin-top: 25px;
+            }
             [class~=themeButton] {
                 margin: 0;
                 padding: 10px !important;
@@ -42,10 +46,10 @@
     }
     .serviceCategoryList {
         list-style: none;
-        // display: flex;
-        // align-items: center;
         padding: 0;
         margin: 40px 0px 0px;
+        // display: flex;
+        // align-items: center;
         // overflow-x: auto;
         // &::-webkit-scrollbar {
         //     display: none;
@@ -57,43 +61,86 @@
             width: 50px;
             height: 50px;
             opacity: 0;
+            @media screen and (max-width: 767px) {
+                right: auto;
+                left: 0;
+            }
             &::before {
                 font-size: 55px;
             }
             &[class~=slick-prev] {
                 right: 80px;
+                @media screen and (max-width: 767px) {
+                    right: auto;
+                    left: 80px;
+                }
+            }
+        }
+        [class~=slick-dots] {
+            bottom: -40px;
+            li {
+                button {
+                    &::before {
+                        color: var(--white);
+                    }
+                }
+                &.active {
+                    button {
+                        &::before {
+                            color: var(--white);
+                        }
+                    }
+                }
             }
         }
         [class~=slick-slide] {
-            margin: 0px 15px;
-            li {
-                a {
-                    border: 1px solid rgba(255, 255, 255, 0.25);
-                    padding: 30px 15px 15px;
-                    border-radius: 15px;
-                    transition: all 0.3s linear;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 20px;
-                    text-decoration: none;
-                    min-width: 200px;
-                    min-height: 170px;
-                    .icon {
-                        width: 30px;
-                        height: 30px;
-                        color: var(--white);
-                    }
+            // margin: 0px 15px;
+            a {
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                padding: 30px 15px 15px;
+                border-radius: 15px;
+                transition: all 0.3s linear;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                text-decoration: none;
+                min-width: 200px;
+                min-height: 185px;
+                margin-right: 24px;
+                background: #ffffff1c;
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    color: var(--white);
+                }
+                .serviceTitle {
+                    font-size: 20px;
+                    color: var(--white);
+                }
+                &:hover {
+                    background: var(--white);
                     .serviceTitle {
-                        font-size: 20px;
-                        color: var(--white);
+                        color: var(--secondary);
                     }
-                    &:hover {
-                        background: var(--white);
-                        .serviceTitle {
-                            color: var(--secondary);
-                        }
+                }
+                img {
+                    width: 55px !important;
+                    height: 55px !important;
+                }
+                .activeIcon {
+                    display: none;
+                }
+                .inactiveIcon {
+                    display: block;
+                }
+                &:hover {
+                    .activeIcon {
+                        display: block;
+                    }
+                    .inactiveIcon {
+                        display: none;
                     }
                 }
             }
@@ -103,7 +150,7 @@
 
 .serviceDetailWrapper {
     background-color: var(--bg-secondary);
-    padding-top: 300px;
+    padding-top: 100px;
     p {
         font-size: 15px;
         line-height: 25px;

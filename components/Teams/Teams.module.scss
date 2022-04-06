@@ -119,6 +119,9 @@
                 color: var(--primary);
                 font-weight: bold;
             }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
         }
     }
     .teamSlideCard {
@@ -141,13 +144,13 @@
                     display: block;
                     color: #fff;
                 }
-                .facebook {
+                &.facebook {
                     background-color: #3b5998;
                 }
-                .twitter {
+                &.twitter {
                     background-color: #15b7ec;
                 }
-                .linkedin {
+                &.linkedin {
                     background-color: #0077b5;
                 }
             }
