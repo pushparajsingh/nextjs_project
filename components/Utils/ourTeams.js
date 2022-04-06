@@ -1,4 +1,23 @@
 import Team1 from '../../assets/images/teams/team-1.jpg';
+import HiteshKanwar from '../../assets/images/teams/hitesh-kanwar.png'
+
+export const teamHeads = [
+    {
+       name: "Company Head 1",
+       post: "Founder / CEO",
+       image: HiteshKanwar,
+    },
+    {
+        name: "Company Head 1",
+        post: "Founder / CEO",
+        image: HiteshKanwar,
+    },
+    {
+        name: "Company Head 1",
+        post: "Founder / CEO",
+        image: HiteshKanwar,
+    },
+];
 
 export const ourTeams = [
     {
@@ -49,4 +68,4 @@ export const ourTeams = [
         "post": "Business Development Manager",
         "thumb": Team1
     },
-]
+];

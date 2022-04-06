@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Slider from "react-slick";
 import Head from 'next/head'
 import {
 	Container,
@@ -15,6 +16,7 @@ import { ourTeams } from '../Utils/ourTeams';
 import { BsPlusLg, BsTwitter } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import Link from 'next/link'
+import { teamHeads } from '../Utils/ourTeams';
 
 const Teams = () => {
 	const [buttonActive, setButtonActive] = useState();
@@ -24,10 +26,45 @@ const Teams = () => {
 	}
 	console.log(1111, ourTeams)
 
+	var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        bool: true,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 1
+                }
+            },
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 2
+              }
+            }
+        ]
+    };
+
 	return (
 		<div>
 			<section className={styles.TeamHeadBg}>
-				<Container>
+				{/* <Container>
 					<Row className='align-items-center'>
 						<Col md={6}>
 							<Image
@@ -80,6 +117,68 @@ const Teams = () => {
 							</div>
 						</Col>
 					</Row>
+				</Container> */}
+				<Container>
+					<Slider {...settings}>
+						{teamHeads.map((value, index) => {
+							return (
+								<div key={index}>
+									<Row className='align-items-center'>
+										<Col md={6}>
+											<Image
+												src={value.image}
+												alt={value.image}
+												className='img-fluid'
+											/>
+										</Col>
+										<Col md={6}>
+											<div className={styles.teamSlideCard}>
+												<Title
+													value={value.name}
+													span="Member"
+													subTitle="Name"
+												/>
+												<p className={styles.teamHeadDescription}>
+													Our clients’ interests are ours as well. We strive to deliver valuable products and services for both our clients and their customers. We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. That’s not some tagline, It’s a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the company’s technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.
+												</p>
+												<ul className={styles.teamHeadList}>
+													<li>
+														<span>
+															Post
+														</span>
+														{value.post}
+													</li>
+													<li>
+														<span>
+															Experience
+														</span>
+														Over 6+ years experience
+													</li>
+													<li>
+														<span>
+															Qualification
+														</span>
+														Bachelor of Engineering
+													</li>
+												</ul>
+												<div className={styles.teamSocial}>
+													<Link href='https://www.google.com'>
+														<a target='_blank' className={styles.facebook}><FaFacebookF /></a>
+													</Link>
+													<Link href='https://www.google.com/'>
+														<a target='_blank' className={styles.linkedin}><FaLinkedinIn /></a>
+													</Link>
+													<Link href='https://www.google.com/'>
+														<a target='_blank' className={styles.twitter}><FaTwitter /></a>
+													</Link>
+												</div>
+											</div>
+										</Col>
+									</Row>
+								</div>
+							)
+						})}
+					</Slider>
 				</Container>
 			</section>
 			<section className={styles.teamsBgWrapper}>
