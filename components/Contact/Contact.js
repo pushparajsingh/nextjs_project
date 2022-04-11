@@ -1,6 +1,7 @@
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from "./Contact.module.scss";
 import { MdOutlineLocationCity } from "react-icons/md";
+
 const Contact = () => {
   return (
     <section className={styles.contactWrapper}>
@@ -57,7 +58,7 @@ const Contact = () => {
           <Col lg={6}>
             <div className={styles.contactFormWrappper}>  
             <p>Tell Me More About Your Details</p>
-            <h6>Let's work together</h6>          
+            {/* <h6>Let's work together</h6>           */}
             <Form className={styles.contactForm}>
             <Form.Group
                 className="mb-3"
@@ -94,7 +95,7 @@ const Contact = () => {
                 {/* <Form.Label>Message</Form.Label> */}
                 <Form.Control as="textarea" rows={3} placeholder="Message"/>
               </Form.Group>
-              <button type="button" class="themeButton btn btn-primary m-0">Submit</button>
+              <Button type="button" className="themeButton btn btn-primary m-0">Submit</Button>
             </Form>
             </div>
           </Col>
