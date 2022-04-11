@@ -104,7 +104,7 @@ const ServicesPage = () => {
                         <Row className="align-items-center">
                             <Col md={6}>
                                 <Title span="Ruby" subTitle="on Rails" />
-                                <p>
+                                {/* <p>
                                     Ruby on Rails, or simply Rails, is a web application framework
                                     written in Ruby under the MIT License. Rails is a
                                     model–view–controller (MVC) framework, providing default
@@ -125,7 +125,7 @@ const ServicesPage = () => {
                                     this is not common practice and is usually discouraged in
                                     accordance with the "convention-over-configuration"
                                     philosophy.
-                                </p>
+                                </p> */}
                             </Col>
                             <Col md={6} className="text-center">
                                 <Image
