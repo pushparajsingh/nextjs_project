@@ -14,11 +14,11 @@ const Contact = () => {
                 </h6>
                 <h2 className="contactSubHeading">Our Contacts</h2>
               </div>
-              <p>
+              {/* <p>
                 Give us a call or drop by anytime, we endeavour to answer all
                 enquiries within 24 hours on business days. We will be happy to
                 answer your questions.
-              </p>
+              </p> */}
               {/* <div className={styles.contactInfo}>
                                 <MdOutlineLocationCity className={styles.contactIcons} />
                                 <div className={styles.infoText}>
@@ -30,10 +30,10 @@ const Contact = () => {
                 <MdOutlineLocationCity className={styles.contactIcons} />
                 <div className={styles.infoText}>
                   <h6>Our Address:</h6>
-                  <p>
+                  {/* <p>
                     715-7th Floor, Pukhraj Corporate,Navlakkha Square,
                     Indore(MP)-452001,INDIA.
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <div className={styles.contactInfo}>
