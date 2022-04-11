@@ -355,6 +355,9 @@
 .whyusTitle h3 {
   margin-bottom: 0;
 }
+.whyUsContainer [class~=CircularProgressbar] [class~=CircularProgressbar-path] {
+  stroke: var(--primary);
+}
 
 .carouseItemContainer {
   /* padding: 140px 0 140px 0; */

@@ -1,6 +1,6 @@
 import { React } from 'react'
 import { Col, Container, Row, Card } from 'react-bootstrap';
-import styles from './Footer.module.css'
+import styles from './Footer.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import Title from '../Titles/Titles';
@@ -99,11 +99,11 @@ const Footer = () => {
             </div>
 
             <section className={styles.footerWrapper}>
-                <div className={styles.footerShapeTop}>
+                {/* <div className={styles.footerShapeTop}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
                         <path d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z"></path>
                     </svg>
-                </div>
+                </div> */}
                 <Container>
                     <div className={styles.footerLogoBox}>
                         <Link href="/">
@@ -168,8 +168,8 @@ const Footer = () => {
                             </p>
                             <ul className={styles.footerSocials}>
                                 <li>
-                                    <Link href="#">
-                                        <a>
+                                    <Link href="https://www.facebook.com/YuvaSoftSolutions">
+                                        <a target="_blank">
                                             <Image
                                                 src={Facebook}
                                                 alt="Icon"
@@ -177,8 +177,8 @@ const Footer = () => {
                                             />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
+                                    <Link href="https://twitter.com/yuvasoftech">
+                                        <a target="_blank">
                                             <Image
                                                 src={Twitter}
                                                 alt="Icon"
@@ -186,8 +186,8 @@ const Footer = () => {
                                             />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
+                                    <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
+                                        <a target="_blank">
                                             <Image
                                                 src={Linkedin}
                                                 alt="Icon"
@@ -195,8 +195,8 @@ const Footer = () => {
                                             />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
+                                    <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
+                                        <a target="_blank">
                                             <Image
                                                 src={Instagram}
                                                 alt="Icon"
