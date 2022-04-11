@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import Slider from "react-slick";
 import Title from "../common/Titles/Titles";
@@ -49,6 +50,10 @@ const ServicesPage = () => {
     };
     return (
         <>
+            <Head>
+				<title>Yuvasoft Solutions - Services</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
             <section className={styles.serviceWrapper}>
                 <Container className={styles.serviceHead}>
                     <Row className="justify-content-between align-items-end">

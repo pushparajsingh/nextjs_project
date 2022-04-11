@@ -156,4 +156,24 @@
             }
         }
     }
+    [class~=slick-dots] {
+        bottom: -45px;
+        li {
+            button {
+                &::before {
+                    font-size: 11px;
+                    color: var(--primary-10);
+                    opacity: 1;
+                }
+            }
+            &[class~=slick-active] {
+                button {
+                    &::before {
+                        color: var(--primary);
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }

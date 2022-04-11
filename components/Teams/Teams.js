@@ -63,61 +63,11 @@ const Teams = () => {
 
 	return (
 		<div>
+			<Head>
+				<title>Yuvasoft Solutions - Teams</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
 			<section className={styles.TeamHeadBg}>
-				{/* <Container>
-					<Row className='align-items-center'>
-						<Col md={6}>
-							<Image
-								src={HiteshKanwar}
-								alt="Member image"
-								className='img-fluid'
-							/>
-						</Col>
-						<Col md={6}>
-							<div className={styles.teamSlideCard}>
-								<Title
-									value="Founder/CEO"
-									span="Member"
-									subTitle="Name"
-								/>
-								<p className={styles.teamHeadDescription}>
-									Our clients’ interests are ours as well. We strive to deliver valuable products and services for both our clients and their customers. We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. That’s not some tagline, It’s a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the company’s technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.
-								</p>
-								<ul className={styles.teamHeadList}>
-									<li>
-										<span>
-											Post
-										</span>
-										Founder, CEO
-									</li>
-									<li>
-										<span>
-											Experience
-										</span>
-										Over 6+ years experience
-									</li>
-									<li>
-										<span>
-											Qualification
-										</span>
-										Bachelor of Engineering
-									</li>
-								</ul>
-								<div className={styles.teamSocial}>
-									<Link href='https://www.google.com'>
-										<a target='_blank' className={styles.facebook}><FaFacebookF /></a>
-									</Link>
-									<Link href='https://www.google.com/'>
-										<a target='_blank' className={styles.linkedin}><FaLinkedinIn /></a>
-									</Link>
-									<Link href='https://www.google.com/'>
-										<a target='_blank' className={styles.twitter}><FaTwitter /></a>
-									</Link>
-								</div>
-							</div>
-						</Col>
-					</Row>
-				</Container> */}
 				<Container>
 					<Slider {...settings}>
 						{teamHeads.map((value, index) => {
@@ -134,12 +84,12 @@ const Teams = () => {
 										<Col md={6}>
 											<div className={styles.teamSlideCard}>
 												<Title
-													value={value.name}
-													span="Member"
-													subTitle="Name"
+													value={value.post}
+													span={value.name}
+													subTitle={value.nameSpan}
 												/>
 												<p className={styles.teamHeadDescription}>
-													Our clients’ interests are ours as well. We strive to deliver valuable products and services for both our clients and their customers. We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. That’s not some tagline, It’s a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the company’s technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.
+													{value.bio}
 												</p>
 												<ul className={styles.teamHeadList}>
 													<li>

@@ -100,8 +100,3 @@ export const ServiceIcon = [
         "iconInactive": XdInactive
     }
 ]
-
-
-// export const ServiceDetails [
-    
-// ]
