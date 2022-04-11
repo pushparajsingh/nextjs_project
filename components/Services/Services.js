@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import Slider from "react-slick";
 import Title from "../common/Titles/Titles";
 import {
@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import serviceGraphic from "../../assets/images/serviceIcon/ruby-on-rails.svg";
 import { ServiceIcon } from "../Utils/ourServices";
+import portfolioData from "../Utils/ourPortfolio";
 
 const ServicesPage = () => {
     var settings = {
@@ -100,7 +101,7 @@ const ServicesPage = () => {
             </section>
             <section className={styles.serviceDetailWrapper}>
                 <Container>
-                    <div className={`${styles.serviceDetailBox} ${styles.active}`}>
+                    <div className={`${styles.serviceDetailBox} ${styles.activeBox}`}>
                         <Row className="align-items-center">
                             <Col md={6}>
                                 <Title span="Ruby" subTitle="on Rails" />
@@ -134,6 +135,9 @@ const ServicesPage = () => {
                                     width="250"
                                     height="250"
                                 />
+                            </Col>
+                            <Col md={12}>
+                                
                             </Col>
                         </Row>
                     </div>
