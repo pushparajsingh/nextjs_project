@@ -11,7 +11,7 @@
   padding: 100px 0 50px;
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   background-color: #f3f2f8;
   position: relative;
 }
@@ -177,13 +177,12 @@
 .weDoInfoBox {
   width: 270px;
   position: absolute;
-  /* bottom: 20px;
-  right: -270px; */
-  bottom: -270px;
-  right: 0px;
+  bottom: 25px;
+  right: 62px;
   z-index: 4;
   opacity: 0;
-  transition: all 0.35s ease;
+  transition: all 0.35s ease-in-out;
+  transition-duration: .5S;
 }
 .weDoSliderBox:hover .weDoInfoBox {
   right: 62px;
