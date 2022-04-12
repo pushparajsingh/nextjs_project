@@ -55,7 +55,7 @@ const PortfolioDetails = () => {
                                 </div>
                             </Col>
                         </Row>
-                        <Row className={styles.projectGallery} data-aos="fade-up" data-aos-duration="2000">
+                        <Row className={styles.projectGallery}>
                             <Col lg={4}>
                                 <div className={styles.imgBox}>
                                 <ImageViewer>
