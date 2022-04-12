@@ -34,7 +34,7 @@ const ClientTestimonial = () => {
                         <Col lg={4}>
                             <div className={styles.clientTestimonialTitle}>
                                 <Title
-                                    value="CLIENT’S REVIEW"
+                                    value="CLIENTS REVIEW"
                                     subTitle="Clients Testimonials"
                                 />
                             </div>

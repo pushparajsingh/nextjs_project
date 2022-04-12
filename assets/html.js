@@ -3,16 +3,17 @@ export const html=`<div id="page" class="site">
 .home5-service {
     margin-top: -40px;
     margin-bottom: 0;
-    padding: 0 0 110px 0;
+    padding: 0 0 15px 0;
+    background: var(--bg-secondary);
 }
 .service-box-s2 {
     overflow: hidden;
     position: relative;
     padding: 30px 30px 28px;
     background: #fff;
-    box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
-    -webkit-box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
-    -moz-box-shadow: 8px 8px 30px 0px rgba(42, 67, 113, 0.15);
+    // box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
+    // -webkit-box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
+    // -moz-box-shadow: 8px 8px 30px 0px rgba(42, 67, 113, 0.15);
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -392,7 +393,7 @@ export const html=`<div id="page" class="site">
                                 <div class="number-box s3">03</div>
                                 <div class="content-box">
                                     <h5>Process Perfection</h5>
-                                    <p>We’re driven to becoming the best version of ourselves.</p>
+                                    <p>We are driven to becoming the best version of ourselves.</p>
                                 </div>
                             </div>
                         </div>
