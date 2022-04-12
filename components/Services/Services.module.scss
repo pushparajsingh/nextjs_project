@@ -143,14 +143,17 @@
                         }
                     }
                 }
+                // .activeTab {
+                //     background: var(--white);
+                // }
             }
         }
     }
 }
 
 .serviceDetailWrapper {
-    background-color: var(--bg-secondary);
-    padding-top: 100px;
+    // background-color: var(--bg-secondary);
+    padding: 100px 0px;
     p {
         font-size: 15px;
         line-height: 25px;
