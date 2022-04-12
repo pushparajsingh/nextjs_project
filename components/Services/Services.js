@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Head from "next/head"
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import Slider from "react-slick";
 import Title from "../common/Titles/Titles";
@@ -11,8 +13,10 @@ import Image from "next/image";
 import serviceGraphic from "../../assets/images/serviceIcon/ruby-on-rails.svg";
 import { ServiceIcon } from "../Utils/ourServices";
 import portfolioData from "../Utils/ourPortfolio";
+import { serviceDetail } from "../Utils/servicesDetails"
 
 const ServicesPage = () => {
+    const [selectOption , setSelectOption] = useState();
     var settings = {
         dots: true,
         infinite: true,
@@ -24,42 +28,55 @@ const ServicesPage = () => {
             {
                 breakpoint: 1400,
                 settings: {
-                  slidesToShow: 4,
-                  slidesToScroll: 1
+                    slidesToShow: 4,
+                    slidesToScroll: 1
                 }
             },
             {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-              }
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
             },
             {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                initialSlide: 2
-              }
-            }
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 440,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
         ]
     };
+
     return (
         <>
+            <Head>
+                <title>Yuvasoft Solutions - Services</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <section className={styles.serviceWrapper}>
                 <Container className={styles.serviceHead}>
                     <Row className="justify-content-between align-items-end">
-                        <Col md={5}>
+                        <Col md={5} data-aos="fade-right" data-aos-duration="1000">
                             <Title
                                 value="Our Services"
                                 span="Some of"
                                 subTitle="Our Services & Skills"
                             />
                         </Col>
-                        <Col md={6}>
+                        <Col md={6} data-aos="fade-left" data-aos-duration="2000">
                             <div className={styles.serviceHeadControls}>
                                 <Button className="themeButton">
                                     <BsFillArrowLeftCircleFill className={styles.icon} />
@@ -70,7 +87,7 @@ const ServicesPage = () => {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row data-aos="fade-up" data-aos-duration="3000">
                         <Col md={12}>
                             <div className={`${styles.serviceCategoryList}`}>
                                 <Slider {...settings}>
@@ -78,7 +95,8 @@ const ServicesPage = () => {
                                         return (
                                             <div key={index}>
                                                 <Link href="#">
-                                                    <a className={`${styles.activeTab} ${styles.inActiveTab}`}>
+                                                    <a className={`${ selectOption ? styles.activeTab : styles.inActiveTab} ${styles.inActiveTab}`} 
+                                                    onClick={() => setSelectOption(value.service)}>
                                                         <span className={styles.inactiveIcon}>
                                                             <Image src={value.iconInactive} alt="service-icon" />
                                                         </span>
@@ -101,46 +119,57 @@ const ServicesPage = () => {
             </section>
             <section className={styles.serviceDetailWrapper}>
                 <Container>
-                    <div className={`${styles.serviceDetailBox} ${styles.activeBox}`}>
-                        <Row className="align-items-center">
-                            <Col md={6}>
-                                <Title span="Ruby" subTitle="on Rails" />
-                                {/* <p>
-                                    Ruby on Rails, or simply Rails, is a web application framework
-                                    written in Ruby under the MIT License. Rails is a
-                                    model–view–controller (MVC) framework, providing default
-                                    structures for a database, a web service, and web pages. It
-                                    encourages and facilitates the use of web standards such as
-                                    JSON or XML for data transfer, and HTML, CSS and JavaScript
-                                    for display and user interfacing. In addition to MVC, Rails
-                                    emphasizes the use of other well-known software engineering
-                                    patterns and paradigms, including convention over
-                                    configuration (CoC), don't repeat yourself (DRY), and the
-                                    active record pattern In a default configuration, a model in
-                                    the Ruby on Rails framework maps to a table in a database and
-                                    to a Ruby file. For example, a model class User will usually
-                                    be defined in the file 'user.rb' in the app/models directory,
-                                    and linked to the table 'users' in the database. While
-                                    developers are free to ignore this convention and choose
-                                    differing names for their models, files, and database table,
-                                    this is not common practice and is usually discouraged in
-                                    accordance with the "convention-over-configuration"
-                                    philosophy.
-                                </p> */}
-                            </Col>
-                            <Col md={6} className="text-center">
-                                <Image
-                                    src={serviceGraphic}
-                                    alt="services"
-                                    width="250"
-                                    height="250"
-                                />
-                            </Col>
-                            <Col md={12}>
-                                
-                            </Col>
-                        </Row>
-                    </div>
+                    {/* {serviceDetail.filter((service, index) => {
+                        return (
+                            <div className={`${styles.serviceDetailBox} ${styles.activeBox}`}>
+                                <Row className="align-items-center" key={index}>
+                                    <Col md={6}>
+                                        <Title span={service.span} value={service.value} subTitle={service.subtitle} />
+                                        <p dangerouslySetInnerHTML={{ __html: service.details }}></p>
+                                    </Col>
+                                    <Col md={6} className="text-center">
+                                        <Image
+                                            src={service.image}
+                                            alt="services"
+                                        />
+                                    </Col>
+                                    <Col md={12}>
+
+                                    </Col>
+                                </Row>
+                            </div>
+                        )
+                    })} */}
+
+                    {
+                        serviceDetail.map((value, index) => {
+                            if(selectOption === value.service) {
+                                return (
+                                    <div className={`${styles.serviceDetailBox} ${styles.activeBox}`}>
+                                        <Row className="align-items-center" key={index}>
+                                            <Col md={6}>
+                                                <Title span={value.span} value={value.value} subTitle={value.subtitle} />
+                                                <p dangerouslySetInnerHTML={{ __html: value.details }}></p>
+                                            </Col>
+                                            <Col md={6} className="text-center">
+                                                <Image
+                                                    src={value.image}
+                                                    alt="services"
+                                                />
+                                            </Col>
+                                            <Col md={12}>
+        
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                )
+                            }
+                            else {
+
+                            }
+                        })
+
+                    }
                 </Container>
             </section>
         </>

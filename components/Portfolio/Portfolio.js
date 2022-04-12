@@ -10,7 +10,7 @@ const Portfolio = () => {
 	return (
 		<section className="theme-padding">
 			<Container className={styles.portfolioWrapper}>
-				<Row className="justify-content-center text-center">
+				<Row className="justify-content-center text-center" data-aos="zoom-in" data-aos-duration="1000">
 					<Col lg={6}>
 						<Title
 							value="Our Projects"
@@ -30,9 +30,9 @@ const Portfolio = () => {
 								<Row>
 									{portfolioData.map((item, index) => {
 										return (
-											<Col lg={4} key={index}>
+											<Col lg={4} key={index} data-aos="fade-up" data-aos-duration="1000">
 												<Card className={styles.portfolioCard}>
-													<Link href="PortfolioDetails">
+													<Link href="/portfolioDetails">
 														<a>
 															<div className={styles.portfolioThumb}>
 																<Image src={item.thumb} alt={item.title} />

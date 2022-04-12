@@ -109,3 +109,131 @@
         }
     }
 }
+
+// Portfolio detail page
+.portfolioDetailsWrapper {
+    p {
+        font-family: var(--primary-font);
+        color: var(--light-black);
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .detailBigBanner {
+        padding: 100px 0px 50px;
+        position: relative;
+        z-index: -1;
+        img {
+            border-radius: 25px;
+        }
+    }
+    .projectTitle {
+        font-size: 30px;
+        font-weight: 600;
+        font-family: var(--primary-font);
+        margin-bottom: 20px;
+    }
+    .details {
+        font-family: var(--primary-font);
+        color: var(--light-black);
+        font-size: 14px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+    .detailCard {
+        background: var(--light-black);
+        padding: 30px;
+        color: var(--white);
+        z-index: 2;
+        font-family: var(--primary-font);
+        border-radius: 15px;
+        h4 {
+            font-size: 26px;
+            font-family: var(--secondary-font);
+            font-weight: 600;
+            margin-bottom: 25px;
+            margin-top: 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin-bottom: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(255,255,255,0.3);
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0px;
+                }
+                span {
+                    font-size: 14px;
+                    display: block;
+                    font-weight: 400;
+                    margin-bottom: 7px;
+                }
+                h5 {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .projectGallery {
+        margin: 50px 0px;
+        overflow: hidden;
+        .imgBox {
+            img {
+                transition: all 0.3s linear;
+                border-radius: 5px;
+                transform: scale(0.95);
+            }
+            &:hover {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    .summaryCard {
+        padding-bottom: 50px;
+        .summaryTitle {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: var(--primary-font);
+        }
+    }
+    .projectActionBox {
+        background: url(../../assets/images/clientDetailBg.png) no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+        padding: 50px;
+        color: var(--white);
+        margin-bottom: 100px;
+        text-align: center;
+        [class~=btn] {
+            display: inline-block !important;
+            background-color: var(--white) !important;
+            color: var(--primary) !important;
+        }
+        .actionTitle {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: var(--secondary-font);
+        }
+        p {
+            font-size: 15px;
+            color: var(--white);
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        .appDownload {
+            a {
+                &:first-child {
+                    margin-right: 25px;
+                }
+                img {
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+}
