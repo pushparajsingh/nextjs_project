@@ -115,7 +115,7 @@
     p {
         font-family: var(--primary-font);
         color: var(--light-black);
-        font-size: 15px;
+        font-size: 14px;
         line-height: 30px;
     }
     .detailBigBanner {
@@ -135,15 +135,17 @@
     .details {
         font-family: var(--primary-font);
         color: var(--light-black);
-        font-size: 15px;
+        font-size: 14px;
         line-height: 30px;
+        margin-bottom: 25px;
     }
     .detailCard {
-        background: var(--primary);
+        background: var(--light-black);
         padding: 30px;
         color: var(--white);
         z-index: 2;
         font-family: var(--primary-font);
+        border-radius: 15px;
         h4 {
             font-size: 26px;
             font-family: var(--secondary-font);
@@ -159,6 +161,10 @@
                 margin-bottom: 30px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid rgba(255,255,255,0.3);
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0px;
+                }
                 span {
                     font-size: 14px;
                     display: block;
@@ -173,8 +179,18 @@
     }
     .projectGallery {
         margin: 50px 0px;
-        img {
-            border-radius: 5px;
+        overflow: hidden;
+        .imgBox {
+            img {
+                transition: all 0.3s linear;
+                border-radius: 5px;
+                transform: scale(0.95);
+            }
+            &:hover {
+                img {
+                    transform: scale(1);
+                }
+            }
         }
     }
     .summaryCard {
@@ -183,6 +199,41 @@
             font-size: 30px;
             font-weight: bold;
             font-family: var(--primary-font);
+        }
+    }
+    .projectActionBox {
+        background: url(../../assets/images/clientDetailBg.png) no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+        padding: 50px;
+        color: var(--white);
+        margin-bottom: 100px;
+        text-align: center;
+        [class~=btn] {
+            display: inline-block !important;
+            background-color: var(--white) !important;
+            color: var(--primary) !important;
+        }
+        .actionTitle {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: var(--secondary-font);
+        }
+        p {
+            font-size: 15px;
+            color: var(--white);
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        .appDownload {
+            a {
+                &:first-child {
+                    margin-right: 25px;
+                }
+                img {
+                    width: 150px !important;
+                }
+            }
         }
     }
 }

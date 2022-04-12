@@ -101,6 +101,7 @@
             padding: 30px 20px;
             border-radius: 10px;
             margin: 0px 15px;
+            transition: all .4s ease-out 0s;
             @media screen and (max-width: 767px) {
                 width: 80%;
             }
@@ -116,6 +117,7 @@
             }
             &:hover {
                 background: #ffffff1a;
+                transform: translateY(-7.5px);
             }
             // &::after {
             //     content: '';
