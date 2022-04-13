@@ -26,77 +26,99 @@ import IllustratorInactive from '../../assets/images/serviceIcon/Inactive/adobe-
 import PhotoshopInactive from '../../assets/images/serviceIcon/Inactive/adobe-photoshop-inactive.svg'
 import XdInactive from '../../assets/images/serviceIcon/Inactive/adobeXD-inactive.svg'
 
+// Service details images
+import railsGraphic from "../../assets/images/services/web-design.png"
+
 export const ServiceIcon = [
     {
-        "id": 1,
-        "service": "Ruby On Rails",
-        "icon": Ruby,
-        "iconInactive": RubyInactive
+        id: 1,
+        service: "Ruby On Rails",
+        icon: Ruby,
+        iconInactive: RubyInactive,
     },
     {
-        "id": 2,
-        "service": "React",
-        "icon": ReactJs,
-        "iconInactive": ReactJsInactive
+        id: 2,
+        service: "React",
+        icon: ReactJs,
+        iconInactive: ReactJsInactive,
     },
     {
-        "id": 3,
-        "service": "React Native",
-        "icon": ReactNative,
-        "iconInactive": ReactNativeInactive
+        id: 3,
+        service: "React Native",
+        icon: ReactNative,
+        iconInactive: ReactNativeInactive,
     },
     {
-        "id": 4,
-        "service": "Node",
-        "icon": Node,
-        "iconInactive": NodeInactive
+        id: 4,
+        service: "Node",
+        icon: Node,
+        iconInactive: NodeInactive,
     },
     {
-        "id": 5,
-        "service": "Android Development",
-        "icon": Android,
-        "iconInactive": AndroidInactive
+        id: 5,
+        service: "Android Development",
+        icon: Android,
+        iconInactive: AndroidInactive,
     },
     {
-        "id": 6,
-        "service": "Python Development",
-        "icon": Python,
-        "iconInactive": PythonInactive
+        id: 6,
+        service: "Python Development",
+        icon: Python,
+        iconInactive: PythonInactive,
     },
     {
-        "id": 7,
-        "service": "Blockchain Development",
-        "icon": Blockchain,
-        "iconInactive": BlockchainInactive
+        id: 7,
+        service: "Blockchain Development",
+        icon: Blockchain,
+        iconInactive: BlockchainInactive,
     },
     {
-        "id": 8,
-        "service": "Responsive Web Design",
-        "icon": WebDesign,
-        "iconInactive": WebDesignInactive
+        id: 8,
+        service: "Responsive Web Design",
+        icon: WebDesign,
+        iconInactive: WebDesignInactive,
     },
     {
-        "id": 9,
-        "service": "Wordpress",
-        "icon": Wordpress,
-        "iconInactive": WordpressInactive
+        id: 9,
+        service: "Wordpress",
+        icon: Wordpress,
+        iconInactive: WordpressInactive,
     },
     {
-        "id": 10,
-        "service": "Illustrator",
-        "icon": Illustrator,
-        "iconInactive": IllustratorInactive
+        id: 10,
+        service: "Illustrator",
+        icon: Illustrator,
+        iconInactive: IllustratorInactive,
     },
     {
-        "id": 11,
-        "service": "Photoshop",
-        "icon": Photoshop,
-        "iconInactive": PhotoshopInactive
+        id: 11,
+        service: "Photoshop",
+        icon: Photoshop,
+        iconInactive: PhotoshopInactive,
     },
     {
-        "id": 12,
-        "service": "Adobe XD",
-        "icon": Xd,
-        "iconInactive": XdInactive
-    }
-]
+        id: 12,
+        service: "Adobe XD",
+        icon: Xd,
+        iconInactive: XdInactive,
+    },
+];
+
+export const serviceDetail = [
+    {
+        service: "Ruby On Rails",
+        span: "Ruby",
+        value: "Service",
+        subtitle: "on Rails",
+        details: "Ruby on Rails, or simply Rails, is a web application framework written in Ruby under the MIT License. Rails is a model-view-controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. <br /> <br /> Rails is a model-view-controller (MVC) framework, providing default structures for a database, a web service, and web pages.",
+        image: railsGraphic,
+    },
+    {
+        service: "React",
+        span: "React",
+        value: "Service",
+        subtitle: "JS",
+        details: "Ruby on Rails, or simply Rails, is a web application framework written in Ruby under the MIT License. Rails is a model-view-controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. <br /> <br /> Rails is a model-view-controller (MVC) framework, providing default structures for a database, a web service, and web pages.",
+        image: railsGraphic,
+    },
+];

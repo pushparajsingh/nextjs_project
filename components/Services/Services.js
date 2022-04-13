@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Head from "next/head"
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Slider from "react-slick";
 import Title from "../common/Titles/Titles";
 import {
@@ -10,10 +10,7 @@ import {
 import styles from "./Services.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import serviceGraphic from "../../assets/images/serviceIcon/ruby-on-rails.svg";
-import { ServiceIcon } from "../Utils/ourServices";
-import portfolioData from "../Utils/ourPortfolio";
-import { serviceDetail } from "../Utils/servicesDetails"
+import { ServiceIcon, serviceDetail } from "../Utils/ourServices";
 
 const ServicesPage = () => {
     const [selectOption , setSelectOption] = useState();
@@ -94,20 +91,18 @@ const ServicesPage = () => {
                                     {ServiceIcon.map((value, index) => {
                                         return (
                                             <div key={index}>
-                                                <Link href="#">
-                                                    <a className={`${ selectOption ? styles.activeTab : styles.inActiveTab} ${styles.inActiveTab}`} 
-                                                    onClick={() => setSelectOption(value.service)}>
-                                                        <span className={styles.inactiveIcon}>
-                                                            <Image src={value.iconInactive} alt="service-icon" />
-                                                        </span>
-                                                        <span className={styles.activeIcon}>
-                                                            <Image src={value.icon} alt="service-icon" />
-                                                        </span>
-                                                        <h4 className={styles.serviceTitle}>
-                                                            {value.service}
-                                                        </h4>
-                                                    </a>
-                                                </Link>
+                                                <div className={`${ selectOption ? styles.activeTab : styles.inActiveTab} ${styles.inActiveTab}`} 
+                                                onClick={() => setSelectOption(value.service)}>
+                                                    <span className={styles.inactiveIcon}>
+                                                        <Image src={value.iconInactive} alt="service-icon" />
+                                                    </span>
+                                                    <span className={styles.activeIcon}>
+                                                        <Image src={value.icon} alt="service-icon" />
+                                                    </span>
+                                                    <h4 className={styles.serviceTitle}>
+                                                        {value.service}
+                                                    </h4>
+                                                </div>
                                             </div>
                                         )
                                     })}

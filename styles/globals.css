@@ -23,6 +23,10 @@ a {
   --secondary: #222222;
   --light-black: #4e5a62;
   --bg-secondary: #F3F2F8;
+  --facebook: #3d6ad6;
+  --twitter: #03a9f4;
+  --linkedin: #0077b5;
+  --instagram: linear-gradient(to right, #feb80a , #a329a7);
   --primary-font: "Poppins", sans-serif;
   --secondary-font: 'Frank Ruhl Libre', serif;
 }

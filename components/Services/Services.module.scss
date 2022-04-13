@@ -79,14 +79,20 @@
                 bottom: -40px;
                 li {
                     button {
+                        border-radius: 50px;
                         &::before {
                             color: var(--white);
                         }
                     }
-                    &.active {
+                    &[class~=slick-active] {
                         button {
+                            border: 1px solid var(--white);
+                            background: var(--white);
                             &::before {
-                                color: var(--white);
+                                color: var(--primary);
+                                opacity: 1;
+                                font-size: 8px;
+                                top: 1.4px;
                             }
                         }
                     }
@@ -109,6 +115,7 @@
                     min-height: 185px;
                     margin-right: 24px;
                     background: #ffffff1c;
+                    cursor: pointer;
                     .icon {
                         width: 30px;
                         height: 30px;

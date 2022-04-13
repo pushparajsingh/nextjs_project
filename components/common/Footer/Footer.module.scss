@@ -181,15 +181,41 @@
                 display: inline-block;
                 width: 35px;
                 height: 35px;
+                line-height: 30px;
                 background: #454b4f;
                 border-radius: 50px;
                 margin-right: 20px;
-                padding: 7px;
+                transition: all .3s;
                 &:last-child {
                     margin: 0px;
                 }
-                img {
-                    max-width: 30px;
+                .icon {
+                    width: 18px;
+                    height: 18px;
+                    color: var(--white);
+                }
+                &:hover {
+                    transform: translateY(-5px);
+                }
+                &.facebook {
+                    &:hover {
+                        background: var(--facebook);
+                    }
+                }
+                &.twitter {
+                    &:hover {
+                        background: var(--twitter);
+                    }
+                }
+                &.linkedin {
+                    &:hover {
+                        background: var(--linkedin);
+                    }
+                }
+                &.instagram {
+                    &:hover {
+                        background: var(--instagram);
+                    }
                 }
             }
         }
