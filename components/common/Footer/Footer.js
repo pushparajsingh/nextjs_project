@@ -8,10 +8,10 @@ import { RatingCards } from '../../Utils/ourRatings';
 import Slider from "react-slick";
 
 import FooterLogo from '../../../assets/images/yuvasoft-logo-white.png'
-import Facebook from '../../../assets/images/footer/facebook.png'
-import Linkedin from '../../../assets/images/footer/linkedin.png'
-import Twitter from '../../../assets/images/footer/twitter.png'
-import Instagram from '../../../assets/images/footer/instagram.png'
+import Facebook from '../../../assets/images/footer/facebook.svg'
+import Linkedin from '../../../assets/images/footer/linkedin.svg'
+import Twitter from '../../../assets/images/footer/twitter.svg'
+import Instagram from '../../../assets/images/footer/instagram.svg'
 
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
