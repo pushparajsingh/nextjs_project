@@ -56,14 +56,12 @@ a {
 .themeTitle h3 span {
   color: var(--primary);
 }
-.themeButton{
+.themeButton {
   background-color: var(--primary) !important;
   color: var(--white) !important;
   border: none !important;
   border-radius: 30px !important;
   padding: 15px 30px !important;
-  display: flex !important;
-  margin: 0 auto;
 }
 .theme-padding {
   padding: 120px 0px;
