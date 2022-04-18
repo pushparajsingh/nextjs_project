@@ -8,14 +8,11 @@ import { RatingCards } from '../../Utils/ourRatings';
 import Slider from "react-slick";
 
 import FooterLogo from '../../../assets/images/yuvasoft-logo-white.png'
-import Facebook from '../../../assets/images/footer/facebook.png'
-import Linkedin from '../../../assets/images/footer/linkedin.png'
-import Twitter from '../../../assets/images/footer/twitter.png'
-import Instagram from '../../../assets/images/footer/instagram.png'
 
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
 import { FiMail } from "react-icons/fi"
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 
 const Footer = () => {
     const settings = {
@@ -169,39 +166,23 @@ const Footer = () => {
                             <ul className={styles.footerSocials}>
                                 <li>
                                     <Link href="https://www.facebook.com/YuvaSoftSolutions">
-                                        <a target="_blank">
-                                            <Image
-                                                src={Facebook}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                        <a target="_blank" className={styles.facebook}>
+                                            <FaFacebookF className={styles.icon} />
                                         </a>
                                     </Link>
                                     <Link href="https://twitter.com/yuvasoftech">
-                                        <a target="_blank">
-                                            <Image
-                                                src={Twitter}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                        <a target="_blank" className={styles.twitter}>
+                                            <FaTwitter className={styles.icon}  />
                                         </a>
                                     </Link>
                                     <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
-                                        <a target="_blank">
-                                            <Image
-                                                src={Linkedin}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                        <a target="_blank" className={styles.linkedin}>
+                                            <FaLinkedinIn className={styles.icon} />
                                         </a>
                                     </Link>
                                     <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
-                                        <a target="_blank">
-                                            <Image
-                                                src={Instagram}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                        <a target="_blank" className={styles.instagram}>
+                                            <FaInstagram className={styles.icon} />
                                         </a>
                                     </Link>
                                 </li>

@@ -5,8 +5,9 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import Slider from "react-slick";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 import Image from 'next/image'
-import ClientProfile from '../../assets/images/ClientProfile.svg'
+import ClientProfile from '../../assets/images/homepage/ClientProfile.svg'
 import QuoteSign from '../../assets/images/right-quote-sign.svg'
+import { testimonials } from '../Utils/ourTestimonials'
 
 const ClientTestimonial = () => {
     const customeSlider = useRef();
@@ -45,7 +46,7 @@ const ClientTestimonial = () => {
                         </Col>
                         <Col lg={8} className={styles.clientTestimonialSlider}>
                             <Slider {...settings} ref={customeSlider}>
-                                {series.map((item, index) => {
+                                {testimonials.map((review, index) => {
                                     return (
                                         <div key={index}>
                                             <Card className={styles.clientTestimonialCard}>
@@ -53,11 +54,11 @@ const ClientTestimonial = () => {
                                                     <div className={styles.testimonialCardHeader}>
                                                         <div className={styles.clientProfileBox}>
                                                             <div className={styles.clientProfileImg}>
-                                                                <Image src={ClientProfile} alt="ClientProfile" className="img-fluid" />
+                                                                <Image src={review.image} alt="ClientProfile" className="img-fluid" />
                                                             </div>
                                                             <div className={styles.clientDetail}>
-                                                                <h5>Mathias Muleme Ssena</h5>
-                                                                <p>Canada</p>
+                                                                <h5>{review.name}</h5>
+                                                                <p>{review.location}</p>
                                                             </div>
                                                         </div>
                                                         <div className={styles.quoteImgBox}>
@@ -65,7 +66,7 @@ const ClientTestimonial = () => {
                                                         </div>
                                                     </div>
                                                     <div className={styles.clientFeedbackBox}>
-                                                        It was great working with YuvaSoft. They are very knowledgeable with Rails and they always checks back to make sure that the work done was satisfactory. A pleasure to work with them and I will certainly hire them for additional work.
+                                                        {review.feedback}
                                                     </div>
                                                 </Card.Body>
                                             </Card>

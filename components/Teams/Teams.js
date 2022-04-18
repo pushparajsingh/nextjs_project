@@ -112,13 +112,13 @@ const Teams = () => {
 													</li>
 												</ul>
 												<div className={styles.teamSocial}>
-													<Link href='https://www.google.com'>
+													<Link href={value.urlFacebook}>
 														<a target='_blank' className={styles.facebook}><FaFacebookF /></a>
 													</Link>
-													<Link href='https://www.google.com/'>
+													<Link href={value.urlLinkedin}>
 														<a target='_blank' className={styles.linkedin}><FaLinkedinIn /></a>
 													</Link>
-													<Link href='https://www.google.com/'>
+													<Link href={value.urlTwitter}>
 														<a target='_blank' className={styles.twitter}><FaTwitter /></a>
 													</Link>
 												</div>

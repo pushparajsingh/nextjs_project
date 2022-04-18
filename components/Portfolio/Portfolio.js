@@ -57,7 +57,7 @@ const Portfolio = () => {
 										return (
 											<Col lg={4} key={index}>
 												<Card className={styles.portfolioCard}>
-													<Link href="/">
+													<Link href="/portfolioDetails">
 														<a>
 															<div className={styles.portfolioThumb}>
 																<Image src={item.thumb} alt={item.title} />
@@ -82,15 +82,19 @@ const Portfolio = () => {
 										return (
 											<Col lg={4} key={index}>
 												<Card className={styles.portfolioCard}>
-													<div className={styles.portfolioThumb}>
-														<Image src={item.thumb} alt={item.title} />
-													</div>
-													<Card.Body>
-														<div className={styles.cardContent}>
-															<Card.Title>{item.title}</Card.Title>
-															<Card.Text>{item.category}</Card.Text>
-														</div>
-													</Card.Body>
+													<Link href="/portfolioDetails">
+														<a>
+															<div className={styles.portfolioThumb}>
+																<Image src={item.thumb} alt={item.title} />
+															</div>
+															<Card.Body>
+																<div className={styles.cardContent}>
+																	<Card.Title>{item.title}</Card.Title>
+																	<Card.Text>{item.category}</Card.Text>
+																</div>
+															</Card.Body>
+														</a>
+													</Link>
 												</Card>
 											</Col>
 										);
