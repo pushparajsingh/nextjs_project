@@ -139,12 +139,6 @@ const About = () => {
                                             <div className={styles.weDoSliderImage}>
                                                 <Image src={WebDesigning} alt="WebDesigning" />
                                             </div>
-                                            <div className={styles.weDoInfoBox}>
-                                                <div className={styles.weDoInfoInfoInner}>
-                                                    <h5>Web Design</h5>
-                                                    <p className={styles.portfolioCates}>The web is the most popular and far-reaching application...</p>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 )
