@@ -41,7 +41,7 @@ const About = () => {
                     </Col>
                     <Col lg={6}>
                         <div className={styles.aboutContent}>
-                            <div class="themeTitle">
+                            <div className="themeTitle">
                                 <h4>who we are</h4>
                             </div>
                             <div className={styles.aboutHeadingBox}>
@@ -121,7 +121,7 @@ const About = () => {
                             span="Meet Our"
                             subTitle="Leadership Team"
                         />
-                        <p className={styles.titleParagraph}>If we had a "secret sauce" it would be our awesome people. We have only professional team!</p>
+                        <p className={styles.titleParagraph}>If we had a &quot; secret sauce &quot; it would be our awesome people. We have only professional team!</p>
                     </Col>
                     <Col lg={6}>
                         <div className={styles.whatweDoSliderControl}>
