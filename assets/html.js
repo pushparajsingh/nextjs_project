@@ -114,6 +114,16 @@ export const html=`<div id="page" class="site">
     color: #fff;
     text-decoration: none;
 }
+@media only screen and (max-width: 991px){
+    .service-box-s2{
+        margin: 10px
+    }
+}
+@media only screen and (max-width: 767px){
+    .slider-tag-line{
+        font-size: 22px !important;
+    }
+}
 </style>
 <div id="content" class="site-content">
             <!-- SLIDER START -->
@@ -370,7 +380,7 @@ export const html=`<div id="page" class="site">
             <section class="home5-service">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-4 col-sm-6 col-xs-12 sm-m-b40">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sm-m-b40">
                             <div class="service-box-s2 s-box service-box-s2-bg1">
                                 <div class="number-box">01</div>
                                 <div class="content-box">
@@ -379,7 +389,7 @@ export const html=`<div id="page" class="site">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 sm-m-b40">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sm-m-b40">
                             <div class="service-box-s2 s-box service-box-s2-bg2">
                                 <div class="number-box s2">02</div>
                                 <div class="content-box">
@@ -388,7 +398,7 @@ export const html=`<div id="page" class="site">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                             <div class="service-box-s2 s-box service-box-s2-bg3">
                                 <div class="number-box s3">03</div>
                                 <div class="content-box">

@@ -67,8 +67,14 @@
   margin-right: 10px;
 }
 /* Responsive CSS */
+@media screen and (max-width: 991px) {
+  .topHeader{
+    display: none;
+  }
+}
 @media screen and (max-width: 767px) {
   .logo img {
     max-width: 170px !important;
   }
+  
 }
