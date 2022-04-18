@@ -31,9 +31,9 @@ const CareerPage = () => {
                     </Col>
                 </Row>
                 <Row>
-                    {series.map(() => {
+                    {series.map((value) => {
                         return (
-                            <Col lg={4}>
+                            <Col key={value} lg={4}>
                                 <div className={styles.jobCard}>
                                     <div className={styles.jobIcon}>
                                         <Image src={jobIcon} className="img-fluid" alt="icon" />
