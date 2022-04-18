@@ -21,7 +21,9 @@ const Banner = () => {
     return (
         <>
             <Script
-                src="/jquery.js" />
+                src="/jquery.js" /> 
+                <Script
+                src="/sliderJs.js" />
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </>
     )
