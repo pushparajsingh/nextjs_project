@@ -17,6 +17,7 @@ import { BsPlusLg, BsTwitter } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import Link from 'next/link'
 import { teamHeads } from '../Utils/ourTeams';
+import {SSRProvider} from '@react-aria/ssr';
 
 const Teams = () => {
 	const [buttonActive, setButtonActive] = useState();
@@ -24,7 +25,7 @@ const Teams = () => {
 	const onCloseButton = () => {
 		setButtonActive('test')
 	}
-	console.log(1111, ourTeams)
+	// console.log(1111, ourTeams)
 
 	var settings = {
         dots: true,
@@ -62,11 +63,13 @@ const Teams = () => {
     };
 
 	return (
+		<SSRProvider>
 		<div>
 			<Head>
 				<title>Yuvasoft Solutions - Teams</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
+			
 			<section className={styles.TeamHeadBg}>
 				<Container>
 					<Slider {...settings}>
@@ -131,6 +134,7 @@ const Teams = () => {
 					</Slider>
 				</Container>
 			</section>
+			
 			<section className={styles.teamsBgWrapper}>
 				<Container>
 					<Row className='justify-content-center text-center'>
@@ -142,6 +146,7 @@ const Teams = () => {
 							/>
 						</Col>
 					</Row>
+					
 					<Row>
 						{ourTeams && ourTeams.map((value, index) => {
 							return (
@@ -176,13 +181,13 @@ const Teams = () => {
 							)
 						})}
 					</Row>
+					
 				</Container>
 			</section>
 
-			<section>
-
-			</section>
+			
 		</div>
+		</SSRProvider>
 	)
 }
 export default Teams;

@@ -44,7 +44,7 @@ const Header = () => {
                                 <a href="#" className={styles.headerMenu}>About</a>
                                 <ul>
                                     <li>
-                                        <Link href="#">
+                                        <Link href="#" passHref>
 
                                             <Image
                                                 src={Facebook}
@@ -55,7 +55,7 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#">
+                                        <Link href="#" passHref>
 
                                             <Image
                                                 src={Twitter}
@@ -66,7 +66,7 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#">
+                                        <Link href="#" passHref>
 
                                             <Image
                                                 src={Linkedin}
@@ -77,7 +77,7 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#">
+                                        <Link href="#" passHref>
 
                                             <Image
                                                 src={Instagram}
@@ -111,7 +111,7 @@ const Header = () => {
             </div>
             <Navbar className={styles.HeaderPrimary} expand="lg">
                 <Container>
-                    <Navbar.Brand href="/" className={styles.logo}>
+                    <Navbar.Brand href="/" className={styles.logo} passHref>
                         <Image src={Logo} className='img-fluid' alt="Yuvasoft Logo" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -120,7 +120,7 @@ const Header = () => {
                             {headerLinks.map((item, index) => (
                                 <>
             
-                                    <Link href={item.path} key={index} ><a className={`${router.pathname == item.path ? styles.active : "active"}`}>{item.name}</a></Link>
+                                    <Link href={item.path} key={index} ><a className={`${router.pathname == item.path ? styles.active : "active"}`} passHref>{item.name}</a></Link>
 
                                 </>
                             ))}
