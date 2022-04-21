@@ -6,10 +6,9 @@ import WhatWeDo from './whatWedo'
 import ClientTestimonial from './ClientTestimonial'
 import WhyChooseUs from './WhyChooseUs'
 import Achievements from './Awards'
-
 const Homepage = () => {
     return(
-        <div>
+        <div className="content">
             <Banner />
 			<Services />
 			<AboutUs />

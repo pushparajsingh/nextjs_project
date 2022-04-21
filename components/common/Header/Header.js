@@ -1,5 +1,5 @@
 
-import { React } from 'react'
+import { React, useEffect } from 'react'
 import {
     Container,
     Nav,
@@ -33,6 +33,18 @@ const Header = () => {
         { name: "Career", path: "/career" },
         { name: "Contact", path: "/contact" },
     ]
+    useEffect(()=>{
+        document.addEventListener('scroll', function(e) {
+            var header = document.getElementById("headerNav");
+            var sticky = header.offsetTop;
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+              } else {
+                header.classList.remove("sticky");
+              }
+            console.log(123456,e)
+        })
+    },[])
 
     return (
         <div>
@@ -109,7 +121,7 @@ const Header = () => {
                     </Row>
                 </Container>
             </div>
-            <Navbar className={styles.HeaderPrimary} expand="lg">
+            <Navbar className={styles.HeaderPrimary} expand="lg" id='headerNav'>
                 <Container>
                     <Navbar.Brand href="/" className={styles.logo} passHref>
                         <Image src={Logo} className='img-fluid' alt="Yuvasoft Logo" />
