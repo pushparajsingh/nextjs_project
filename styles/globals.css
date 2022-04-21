@@ -66,3 +66,12 @@ a {
 .theme-padding {
   padding: 120px 0px;
 }
+.sticky{
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.sticky + .content {
+  margin-top: 500px;
+}

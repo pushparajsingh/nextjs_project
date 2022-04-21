@@ -121,6 +121,26 @@
       .whatweDoSliderControl{
         display: flex;
         justify-content: flex-end;
+        button{
+            border-radius: 50%;
+            font-size: 28px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            border: none;
+            &:nth-child(1){
+                background-color: var(--light-black);
+            }
+            &:nth-child(2){
+                background-color: var(--primary);
+            }
+        }
+        [class~="slick-arrow"]{
+            display: none !important;
+        }
       }
 
 }
