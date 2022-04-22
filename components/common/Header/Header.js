@@ -33,18 +33,20 @@ const Header = () => {
         { name: "Career", path: "/career" },
         { name: "Contact", path: "/contact" },
     ]
-    useEffect(()=>{
-        document.addEventListener('scroll', function(e) {
+    useEffect(() => {
+        document.addEventListener('scroll', function (e) {
             var header = document.getElementById("headerNav");
+            var contentBanner = document.getElementById("contentBox");
             var sticky = header.offsetTop;
             if (window.pageYOffset > sticky) {
                 header.classList.add("sticky");
-              } else {
+                contentBanner.classList.add("afteFixedHeader");
+            } else {
                 header.classList.remove("sticky");
-              }
-            console.log(123456,e)
+                contentBanner.classList.remove("afteFixedHeader");
+            }
         })
-    },[])
+    }, [])
 
     return (
         <div>
@@ -124,17 +126,18 @@ const Header = () => {
             <Navbar className={styles.HeaderPrimary} expand="lg" id='headerNav'>
                 <Container>
                     <Navbar.Brand href="/" className={styles.logo} passHref>
-                        <Image src={Logo} className='img-fluid' alt="Yuvasoft Logo" />
+                        <Image src={Logo} className='img-fluid header-logo' alt="Yuvasoft Logo" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto ">
                             {headerLinks.map((item, index) => (
-                                <>
-            
-                                    <Link href={item.path} key={index} ><a className={`${router.pathname == item.path ? styles.active : "active"}`} passHref>{item.name}</a></Link>
+                                // <div key={index} > 
+                               
 
-                                </>
+                                    <Link  href={item.path}><a className={`${router.pathname == item.path ? styles.active : "active"}`} passHref>{item.name}</a></Link>
+
+                                // </div>
                             ))}
                         </Nav>
                     </Navbar.Collapse>

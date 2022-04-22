@@ -7,10 +7,10 @@ import Contact from "../../components/Contact/Contact";
 const ContactRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Contact" titleValue="Us" breadCrumbItem="Home" activeBreadcrumb="Contact us" />
             <Contact />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

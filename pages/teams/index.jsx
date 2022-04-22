@@ -7,10 +7,10 @@ import Teams from "../../components/Teams/Teams";
 const TeamsRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Our" titleValue="Teams" breadCrumbItem="Home" activeBreadcrumb="Teams" />
             <Teams />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

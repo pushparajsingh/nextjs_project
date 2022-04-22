@@ -7,10 +7,10 @@ import Career from "../../components/Career/Career";
 const CareerRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Job" titleValue="Openings" breadCrumbItem="Home" activeBreadcrumb="Careers" />
             <Career />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

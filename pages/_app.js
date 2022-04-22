@@ -7,6 +7,8 @@ import 'react-circular-progressbar/dist/styles.css';
 import '../assets/slider.css'
 import AOS from "aos"
 import 'aos/dist/aos.css'
+import Header from '../components/common/Header/Header';
+import Footer from '../components/common/Footer/Footer';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -16,7 +18,15 @@ function MyApp({ Component, pageProps }) {
       offset: 50,
     });
   }, []);
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Header />
+      <div className="content" id="contentBox">
+        <Component {...pageProps} />
+      </div>
+      <Footer />
+    </>
+  )
 }
 
 export default MyApp

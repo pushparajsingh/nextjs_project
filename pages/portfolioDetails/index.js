@@ -7,10 +7,10 @@ import PortfolioDetails from "../../components/Portfolio/PortfolioDetails";
 const PortfolioDetailRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Project" titleValue="Details" breadCrumbItem="Home" activeBreadcrumb="Portfolio" />
             <PortfolioDetails />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

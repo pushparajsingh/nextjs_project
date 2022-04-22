@@ -7,10 +7,10 @@ import Gallery from "../../components/Gallery/Gallery";
 const GalleryRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Our" titleValue="Gallery" breadCrumbItem="Home" activeBreadcrumb="Gallery" />
             <Gallery />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )
