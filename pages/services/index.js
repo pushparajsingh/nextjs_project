@@ -7,10 +7,10 @@ import Services from "../../components/Services/Services";
 const ServicesRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Our" titleValue="Services" breadCrumbItem="Home" activeBreadcrumb="Services" />
             <Services />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

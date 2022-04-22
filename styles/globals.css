@@ -72,6 +72,17 @@ a {
   width: 100%;
   z-index: 999;
 }
-.sticky + .content {
-  margin-top: 500px;
+.afteFixedHeader {
+  padding-top: 120px
+}
+.sticky {
+padding: 10px 0 !important;
+}
+.navbar-brand img{
+  transition: all 1s ease-in-out
+}
+.sticky .navbar-brand img{
+  max-width: 200px !important;
+  width: 200px !important;
+  height: auto !important; 
 }

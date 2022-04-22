@@ -7,10 +7,10 @@ import Portfolio from "../../components/Portfolio/Portfolio";
 const PortfolioRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="Our" titleValue="Portfolio" breadCrumbItem="Home" activeBreadcrumb="Portfolio" />
             <Portfolio />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )

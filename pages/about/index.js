@@ -7,10 +7,10 @@ import About from "../../components/About/About";
 const AboutRoute = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <BreadCrumb spanValue="About" titleValue="Us" breadCrumbItem="Home" activeBreadcrumb="About us" />
             <About />
-            <Footer />
+            {/* <Footer /> */}
         </>
 
     )
