@@ -54,7 +54,7 @@ const WhatWeDo = () => {
                                         <div key={index}>
                                             <div className={styles.weDoSliderBox}>
                                                 <div className={styles.weDoSliderImage}>
-                                                    <Image src={item.thumb} alt="WebDesigning" />
+                                                    <Image src={WebDesigning} alt="WebDesigning" />
                                                 </div>
                                                 <div className={styles.weDoInfoBox}>
                                                     <div className={styles.weDoInfoInfoInner}>
