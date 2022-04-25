@@ -1,5 +1,5 @@
 
-import { React, useEffect } from 'react'
+import { React, useEffect, Fragment } from 'react'
 import {
     Container,
     Nav,
@@ -132,11 +132,11 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto ">
                             {headerLinks.map((item, index) => (
-                                <div key={index}> 
+                                <Fragment key={index}> 
             
                                     <Link  href={item.path}><a className={`${router.pathname == item.path ? styles.active : "active"}`} passHref>{item.name}</a></Link>
 
-                                 </div>
+                                 </Fragment>
                             ))}
                         </Nav>
                     </Navbar.Collapse>
