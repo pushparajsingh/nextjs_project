@@ -5,7 +5,6 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import Slider from "react-slick";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 import Image from 'next/image'
-import ClientProfile from '../../assets/images/homepage/ClientProfile.svg'
 import QuoteSign from '../../assets/images/right-quote-sign.svg'
 import { testimonials } from '../Utils/ourTestimonials'
 

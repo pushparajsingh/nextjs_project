@@ -6,9 +6,7 @@ import Link from 'next/link'
 import Title from '../Titles/Titles';
 import { RatingCards } from '../../Utils/ourRatings';
 import Slider from "react-slick";
-
 import FooterLogo from '../../../assets/images/yuvasoft-logo-white.png'
-
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
 import { FiMail } from "react-icons/fi"
@@ -161,7 +159,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                             <p className={styles.copyright}>
-                                © 2017 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
+                            &#169; 2017 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
                             </p>
                             <ul className={styles.footerSocials}>
                                 <li>

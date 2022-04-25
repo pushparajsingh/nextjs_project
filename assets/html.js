@@ -11,9 +11,6 @@ export const html=`<div id="page" class="site">
     position: relative;
     padding: 30px 30px 28px;
     background: #fff;
-    // box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
-    // -webkit-box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
-    // -moz-box-shadow: 8px 8px 30px 0px rgba(42, 67, 113, 0.15);
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -135,7 +132,7 @@ export const html=`<div id="page" class="site">
                         <!-- SLIDE 1 -->
                         <li data-index="rs-71" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/main-slider/slider3/slide2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8' style='' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8'  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                                                                                     
                             <!-- LAYER 3  Thin text title-->
                             <div class="tp-caption   tp-resizeme slider-tag-line" 
@@ -214,7 +211,7 @@ export const html=`<div id="page" class="site">
                         <!-- SLIDE 1 -->
                         <li data-index="rs-72" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/main-slider/slider3/slide2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8' style='' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8'  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                                                                                     
                             <!-- LAYER 3  Thin text title-->
                             <div class="tp-caption   tp-resizeme slider-tag-line" 
@@ -293,7 +290,7 @@ export const html=`<div id="page" class="site">
                         <!-- SLIDE 1 -->
                         <li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/main-slider/slider3/slide2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8' style='' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                            <img src="images/banner-1.jpg" data-bgcolor='#f8f8f8'  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                                                                                     
                             <!-- LAYER 3  Thin text title-->
                             <div class="tp-caption   tp-resizeme slider-tag-line" 
@@ -412,5 +409,6 @@ export const html=`<div id="page" class="site">
             </section>
 
 
+        </div>
         </div>
 `
