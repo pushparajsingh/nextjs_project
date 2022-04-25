@@ -9,9 +9,6 @@ import {
 import styles from './Teams.module.scss'
 import Title from '../common/Titles/Titles'
 import Image from 'next/image'
-import TeamMember1 from '../../assets/images/teams/team-1.jpg'
-import HiteshKanwar from '../../assets/images/teams/hitesh-kanwar.png'
-import Team1 from '../../assets/images/teams/team-1.jpg';
 import { ourTeams } from '../Utils/ourTeams';
 import { BsPlusLg, BsTwitter } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
@@ -25,7 +22,6 @@ const Teams = () => {
 	const onCloseButton = () => {
 		setButtonActive('test')
 	}
-	// console.log(1111, ourTeams)
 
 	var settings = {
         dots: true,

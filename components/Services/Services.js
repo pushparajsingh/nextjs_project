@@ -114,27 +114,7 @@ const ServicesPage = () => {
             </section>
             <section className={styles.serviceDetailWrapper}>
                 <Container>
-                    {/* {serviceDetail.filter((service, index) => {
-                        return (
-                            <div className={`${styles.serviceDetailBox} ${styles.activeBox}`}>
-                                <Row className="align-items-center" key={index}>
-                                    <Col md={6}>
-                                        <Title span={service.span} value={service.value} subTitle={service.subtitle} />
-                                        <p dangerouslySetInnerHTML={{ __html: service.details }}></p>
-                                    </Col>
-                                    <Col md={6} className="text-center">
-                                        <Image
-                                            src={service.image}
-                                            alt="services"
-                                        />
-                                    </Col>
-                                    <Col md={12}>
-
-                                    </Col>
-                                </Row>
-                            </div>
-                        )
-                    })} */}
+                   
 
                     {
                         serviceDetail.map((value, index) => {

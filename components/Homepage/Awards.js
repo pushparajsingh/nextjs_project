@@ -18,13 +18,13 @@ const Achievements = () => {
         slidesToScroll: 1,
         bool: true
     };
-    const gotoNext = () => {
-        customeSlider.current.slickNext()
-    }
+    // const gotoNext = () => {
+    //     customeSlider.current.slickNext()
+    // }
 
-    const gotoPrev = () => {
-        customeSlider.current.slickPrev()
-    }
+    // const gotoPrev = () => {
+    //     customeSlider.current.slickPrev()
+    // }
     const series = [1, 2, 3, 4, 5, 6]
     return (
         <>

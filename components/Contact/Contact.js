@@ -16,26 +16,10 @@ const Contact = () => {
                   </h6>
                   <h2 className="contactSubHeading">Our Contacts</h2>
                 </div>
-                {/* <p>
-                Give us a call or drop by anytime, we endeavour to answer all
-                enquiries within 24 hours on business days. We will be happy to
-                answer your questions.
-              </p> */}
-                {/* <div className={styles.contactInfo}>
-                                <MdOutlineLocationCity className={styles.contactIcons} />
-                                <div className={styles.infoText}>
-                                    <h6>Our Address:</h6>
-                                    <p>715-7th Floor, Pukhraj Corporate,Navlakkha Square, Indore(MP)-452001,INDIA.</p>
-                                </div>
-                            </div> */}
                 <div className={styles.contactInfo}>
                   <MdOutlineLocationCity className={styles.contactIcons} />
                   <div className={styles.infoText}>
                     <h6>Our Address:</h6>
-                    {/* <p>
-                    715-7th Floor, Pukhraj Corporate,Navlakkha Square,
-                    Indore(MP)-452001,INDIA.
-                  </p> */}
                   </div>
                 </div>
                 <div className={styles.contactInfo}>
@@ -60,7 +44,7 @@ const Contact = () => {
           <Col lg={7}>
             <div className={styles.contactFormWrappper}>
               <p>Tell Me More About Your Details</p>
-              {/* <h6>Let's work together</h6>           */}
+              <h6>Are you Ready for a Better, more Productive Business?</h6>          
               <Form className={styles.contactForm}>
                 <Row>
                   <Col lg={6}>
@@ -82,37 +66,6 @@ const Contact = () => {
                   <Button type="button" className="themeButton btn btn-primary m-0">Submit</Button>
                   </Col>
                 </Row>
-                {/* <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Control type="text" placeholder="Name" />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Control type="email" placeholder="name@example.com" />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Control type="number" placeholder="Phone Number" />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Control type="text" placeholder="Company Name" />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlTextarea1"
-                >
-                  <Form.Control as="textarea" rows={3} placeholder="Message" />
-                </Form.Group>
-                <Button type="button" className="themeButton btn btn-primary m-0">Submit</Button> */}
               </Form>
             </div>
           </Col>

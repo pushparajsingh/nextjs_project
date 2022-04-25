@@ -5,14 +5,11 @@
 }
 
 .servicesContainerBg {
-  /* background: url(../../assets/images/Services-bg.svg); */
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding: 200px 0 50px; */
   padding: 100px 0 50px;
   width: 100%;
   height: 100%;
-  /* margin-top: 30px; */
   background-color: #f3f2f8;
   position: relative;
 }
@@ -63,10 +60,6 @@
   border: none;
 }
 
-/* .serviceAction button{
-  background-color: transparent;
-  border: none;
-} */
 .serviceAction span {
   width: 30px;
   height: 30px;
@@ -427,7 +420,6 @@
 }
 
 .carouseItemContainer {
-  /* padding: 140px 0 140px 0; */
   height: 800px;
   display: flex;
 }
@@ -436,7 +428,6 @@
   background-repeat: no-repeat;
   margin-bottom: 0;
   background-position: top right;
-  /* background-size: cover; */
   background-size: contain;
   width: 50%;
   content: "";
@@ -447,9 +438,6 @@
   z-index: 999;
 }
 
-/* .carouseItemContainer1:after{
-  position: relative;
-} */
 .bannerImgWrapper {
   position: absolute;
   right: 0;
@@ -510,7 +498,4 @@
   .workflowWrapper{
     background-image: none;
   } 
-  /* .weDoSliderBox{
-    max-width: 90%;
-  } */
 }

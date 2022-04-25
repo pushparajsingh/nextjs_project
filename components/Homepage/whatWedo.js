@@ -7,7 +7,6 @@ import Image from 'next/image'
 import WebDesigning from '../../assets/images/webDesignWorkFlow.png'
 import {HiOutlineArrowLeft,HiOutlineArrowRight} from 'react-icons/hi'
 import portfolioData from '../Utils/ourPortfolio';
-// import portfolioData from "../Utils/ourPortfolio";
 const WhatWeDo = () => {
     const customeSlider = useRef();
     var settings = {
@@ -56,7 +55,6 @@ const WhatWeDo = () => {
                                             <div className={styles.weDoSliderBox}>
                                                 <div className={styles.weDoSliderImage}>
                                                     <Image src={item.thumb} alt="WebDesigning" />
-                                                    {/* <Image src={WebDesigning} alt="WebDesigning" />                                                     */}
                                                 </div>
                                                 <div className={styles.weDoInfoBox}>
                                                     <div className={styles.weDoInfoInfoInner}>
