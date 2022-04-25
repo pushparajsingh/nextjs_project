@@ -132,9 +132,8 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto ">
                             {headerLinks.map((item, index) => (
-                                <div kay={index}> 
-                               
-
+                                <div key={index}> 
+            
                                     <Link  href={item.path}><a className={`${router.pathname == item.path ? styles.active : "active"}`} passHref>{item.name}</a></Link>
 
                                  </div>
