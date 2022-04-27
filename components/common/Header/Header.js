@@ -20,6 +20,8 @@ import Instagram from '../../../assets/images/footer/instagram.png'
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
 import { FiMail } from "react-icons/fi"
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
+
 const Header = () => {
     const router = useRouter()
 
@@ -55,61 +57,45 @@ const Header = () => {
                     <Row>
                         <Col lg={4}>
                             <div className={styles.topHeaderleft}>
-                                <a href="#" className={styles.headerMenu}>About</a>
+                                {/* <a href="#" className={styles.headerMenu}>About</a> */}
                                 <ul>
                                     <li>
-                                        <Link href="#" passHref>
-
-                                            <Image
-                                                src={Facebook}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
-
-                                        </Link>
+                                    <Link href="https://www.facebook.com/YuvaSoftSolutions">
+                                        <a target="_blank" className={styles.facebook}>
+                                            <FaFacebookF className={styles.icon} />
+                                        </a>
+                                    </Link>
                                     </li>
                                     <li>
-                                        <Link href="#" passHref>
-
-                                            <Image
-                                                src={Twitter}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
-
-                                        </Link>
+                                    <Link href="https://twitter.com/yuvasoftech">
+                                        <a target="_blank" className={styles.twitter}>
+                                            <FaTwitter className={styles.icon}  />
+                                        </a>
+                                    </Link>
                                     </li>
                                     <li>
-                                        <Link href="#" passHref>
-
-                                            <Image
-                                                src={Linkedin}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
-
-                                        </Link>
+                                    <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
+                                        <a target="_blank" className={styles.linkedin}>
+                                            <FaLinkedinIn className={styles.icon} />
+                                        </a>
+                                    </Link>
                                     </li>
                                     <li>
-                                        <Link href="#" passHref>
-
-                                            <Image
-                                                src={Instagram}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
-
-                                        </Link>
+                                    <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
+                                        <a target="_blank" className={styles.instagram}>
+                                            <FaInstagram className={styles.icon} />
+                                        </a>
+                                    </Link>
                                     </li>
                                 </ul>
                             </div>
                         </Col>
                         <Col lg={8}>
                             <div className={styles.topHeaderRight}>
-                                <div className={styles.menuBox}>
+                                {/* <div className={styles.menuBox}>
                                     <BiHome className={styles.Icon} />
                                     715-7th Floor, Pukhraj Corporate, Navlakha Square
-                                </div>
+                                </div> */}
                                 <div className={styles.menuBox}>
                                     <FiMail className={styles.Icon} />
                                     info@yuvasoftech.com
