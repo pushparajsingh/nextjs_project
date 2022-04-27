@@ -1,0 +1,235 @@
+.portfolioWrapper {
+    [class~=themeTitle] {
+        justify-content: center;
+        align-items: center;
+    }
+    [class~=nav] {
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 20px 0px;
+        [class~=nav-item] {
+            padding: 0px 20px;
+            @media screen and (max-width: 767px) {
+                padding: 0px 10px;
+            }
+            [class~=nav-link] {
+                font-size: 16px;
+                font-family: var(--primary-font);
+                text-transform: uppercase;
+                font-weight: 600;
+                color: var(--light-black);
+                background: none;
+                border: none;
+                padding-left: 0;
+                padding-right: 0;
+                position: relative;
+                transition: all 0.3s ease;
+                @media screen and (max-width: 767px) {
+                    font-size: 14px;
+                }
+                &::after {
+                    position: absolute;
+                    height: 3px;
+                    width: 0%;
+                    left: 0px;
+                    bottom: 0px;
+                    background-color: var(--primary);
+                    content: "";
+                    display: block;
+                    border-radius: 1.5px;
+                    transition: all 0.3s ease;
+                }
+                &:hover {
+                    color: var(--primary);
+                    &::after {
+                        width: 100%;
+                        opacity: 1;
+                    } 
+                }
+                &[class~=active] {
+                    color: var(--primary);
+                    &::after {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .portfolioCard {
+        border: none;
+        margin-bottom: 30px;
+        a {
+            text-decoration: none;
+        }
+        .portfolioThumb {
+            border-radius: 15px;
+            overflow: hidden;
+            max-height: 320px;
+            img {
+                transition: all 0.3s linear;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        [class~=card-body] {
+            padding: 25px;
+            margin-top: -50px;
+            z-index: 2;
+            position: relative;
+            .cardContent {
+                background: var(--white);
+                box-shadow: 5px 5px 18px 0px rgba(42, 67, 113,0.15);
+                border-radius: 15px;
+                text-align: center;
+                padding: 30px 20px;
+                [class~=card-title] {
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-family: var(--primary-font);
+                    color: var(--primary);
+                    margin-bottom: 10px;
+                }
+                [class~=card-text] {
+                    font-size: 15px;
+                    color: var(--light-black);
+                    font-family: var(--secondary-font);
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Portfolio detail page
+.portfolioDetailsWrapper {
+    p {
+        font-family: var(--primary-font);
+        color: var(--light-black);
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .detailBigBanner {
+        padding: 100px 0px 50px;
+        position: relative;
+        z-index: -1;
+        img {
+            border-radius: 25px;
+        }
+    }
+    .projectTitle {
+        font-size: 30px;
+        font-weight: 600;
+        font-family: var(--primary-font);
+        margin-bottom: 20px;
+    }
+    .details {
+        font-family: var(--primary-font);
+        color: var(--light-black);
+        font-size: 14px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+    .detailCard {
+        background: var(--light-black);
+        padding: 30px;
+        color: var(--white);
+        z-index: 2;
+        font-family: var(--primary-font);
+        border-radius: 15px;
+        h4 {
+            font-size: 26px;
+            font-family: var(--secondary-font);
+            font-weight: 600;
+            margin-bottom: 25px;
+            margin-top: 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin-bottom: 30px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(255,255,255,0.3);
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0px;
+                }
+                span {
+                    font-size: 14px;
+                    display: block;
+                    font-weight: 400;
+                    margin-bottom: 7px;
+                }
+                h5 {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .projectGallery {
+        margin: 50px 0px;
+        overflow: hidden;
+        .imgBox {
+            img {
+                transition: all 0.3s linear;
+                border-radius: 5px;
+                transform: scale(0.95);
+            }
+            &:hover {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    .summaryCard {
+        padding-bottom: 50px;
+        .summaryTitle {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: var(--primary-font);
+        }
+    }
+    .projectActionBox {
+        background: url(../../assets/images/clientDetailBg.png) no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+        padding: 50px;
+        color: var(--white);
+        margin-bottom: 100px;
+        text-align: center;
+        [class~=btn] {
+            display: inline-block !important;
+            background-color: var(--white) !important;
+            color: var(--primary) !important;
+        }
+        .actionTitle {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: var(--secondary-font);
+        }
+        p {
+            font-size: 15px;
+            color: var(--white);
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        .appDownload {
+            a {
+                &:first-child {
+                    margin-right: 25px;
+                }
+                img {
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+}
