@@ -1,5 +1,7 @@
 import Team1 from '../../assets/images/teams/team-1.jpg';
 import HiteshKanwar from '../../assets/images/teams/hitesh-kanwar.png'
+import SandeepSignh from '../../assets/images/teams/sandeep-singh.png'
+import ManjariMishra from '../../assets/images/teams/manjari-mishra.png'
 
 export const teamHeads = [
     {
@@ -16,7 +18,7 @@ export const teamHeads = [
         name: "Sandeep Singh",
         nameSpan: "Sisodiya",
         post: "Co-Founder, Director",
-        image: HiteshKanwar,
+        image: SandeepSignh,
         urlFacebook: "",
         urlLinkedin: "https://in.linkedin.com/in/sandy1987",
         urlTwitter: "",
@@ -26,7 +28,7 @@ export const teamHeads = [
         name: "Manjari",
         nameSpan: "Mishra",
         post: "HR-Manager",
-        image: HiteshKanwar,
+        image: ManjariMishra,
         urlFacebook: "",
         urlLinkedin: "https://in.linkedin.com/in/manjarimishra-09a40824?trk=org-employees",
         urlTwitter: "",
