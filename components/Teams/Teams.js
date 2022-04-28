@@ -57,6 +57,14 @@ const Teams = () => {
             }
         ]
     };
+	const handleSocialClick=(value)=>{
+		if(value==buttonActive){
+			setButtonActive(false)
+		}else{
+			setButtonActive(value)
+		}
+		
+	}
 
 	return (
 		<SSRProvider>
@@ -159,7 +167,7 @@ const Teams = () => {
 										<div className={styles.TeamInfo}>
 											<h4 className={styles.TeamName}>{value.name}</h4>
 											<p className={styles.TeamPost}>{value.post}</p>
-											<div className={` ${buttonActive === true ? styles.activeSocial : ''} ${styles.TeamSocial}`}>
+											<div className={` ${buttonActive === value.name  ? styles.activeSocial : ''} ${styles.TeamSocial}`}>
 												<Link href='https://www.google.com'>
 													<a><FaFacebookF className='icon facebook' /></a>
 												</Link>
@@ -169,7 +177,7 @@ const Teams = () => {
 												<Link href='https://www.google.com'>
 													<a><BsTwitter className='icon twitter' /></a>
 												</Link>
-												<BsPlusLg onClick={() => setButtonActive(!buttonActive)} className='icon iconToggle' />
+												<BsPlusLg onClick={() => handleSocialClick(value.name)} className='icon iconToggle' />
 											</div>
 										</div>
 									</div>

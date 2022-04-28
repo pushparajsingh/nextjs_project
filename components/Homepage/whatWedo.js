@@ -15,6 +15,8 @@ const WhatWeDo = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 2,
+        adaptiveHeight:true,
+        centerPadding:"200px",
         bool: true
     };
     const gotoNext = () => {
@@ -51,10 +53,10 @@ const WhatWeDo = () => {
                             <Slider {...settings} ref={customeSlider}>
                                 {portfolioData.map((item, index) => {
                                     return (
-                                        <div key={index}>
+                                        <div key={index} >
                                             <div className={styles.weDoSliderBox}>
                                                 <div className={styles.weDoSliderImage}>
-                                                    <Image src={WebDesigning} alt="WebDesigning" />
+                                                    <Image src={item.thumb} alt="WebDesigning" />
                                                 </div>
                                                 <div className={styles.weDoInfoBox}>
                                                     <div className={styles.weDoInfoInfoInner}>

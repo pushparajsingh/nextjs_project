@@ -267,6 +267,7 @@
   border: none;
 }
 
+
 .whatweDoSliderControl button:nth-child(1) {
   background-color: var(--light-black);
 }
@@ -383,7 +384,16 @@
   border: 1px solid var(--white);
   background-color: transparent;
 }
-
+.clientTestimonialSliderControl button:hover,
+.clientTestimonialSliderControl button:active,
+.clientTestimonialSliderControl button:focus,
+.clientTestimonialSliderControl button:active:focus
+ {
+  background-color: var(--white);
+  color: var(--primary);
+  box-shadow: none;
+  border: none;
+}
 .clientTestimonialSlider [class~="slick-dots"] {
   margin-bottom: 20px;
   bottom: -70px;
@@ -486,7 +496,9 @@
 .awardsSection {
   padding-bottom: 100px;
 }
-
+.awardsSliderBox{
+  text-align: center;
+}
 @media only screen and (max-width: 1024px){
   
 }
