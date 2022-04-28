@@ -53,7 +53,7 @@ const Portfolio = () => {
 							</Tab>
 							<Tab eventKey="profile" title="Web Applications">
 								<Row>
-									{portfolioData.slice(1, 2).map((item, index) => {
+									{portfolioData.filter((item)=>item.category=="Website").map((item, index) => {
 										return (
 											<Col lg={4} key={index}>
 												<Card className={styles.portfolioCard}>
@@ -78,7 +78,7 @@ const Portfolio = () => {
 							</Tab>
 							<Tab eventKey="contact" title="Mobile Applications">
 								<Row>
-									{portfolioData.slice(0, 2).map((item, index) => {
+									{portfolioData.filter((item)=>item.category=="Mobile App").map((item, index) => {
 										return (
 											<Col lg={4} key={index}>
 												<Card className={styles.portfolioCard}>

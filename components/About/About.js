@@ -115,7 +115,7 @@ const About = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={6}>
+                    <Col lg={8}>
                         <Title
                             value="Professional Team"
                             span="Meet Our"
@@ -123,7 +123,7 @@ const About = () => {
                         />
                         <p className={styles.titleParagraph}>If we had a &quot; secret sauce &quot; it would be our awesome people. We have only professional team!</p>
                     </Col>
-                    <Col lg={6}>
+                    <Col lg={4}>
                         <div className={styles.whatweDoSliderControl}>
                             <Button onClick={() => gotoNext()}><HiOutlineArrowLeft /></Button>
                             <Button onClick={() => gotoPrev()}><HiOutlineArrowRight /></Button>

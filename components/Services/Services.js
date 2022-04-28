@@ -13,7 +13,7 @@ import Image from "next/image";
 import { ServiceIcon, serviceDetail } from "../Utils/ourServices";
 
 const ServicesPage = () => {
-    const [selectOption , setSelectOption] = useState();
+    const [selectOption , setSelectOption] = useState(ServiceIcon[0].service);
     var settings = {
         dots: true,
         infinite: true,
@@ -91,7 +91,7 @@ const ServicesPage = () => {
                                     {ServiceIcon.map((value, index) => {
                                         return (
                                             <div key={index}>
-                                                <div className={`${ selectOption ? styles.activeTab : styles.inActiveTab} ${styles.inActiveTab}`} 
+                                                <div className={`${ selectOption==value.service ? styles.activeTab : ''} ${styles.serviceIconTab}`} 
                                                 onClick={() => setSelectOption(value.service)}>
                                                     <span className={styles.inactiveIcon}>
                                                         <Image src={value.iconInactive} alt="service-icon" />
@@ -140,7 +140,7 @@ const ServicesPage = () => {
                                 )
                             }
                             else {
-
+                                return null
                             }
                         })
 

@@ -156,6 +156,22 @@
             &:nth-child(2) {
                 background-color: var(--primary);
             }
+            &:hover{
+                box-shadow: none;
+                border: none;
+            }
+            &:active{
+                box-shadow: none;
+                border: none;
+            }
+            &:focus{
+                box-shadow: none;
+                border: none;
+            }
+            &:active:focus{
+                box-shadow: none;
+                border: none;
+            }
         }
 
         // [class~="slick-arrow"] {
@@ -165,6 +181,24 @@
 
     }
     .whatweDoSlider{
+        button{
+            &:hover{
+                box-shadow: none;
+                border: none;
+            }
+            &:active{
+                box-shadow: none;
+                border: none;
+            }
+            &:focus{
+                box-shadow: none;
+                border: none;
+            }
+            &:active:focus{
+                box-shadow: none;
+                border: none;
+            }
+        }
         [class~="slick-dots"] {
             margin-bottom: 25px;
             bottom: -60px;
