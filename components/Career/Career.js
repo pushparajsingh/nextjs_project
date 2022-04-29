@@ -50,6 +50,11 @@ const CareerPage = () => {
                     })}
                 </Row>
             </Container>
+            <Container fluid>
+                <Row>
+                    
+                </Row>
+            </Container>
         </section>
     )
 }
