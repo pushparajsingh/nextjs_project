@@ -1,6 +1,7 @@
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from "./Contact.module.scss";
 import { MdOutlineLocationCity } from "react-icons/md";
+import Title from "../common/Titles/Titles";
 
 const Contact = () => {
   return (
@@ -43,27 +44,32 @@ const Contact = () => {
           </Col>
           <Col lg={7}>
             <div className={styles.contactFormWrappper}>
-              <p>Tell Me More About Your Details</p>
-              <h6>Are you Ready for a Better, more Productive Business?</h6>          
+              <Title
+                value="Let Connect"
+                span="Tell Me More "
+                subTitle="About Your Details"
+              />
+              {/* <p>Tell Me More About Your Details</p> */}
+              {/* <h6>Are you Ready for a Better, more Productive Business?</h6>           */}
               <Form className={styles.contactForm}>
                 <Row>
                   <Col lg={6}>
-                    <Form.Control type="text" placeholder="Name"  className="mb-3" />
+                    <Form.Control type="text" placeholder="Name" className="mb-3" />
                   </Col>
                   <Col lg={6}>
                     <Form.Control type="email" placeholder="name@example.com" className="mb-3" />
                   </Col>
                   <Col lg={6}>
-                  <Form.Control type="number" placeholder="Phone Number" className="mb-3" />
+                    <Form.Control type="number" placeholder="Phone Number" className="mb-3" />
                   </Col>
                   <Col lg={6}>
-                  <Form.Control type="text" placeholder="Company Name" className="mb-3" />
+                    <Form.Control type="text" placeholder="Company Name" className="mb-3" />
                   </Col>
                   <Col lg={12}>
-                  <Form.Control type="text" placeholder="Company Name" />
+                    <Form.Control type="text" placeholder="Company Name" />
                   </Col>
                   <Col lg={12}>
-                  <Button type="button" className="themeButton btn btn-primary m-0">Submit</Button>
+                    <Button type="button" className="themeButton btn btn-primary m-0">Submit</Button>
                   </Col>
                 </Row>
               </Form>
