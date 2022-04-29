@@ -16,7 +16,7 @@ const Gallery = () => {
                     <Title
                         value="Our Projects"
                         span="Some of"
-                        subTitle="Our Creative Works For Clients"
+                        subTitle="Our memorable memory"
                     />
                 </Col>
             </Row>
@@ -33,69 +33,69 @@ const Gallery = () => {
                                     return (
                                         <Col lg={4} key={index} data-aos="fade-up" data-aos-duration="1000">
                                             <Card className={styles.portfolioCard}>
-                                                <Link href="/portfolioDetails">
-                                                    <a>
+                                                {/* <Link href="/portfolioDetails">
+                                                    <a> */}
                                                         <div className={styles.portfolioThumb}>
                                                             <Image src={item.thumb} alt={item.title} />
                                                         </div>
-                                                        <Card.Body>
+                                                        {/* <Card.Body>
                                                             <div className={styles.cardContent}>
                                                                 <Card.Title>{item.title}</Card.Title>
                                                                 <Card.Text>{item.category}</Card.Text>
                                                             </div>
-                                                        </Card.Body>
-                                                    </a>
-                                                </Link>
+                                                        </Card.Body> */}
+                                                    {/* </a>
+                                                </Link> */}
                                             </Card>
                                         </Col>
                                     );
                                 })}
                             </Row>
                         </Tab>
-                        <Tab eventKey="profile" title="Web Applications">
+                        <Tab eventKey="profile" title="Diwali">
                             <Row>
                                 {portfolioData.slice(1, 2).map((item, index) => {
                                     return (
                                         <Col lg={4} key={index}>
                                             <Card className={styles.portfolioCard}>
-                                                <Link href="/portfolioDetails">
-                                                    <a>
+                                                {/* <Link href="/portfolioDetails">
+                                                    <a> */}
                                                         <div className={styles.portfolioThumb}>
                                                             <Image src={item.thumb} alt={item.title} />
                                                         </div>
-                                                        <Card.Body>
+                                                        {/* <Card.Body>
                                                             <div className={styles.cardContent}>
                                                                 <Card.Title>{item.title}</Card.Title>
                                                                 <Card.Text>{item.category}</Card.Text>
                                                             </div>
-                                                        </Card.Body>
-                                                    </a>
-                                                </Link>
+                                                        </Card.Body> */}
+                                                    {/* </a>
+                                                </Link> */}
                                             </Card>
                                         </Col>
                                     );
                                 })}
                             </Row>
                         </Tab>
-                        <Tab eventKey="contact" title="Mobile Applications">
+                        <Tab eventKey="contact" title="Holi">
                             <Row>
                                 {portfolioData.slice(0, 2).map((item, index) => {
                                     return (
                                         <Col lg={4} key={index}>
                                             <Card className={styles.portfolioCard}>
-                                                <Link href="/portfolioDetails">
-                                                    <a>
+                                                {/* <Link href="/portfolioDetails">
+                                                    <a> */}
                                                         <div className={styles.portfolioThumb}>
                                                             <Image src={item.thumb} alt={item.title} />
                                                         </div>
-                                                        <Card.Body>
+                                                        {/* <Card.Body>
                                                             <div className={styles.cardContent}>
                                                                 <Card.Title>{item.title}</Card.Title>
                                                                 <Card.Text>{item.category}</Card.Text>
                                                             </div>
-                                                        </Card.Body>
-                                                    </a>
-                                                </Link>
+                                                        </Card.Body> */}
+                                                    {/* </a>
+                                                </Link> */}
                                             </Card>
                                         </Col>
                                     );

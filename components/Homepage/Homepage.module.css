@@ -191,15 +191,24 @@
   position: relative;
 }
 
+.whatweDoSlider [class~="slick-slide"] {
+  padding: 0 20px;
+}
+
 .weDoSliderImage {
   border-radius: 15px;
+}
+
+.weDoSliderImage span {
+  width: 100% !important;
 }
 
 .weDoInfoBox {
   width: 270px;
   position: absolute;
   bottom: 25px;
-  right: 62px;
+  /* right: 62px; */
+  right: 0px;
   z-index: 4;
   opacity: 0;
   transition: all 0.35s ease-in-out;
@@ -207,7 +216,8 @@
 }
 
 .weDoSliderBox:hover .weDoInfoBox {
-  right: 62px;
+  /* right: 62px; */
+  right: 0px;
   opacity: 1;
   bottom: 25px;
 }
@@ -384,16 +394,17 @@
   border: 1px solid var(--white);
   background-color: transparent;
 }
+
 .clientTestimonialSliderControl button:hover,
 .clientTestimonialSliderControl button:active,
 .clientTestimonialSliderControl button:focus,
-.clientTestimonialSliderControl button:active:focus
- {
+.clientTestimonialSliderControl button:active:focus {
   background-color: var(--white);
   color: var(--primary);
   box-shadow: none;
   border: none;
 }
+
 .clientTestimonialSlider [class~="slick-dots"] {
   margin-bottom: 20px;
   bottom: -70px;
@@ -413,10 +424,12 @@
 .clientTestimonialSlider [class~="slick-arrow"] {
   display: none !important;
 }
-.progressBarContainer{
+
+.progressBarContainer {
   width: 80%;
   margin: 20px;
 }
+
 .whyUsContainer {
   padding: 100px 0;
 }
@@ -496,18 +509,145 @@
 .awardsSection {
   padding-bottom: 100px;
 }
-.awardsSliderBox{
+
+.awardsSliderBox {
   text-align: center;
 }
-@media only screen and (max-width: 1024px){
-  
+
+
+/* Banner css Start */
+.mainBanner {
+  height: 700px;
 }
 
+.bannerSliderBox {
+  background-color: rgb(248, 248, 248);
+  background-repeat: no-repeat;
+  background-image: url('/images/banner-1.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+}
+.bannerTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.bannerTitle h3 {
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: center;
+  line-height: 72px;
+  font-size: 36px;
+}
 
+.bannerTitle p {
+  color: rgb(255, 255, 255);
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: center;
+  line-height: 36px;
+  font-size: 22px;
+}
+
+.bannerBtn {
+  margin: 0 auto;
+  display: flex;
+  background: var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  box-shadow: none !important;
+}
+.bannerBtn:hover,
+.bannerBtn:focus,
+.bannerBtn:active{
+  box-shadow: none !important;
+  color: #000;
+  background: var(--white);
+}
+.homeService {
+  margin-top: -80px;
+  margin-bottom: 0;
+  padding: 0 0 15px 0;
+  background: var(--bg-secondary);
+}
+
+.serviceBoxSmall {
+  overflow: hidden;
+  position: relative;
+  padding: 30px 30px 28px;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.serviceBoxSmall .numberBox {
+  float: left;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #00c3ff;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: rgba(0, 195, 255, 0.15);
+}
+.serviceBoxSmall .contentBox {
+  padding-left: calc(40px + 50px);
+}
+.numberBox.serviceSecond {
+  color: #0160e7;
+  background-color: rgba(1,96,231,.152);
+}
+.numberBox.serviceThird{
+  color: #fe4c1c;
+  background-color: rgba(254,76,28,.154);
+}
+.serviceBoxbg1 {
+  background-image: url(/images/bg-service1-1.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.serviceBoxbg2 {
+  background-image: url(/images/bg-service2-1.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+.serviceBoxbg3 {
+  background-image: url(/images/bg-service3-1.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.mainBanner [class~="slick-arrow"]{
+  display: none !important;
+}
+/* Bannner css End */
 
 @media only screen and (max-width: 991px) {
 
-  .workflowWrapper{
+  .workflowWrapper {
     background-image: none;
-  } 
+  }
 }
