@@ -1,21 +1,16 @@
 import { React } from 'react'
 import { Col, Container, Row, Card } from 'react-bootstrap';
-import styles from './Footer.module.css'
+import styles from './Footer.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import Title from '../Titles/Titles';
 import { RatingCards } from '../../Utils/ourRatings';
 import Slider from "react-slick";
-
 import FooterLogo from '../../../assets/images/yuvasoft-logo-white.png'
-import Facebook from '../../../assets/images/footer/facebook.png'
-import Linkedin from '../../../assets/images/footer/linkedin.png'
-import Twitter from '../../../assets/images/footer/twitter.png'
-import Instagram from '../../../assets/images/footer/instagram.png'
-
 import { BiHome } from "react-icons/bi"
 import { BsTelephoneOutbound } from "react-icons/bs"
 import { FiMail } from "react-icons/fi"
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 
 const Footer = () => {
     const settings = {
@@ -99,11 +94,11 @@ const Footer = () => {
             </div>
 
             <section className={styles.footerWrapper}>
-                <div className={styles.footerShapeTop}>
+                {/* <div className={styles.footerShapeTop}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
                         <path d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z"></path>
                     </svg>
-                </div>
+                </div> */}
                 <Container>
                     <div className={styles.footerLogoBox}>
                         <Link href="/">
@@ -164,44 +159,28 @@ const Footer = () => {
                                 </li>
                             </ul>
                             <p className={styles.copyright}>
-                                © 2017 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
+                            &#169; 2017 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
                             </p>
                             <ul className={styles.footerSocials}>
                                 <li>
-                                    <Link href="#">
-                                        <a>
-                                            <Image
-                                                src={Facebook}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                    <Link href="https://www.facebook.com/YuvaSoftSolutions">
+                                        <a target="_blank" className={styles.facebook}>
+                                            <FaFacebookF className={styles.icon} />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
-                                            <Image
-                                                src={Twitter}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                    <Link href="https://twitter.com/yuvasoftech">
+                                        <a target="_blank" className={styles.twitter}>
+                                            <FaTwitter className={styles.icon}  />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
-                                            <Image
-                                                src={Linkedin}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                    <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
+                                        <a target="_blank" className={styles.linkedin}>
+                                            <FaLinkedinIn className={styles.icon} />
                                         </a>
                                     </Link>
-                                    <Link href="#">
-                                        <a>
-                                            <Image
-                                                src={Instagram}
-                                                alt="Icon"
-                                                className='img-fluid'
-                                            />
+                                    <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
+                                        <a target="_blank" className={styles.instagram}>
+                                            <FaInstagram className={styles.icon} />
                                         </a>
                                     </Link>
                                 </li>

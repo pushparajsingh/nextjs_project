@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Slider from "react-slick";
 import Head from 'next/head'
 import {
 	Container,
@@ -8,13 +9,12 @@ import {
 import styles from './Teams.module.scss'
 import Title from '../common/Titles/Titles'
 import Image from 'next/image'
-import TeamMember1 from '../../assets/images/teams/team-1.jpg'
-import HiteshKanwar from '../../assets/images/teams/hitesh-kanwar.png'
-import Team1 from '../../assets/images/teams/team-1.jpg';
 import { ourTeams } from '../Utils/ourTeams';
 import { BsPlusLg, BsTwitter } from 'react-icons/bs';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import Link from 'next/link'
+import { teamHeads } from '../Utils/ourTeams';
+import {SSRProvider} from '@react-aria/ssr';
 
 const Teams = () => {
 	const [buttonActive, setButtonActive] = useState();
@@ -22,66 +22,123 @@ const Teams = () => {
 	const onCloseButton = () => {
 		setButtonActive('test')
 	}
-	console.log(1111, ourTeams)
+
+	var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        bool: true,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 1
+                }
+            },
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 2
+              }
+            }
+        ]
+    };
+	const handleSocialClick=(value)=>{
+		if(value==buttonActive){
+			setButtonActive(false)
+		}else{
+			setButtonActive(value)
+		}
+		
+	}
 
 	return (
+		<SSRProvider>
 		<div>
+			<Head>
+				<title>Yuvasoft Solutions - Teams</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+			
 			<section className={styles.TeamHeadBg}>
 				<Container>
-					<Row className='align-items-center'>
-						<Col md={6}>
-							<Image
-								src={HiteshKanwar}
-								alt="Member image"
-								className='img-fluid'
-							/>
-						</Col>
-						<Col md={6}>
-							<div className={styles.teamSlideCard}>
-								<Title
-									value="Founder/CEO"
-									span="Member"
-									subTitle="Name"
-								/>
-								<p className={styles.teamHeadDescription}>
-									Our clients’ interests are ours as well. We strive to deliver valuable products and services for both our clients and their customers. We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. That’s not some tagline, It’s a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the company’s technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.
-								</p>
-								<ul className={styles.teamHeadList}>
-									<li>
-										<span>
-											Post
-										</span>
-										Founder, CEO
-									</li>
-									<li>
-										<span>
-											Experience
-										</span>
-										Over 6+ years experience
-									</li>
-									<li>
-										<span>
-											Qualification
-										</span>
-										Bachelor of Engineering
-									</li>
-								</ul>
-								<div className={styles.teamSocial}>
-									<Link href='https://www.google.com'>
-										<a target='_blank' className={styles.facebook}><FaFacebookF /></a>
-									</Link>
-									<Link href='https://www.google.com/'>
-										<a target='_blank' className={styles.linkedin}><FaLinkedinIn /></a>
-									</Link>
-									<Link href='https://www.google.com/'>
-										<a target='_blank' className={styles.twitter}><FaTwitter /></a>
-									</Link>
+					<Slider {...settings}>
+						{teamHeads.map((value, index) => {
+							return (
+								<div key={index}>
+									<Row className='align-items-center'>
+										<Col md={6}>
+											<Image
+												src={value.image}
+												alt={value.image}
+												className='img-fluid'
+											/>
+										</Col>
+										<Col md={6}>
+											<div className={styles.teamSlideCard}>
+												<Title
+													value={value.post}
+													span={value.name}
+													subTitle={value.nameSpan}
+												/>
+												<p className={styles.teamHeadDescription}>
+													{value.bio}
+												</p>
+												<ul className={styles.teamHeadList}>
+													<li>
+														<span>
+															Post
+														</span>
+														{value.post}
+													</li>
+													<li>
+														<span>
+															Experience
+														</span>
+														Over 6+ years experience
+													</li>
+													<li>
+														<span>
+															Qualification
+														</span>
+														Bachelor of Engineering
+													</li>
+												</ul>
+												<div className={styles.teamSocial}>
+													<Link href={value.urlFacebook}>
+														<a target='_blank' className={styles.facebook}><FaFacebookF /></a>
+													</Link>
+													<Link href={value.urlLinkedin}>
+														<a target='_blank' className={styles.linkedin}><FaLinkedinIn /></a>
+													</Link>
+													<Link href={value.urlTwitter}>
+														<a target='_blank' className={styles.twitter}><FaTwitter /></a>
+													</Link>
+												</div>
+											</div>
+										</Col>
+									</Row>
 								</div>
-							</div>
-						</Col>
-					</Row>
+							)
+						})}
+					</Slider>
 				</Container>
 			</section>
+			
 			<section className={styles.teamsBgWrapper}>
 				<Container>
 					<Row className='justify-content-center text-center'>
@@ -93,6 +150,7 @@ const Teams = () => {
 							/>
 						</Col>
 					</Row>
+					
 					<Row>
 						{ourTeams && ourTeams.map((value, index) => {
 							return (
@@ -109,7 +167,7 @@ const Teams = () => {
 										<div className={styles.TeamInfo}>
 											<h4 className={styles.TeamName}>{value.name}</h4>
 											<p className={styles.TeamPost}>{value.post}</p>
-											<div className={` ${buttonActive === true ? styles.activeSocial : ''} ${styles.TeamSocial}`}>
+											<div className={` ${buttonActive === value.name  ? styles.activeSocial : ''} ${styles.TeamSocial}`}>
 												<Link href='https://www.google.com'>
 													<a><FaFacebookF className='icon facebook' /></a>
 												</Link>
@@ -119,7 +177,7 @@ const Teams = () => {
 												<Link href='https://www.google.com'>
 													<a><BsTwitter className='icon twitter' /></a>
 												</Link>
-												<BsPlusLg onClick={() => setButtonActive(!buttonActive)} className='icon iconToggle' />
+												<BsPlusLg onClick={() => handleSocialClick(value.name)} className='icon iconToggle' />
 											</div>
 										</div>
 									</div>
@@ -127,13 +185,13 @@ const Teams = () => {
 							)
 						})}
 					</Row>
+					
 				</Container>
 			</section>
 
-			<section>
-
-			</section>
+			
 		</div>
+		</SSRProvider>
 	)
 }
 export default Teams;

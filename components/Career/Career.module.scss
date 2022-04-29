@@ -1,0 +1,29 @@
+.careerPage {
+    .careerBasic {
+        font-size: 14px;
+        line-height: 25px;
+        color: var(--light-black);
+    }
+    .jobCard {
+        background: var(--white);
+        padding: 25px;
+        box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.1);
+        text-align: center;
+        border-radius: 15px;
+        .jobIcon {
+            width: 70px;
+            height: 70px;
+            margin: 0px auto 25px;
+            background: var(--primary-10);
+            padding: 15px;
+            border-radius: 50px;
+        }
+        .jobTitle {
+            font-size: 24px;
+        }
+        .jobDesc {
+            font-size: 14px;
+            color: var(--light-black);
+        }
+    }
+}

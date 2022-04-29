@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import Image from 'next/image'
 import WebDesigning from '../../assets/images/webDesignWorkFlow.png'
 import {HiOutlineArrowLeft,HiOutlineArrowRight} from 'react-icons/hi'
+import portfolioData from '../Utils/ourPortfolio';
 const WhatWeDo = () => {
     const customeSlider = useRef();
     var settings = {
@@ -14,6 +15,8 @@ const WhatWeDo = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 2,
+        adaptiveHeight:true,
+        centerPadding:"200px",
         bool: true
     };
     const gotoNext = () => {
@@ -23,7 +26,7 @@ const WhatWeDo = () => {
     const gotoPrev = () => {
         customeSlider.current.slickPrev()
     }
-    const series = [1, 2, 3, 4, 5, 6]
+    const series = [{value: 1,Image: WebDesigning},1, 2, 3, 4, 5, 6]
     return (
 
         <>
@@ -48,12 +51,13 @@ const WhatWeDo = () => {
                     <Row>
                         <Col lg={12} className={styles.whatweDoSlider}>
                             <Slider {...settings} ref={customeSlider}>
-                                {series.map((item, index) => {
+                                {portfolioData.map((item, index) => {
                                     return (
-                                        <div key={index}>
+                                        <div key={index} >
                                             <div className={styles.weDoSliderBox}>
                                                 <div className={styles.weDoSliderImage}>
-                                                    <Image src={WebDesigning} alt="WebDesigning" />
+                                                    {/* <Image src={item.thumb} alt="WebDesigning" /> */}
+                                                    <Image src={WebDesigning} alt="WebDesigning" />                                                    
                                                 </div>
                                                 <div className={styles.weDoInfoBox}>
                                                     <div className={styles.weDoInfoInfoInner}>

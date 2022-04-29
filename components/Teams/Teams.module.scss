@@ -119,6 +119,9 @@
                 color: var(--primary);
                 font-weight: bold;
             }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
         }
     }
     .teamSlideCard {
@@ -137,18 +140,45 @@
                 padding: 5px;
                 width: 35px;
                 height: 35px;
+                transition: all .3s;
                 svg {
                     display: block;
                     color: #fff;
                 }
-                .facebook {
+                &.facebook {
                     background-color: #3b5998;
                 }
-                .twitter {
+                &.twitter {
                     background-color: #15b7ec;
                 }
-                .linkedin {
+                &.linkedin {
                     background-color: #0077b5;
+                }
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+    [class~=slick-dots] {
+        bottom: -55px;
+        li {
+            button {
+                border-radius: 50px;
+                &::before {
+                    font-size: 11px;
+                    color: var(--primary-10);
+                    opacity: 1;
+                }
+            }
+            &[class~=slick-active] {
+                button {
+                    border: 2px solid var(--primary);
+                    &::before {
+                        color: var(--primary);
+                        font-size: 12px;
+                        top: 1px;
+                    }
                 }
             }
         }

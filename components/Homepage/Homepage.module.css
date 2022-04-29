@@ -3,25 +3,27 @@
   font-size: 24px;
   font-weight: bold;
 }
+
 .servicesContainerBg {
-  /* background: url(../../assets/images/Services-bg.svg); */
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 200px 0 50px;
+  padding: 100px 0 50px;
   width: 100%;
   height: 100%;
-  margin-top: 30px;
   background-color: #f3f2f8;
   position: relative;
 }
+
 .shapeContainer {
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 .shapeContainer svg {
   fill: var(--white);
 }
+
 .serviceCard {
   background: var(--white);
   padding: 30px;
@@ -31,16 +33,19 @@
   min-height: 167px;
   position: relative;
 }
+
 .serviceIcon img {
   max-width: 58px;
   margin-bottom: 10px;
 }
+
 .serviceCard h5 {
   color: var(--light-black);
   font-size: 18px;
   text-transform: capitalize;
   margin: 0;
 }
+
 .serviceAction {
   display: none;
   color: var(--white);
@@ -54,10 +59,7 @@
   left: 24px;
   border: none;
 }
-/* .serviceAction button{
-  background-color: transparent;
-  border: none;
-} */
+
 .serviceAction span {
   width: 30px;
   height: 30px;
@@ -70,18 +72,22 @@
   align-items: center;
   margin-left: 10px;
 }
+
 .serviceCard:hover .serviceAction {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .serviceAction:hover {
   background: var(--secondary);
 }
+
 .serviceAction:focus {
   box-shadow: none;
   border: none;
 }
+
 .aboutUsSec {
   background-image: url(../../assets/images/whyYuvasoftImg.png);
   background-repeat: no-repeat;
@@ -89,15 +95,19 @@
   padding: 100px 0;
   background-position: right;
 }
+
 .themeTitleCenter h4 {
   margin: 0 auto 12px;
 }
+
 .themeTitleCenter h3 {
   text-align: center;
 }
+
 .accordionContainer {
   border: none;
 }
+
 .accordionCard {
   margin-bottom: 20px;
   background: #fff;
@@ -105,11 +115,13 @@
   border-radius: 28px !important;
   border: none;
 }
+
 .accordionCard [class~="accordion-header"] [class~="collapsed"] {
   border-radius: 28px !important;
   color: var(--light-black);
   font-weight: 500;
 }
+
 .accordionCard [class~="accordion-header"] button {
   border-top-left-radius: 28px !important;
   border-top-right-radius: 28px !important;
@@ -118,6 +130,7 @@
   font-weight: 500;
   box-shadow: none;
 }
+
 .accordionCard [class~="accordion-header"] button::after {
   background-image: url(../../assets/images/up_icon.svg);
   background-color: var(--primary);
@@ -127,18 +140,22 @@
   background-size: initial;
   background-position: center;
 }
+
 .accordionCard [class~="accordion-header"] button:focus {
   border: none;
   box-shadow: none;
 }
+
 .workflowWrapper {
   padding: 100px 0;
 }
+
 .workflowWrapper {
   background-image: url(../../assets/images/workFLowBg.svg);
   background-position: top right;
   background-repeat: no-repeat;
 }
+
 .workCard {
   margin: 5px;
   text-align: center;
@@ -159,36 +176,52 @@
   color: #1a1b1e;
   font-family: "Red Hat Display", sans-serif;
 }
+
 .titleParagraph {
   color: var(--light-black);
   font-size: 16px;
 }
+
 .whatWeDoWrapper {
   padding: 80px 0 130px;
   position: relative;
 }
+
 .weDoSliderBox {
   position: relative;
 }
+
+.whatweDoSlider [class~="slick-slide"] {
+  padding: 0 20px;
+}
+
 .weDoSliderImage {
   border-radius: 15px;
 }
+
+.weDoSliderImage span {
+  width: 100% !important;
+}
+
 .weDoInfoBox {
   width: 270px;
   position: absolute;
-  /* bottom: 20px;
-  right: -270px; */
-  bottom: -270px;
+  bottom: 25px;
+  /* right: 62px; */
   right: 0px;
   z-index: 4;
   opacity: 0;
-  transition: all 0.35s ease;
+  transition: all 0.35s ease-in-out;
+  transition-duration: .5S;
 }
+
 .weDoSliderBox:hover .weDoInfoBox {
-  right: 62px;
+  /* right: 62px; */
+  right: 0px;
   opacity: 1;
   bottom: 25px;
 }
+
 .weDoInfoInfoInner {
   background-color: var(--primary);
   color: var(--white);
@@ -196,34 +229,42 @@
   border-bottom-left-radius: 20px;
   padding: 10px;
 }
+
 .weDoInfoInfoInner h5 {
   font-size: 22px;
 }
+
 .weDoInfoInfoInner p {
   font-size: 14px;
   margin-bottom: 0;
 }
+
 .slick-slide.slick-active {
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
+
 .whatweDoSlider [class~="slick-dots"] {
   margin-bottom: 20px;
   bottom: -70px;
 }
+
 .whatweDoSlider [class~="slick-dots"] li button:before {
   font-size: 18px;
   color: var(--primary-10);
   opacity: 1;
 }
+
 .whatweDoSlider [class~="slick-dots"] li[class~="slick-active"] button:before {
   color: var(--primary);
 }
+
 .whatweDoSliderControl {
   display: flex;
   justify-content: flex-end;
 }
+
 .whatweDoSliderControl button {
   border-radius: 50%;
   font-size: 28px;
@@ -235,24 +276,31 @@
   margin: 0 10px;
   border: none;
 }
+
+
 .whatweDoSliderControl button:nth-child(1) {
   background-color: var(--light-black);
 }
+
 .whatweDoSliderControl button:nth-child(2) {
   background-color: var(--primary);
 }
+
 .whatweDoSliderControl [class~="slick-arrow"] {
   display: none !important;
 }
+
 .testimonialWrapper {
   background-image: url(../../assets/images/testimonialBg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 0;
 }
+
 .clientTestimonialTitle h3 {
   color: var(--white);
 }
+
 .clientTestimonialCard {
   border-radius: 10px;
   border: none;
@@ -261,6 +309,7 @@
   margin: 0 auto;
   min-height: 300px;
 }
+
 .clientTestimonialCard::after {
   content: "";
   background-image: url(../../assets/images/testimonialCardBg.svg);
@@ -272,6 +321,7 @@
   border-radius: 10px !important;
   margin: 10px;
 }
+
 .clientTestimonialCard::before {
   content: "";
   background-image: url(../../assets/images/testimonialCardBg.svg);
@@ -283,40 +333,55 @@
   border-radius: 10px !important;
   margin: 10px;
 }
+
 .clientTestimonialCard [class~="card-body"] {
   padding: 25px;
 }
+
 .testimonialCardHeader {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
+
 .clientDetail {
   margin-left: 20px;
 }
+
 .clientDetail h5 {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
   color: var(--secondary);
 }
+
 .clientDetail p {
   color: var(--light-black);
   margin-bottom: 0;
   font-size: 18px;
 }
+
 .clientProfileBox {
   display: flex;
   align-items: center;
 }
+
+.clientProfileBox .clientProfileImg {
+  width: 70px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
 .clientFeedbackBox {
   color: var(--light-black);
   font-size: 16px;
   line-height: 30px;
 }
+
 .clientTestimonialSliderControl {
   display: flex;
 }
+
 .clientTestimonialSliderControl button {
   border-radius: 50%;
   font-size: 28px;
@@ -329,42 +394,63 @@
   border: 1px solid var(--white);
   background-color: transparent;
 }
+
+.clientTestimonialSliderControl button:hover,
+.clientTestimonialSliderControl button:active,
+.clientTestimonialSliderControl button:focus,
+.clientTestimonialSliderControl button:active:focus {
+  background-color: var(--white);
+  color: var(--primary);
+  box-shadow: none;
+  border: none;
+}
+
 .clientTestimonialSlider [class~="slick-dots"] {
   margin-bottom: 20px;
   bottom: -70px;
 }
+
 .clientTestimonialSlider [class~="slick-dots"] li button:before {
   font-size: 18px;
   color: var(--primary-10);
   opacity: 0.25;
 }
-.clientTestimonialSlider
-  [class~="slick-dots"]
-  li[class~="slick-active"]
-  button:before {
+
+.clientTestimonialSlider [class~="slick-dots"] li[class~="slick-active"] button:before {
   color: var(--primary-10);
   opacity: 1;
 }
+
 .clientTestimonialSlider [class~="slick-arrow"] {
   display: none !important;
 }
+
+.progressBarContainer {
+  width: 80%;
+  margin: 20px;
+}
+
 .whyUsContainer {
   padding: 100px 0;
 }
+
 .whyusTitle h3 {
   margin-bottom: 0;
 }
 
+.whyUsContainer [class~=CircularProgressbar] [class~=CircularProgressbar-path] {
+  stroke: var(--primary);
+}
+
 .carouseItemContainer {
-  /* padding: 140px 0 140px 0; */
   height: 800px;
   display: flex;
 }
+
 .carouseItemContainer:after {
   background-repeat: no-repeat;
   margin-bottom: 0;
   background-position: top right;
-  /* background-size: cover; */
   background-size: contain;
   width: 50%;
   content: "";
@@ -374,17 +460,17 @@
   top: 0;
   z-index: 999;
 }
-/* .carouseItemContainer1:after{
-  position: relative;
-} */
+
 .bannerImgWrapper {
   position: absolute;
   right: 0;
   top: 0;
 }
+
 .bannerImgWrapper img {
   height: 100vh;
 }
+
 .achievementSection {
   background-image: url(../../assets/images/clientDetailBg.png);
   background-repeat: no-repeat;
@@ -394,26 +480,174 @@
   background-size: cover;
   border-radius: 10px;
 }
+
 .achievementcontainer {
   align-items: center;
   height: 100%;
   display: flex;
   justify-content: space-around;
 }
+
 .achieventContent {
   color: var(--white);
 }
+
 .achieventContent h3 {
   margin-bottom: 0;
 }
+
 .achieventContent p {
   margin-bottom: 0;
   text-transform: capitalize;
   font-weight: 500;
 }
-.CircularProgressbar .CircularProgressbar-path{
+
+.CircularProgressbar .CircularProgressbar-path {
   background: red;
 }
-.awardsSection{
+
+.awardsSection {
   padding-bottom: 100px;
+}
+
+.awardsSliderBox {
+  text-align: center;
+}
+
+
+/* Banner css Start */
+.mainBanner {
+  height: 700px;
+}
+
+.bannerSliderBox {
+  background-color: rgb(248, 248, 248);
+  background-repeat: no-repeat;
+  background-image: url('/images/banner-1.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+}
+.bannerTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.bannerTitle h3 {
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: center;
+  line-height: 72px;
+  font-size: 36px;
+}
+
+.bannerTitle p {
+  color: rgb(255, 255, 255);
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: center;
+  line-height: 36px;
+  font-size: 22px;
+}
+
+.bannerBtn {
+  margin: 0 auto;
+  display: flex;
+  background: var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  box-shadow: none !important;
+}
+.bannerBtn:hover,
+.bannerBtn:focus,
+.bannerBtn:active{
+  box-shadow: none !important;
+  color: #000;
+  background: var(--white);
+}
+.homeService {
+  margin-top: -80px;
+  margin-bottom: 0;
+  padding: 0 0 15px 0;
+  background: var(--bg-secondary);
+}
+
+.serviceBoxSmall {
+  overflow: hidden;
+  position: relative;
+  padding: 30px 30px 28px;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.serviceBoxSmall .numberBox {
+  float: left;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #00c3ff;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: rgba(0, 195, 255, 0.15);
+}
+.serviceBoxSmall .contentBox {
+  padding-left: calc(40px + 50px);
+}
+.numberBox.serviceSecond {
+  color: #0160e7;
+  background-color: rgba(1,96,231,.152);
+}
+.numberBox.serviceThird{
+  color: #fe4c1c;
+  background-color: rgba(254,76,28,.154);
+}
+.serviceBoxbg1 {
+  background-image: url(/images/bg-service1-1.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.serviceBoxbg2 {
+  background-image: url(/images/bg-service2-1.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+.serviceBoxbg3 {
+  background-image: url(/images/bg-service3-1.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.mainBanner [class~="slick-arrow"]{
+  display: none !important;
+}
+/* Bannner css End */
+
+@media only screen and (max-width: 991px) {
+
+  .workflowWrapper {
+    background-image: none;
+  }
 }

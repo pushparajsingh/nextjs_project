@@ -6,19 +6,18 @@ import WhatWeDo from './whatWedo'
 import ClientTestimonial from './ClientTestimonial'
 import WhyChooseUs from './WhyChooseUs'
 import Achievements from './Awards'
-
 const Homepage = () => {
-    return(
-        <div>
+    return (
+        <>
             <Banner />
-			<Services />
-			<AboutUs />
-			<WorkFlow />
-			<WhatWeDo />
+            <Services />
+            <AboutUs />
+            <WorkFlow />
+            <WhatWeDo />
             <ClientTestimonial />
             <WhyChooseUs />
             <Achievements />
-        </div>
+        </>
     )
 }
 export default Homepage;

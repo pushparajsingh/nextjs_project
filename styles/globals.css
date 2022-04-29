@@ -23,6 +23,10 @@ a {
   --secondary: #222222;
   --light-black: #4e5a62;
   --bg-secondary: #F3F2F8;
+  --facebook: #3d6ad6;
+  --twitter: #03a9f4;
+  --linkedin: #0077b5;
+  --instagram: linear-gradient(to right, #feb80a , #a329a7);
   --primary-font: "Poppins", sans-serif;
   --secondary-font: 'Frank Ruhl Libre', serif;
 }
@@ -52,15 +56,33 @@ a {
 .themeTitle h3 span {
   color: var(--primary);
 }
-.themeButton{
+.themeButton {
   background-color: var(--primary) !important;
   color: var(--white) !important;
   border: none !important;
   border-radius: 30px !important;
   padding: 15px 30px !important;
-  display: flex !important;
-  margin: 0 auto;
 }
 .theme-padding {
   padding: 120px 0px;
+}
+.sticky{
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.afteFixedHeader {
+  padding-top: 120px
+}
+.sticky {
+padding: 10px 0 !important;
+}
+.navbar-brand img{
+  transition: all 1s ease-in-out
+}
+.sticky .navbar-brand img{
+  max-width: 200px !important;
+  width: 200px !important;
+  height: auto !important; 
 }
