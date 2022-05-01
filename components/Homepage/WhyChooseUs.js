@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Title from "../common/Titles/Titles";
+import Title from "../Layout/Titles/Titles";
 import styles from "./Homepage.module.css";
 import {
   CircularProgressbar,
@@ -15,14 +15,10 @@ const WhyChooseUs = () => {
   const skillsCounts = [1, 2, 3, 4, 5, 6];
   const handleChange = (isVisible) => {
     if (isVisible) {
-
-      setPercentage(66)
-
+      setPercentage(66);
+    } else {
+      setPercentage(0);
     }
-    else {
-      setPercentage(0)
-    }
-
   };
   return (
     <>
@@ -46,9 +42,11 @@ const WhyChooseUs = () => {
             {skillsCounts.map((value, index) => {
               return (
                 <Col lg={2} md={4} key={index}>
-
                   <div className={styles.progressBarContainer}>
-                    <VisibilitySensor delayedCall={true} onChange={(isVisible) => handleChange(isVisible)}>
+                    <VisibilitySensor
+                      delayedCall={true}
+                      onChange={(isVisible) => handleChange(isVisible)}
+                    >
                       <>
                         <CircularProgressbarWithChildren
                           value={percentage}
@@ -56,8 +54,10 @@ const WhyChooseUs = () => {
                           styles={buildStyles({
                             trailColor: "#fff",
                             fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
-                            pathTransition: percentage === 0 ? "none" : "stroke-dashoffset 2s ease 0s"
-
+                            pathTransition:
+                              percentage === 0
+                                ? "none"
+                                : "stroke-dashoffset 2s ease 0s",
                           })}
                         >
                           <div style={{ width: "60%" }}>
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
                     </VisibilitySensor>
                   </div>
                 </Col>
-              )
+              );
             })}
 
             {/* Achievement Section Start */}

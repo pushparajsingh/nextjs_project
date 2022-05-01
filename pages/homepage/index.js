@@ -1,6 +1,6 @@
 import Homepage from "../../components/Homepage/Homepage";
-import Header from "../../components/common/Header/Header";
-import Footer from "../../components/common/Footer/Footer";
+import Header from "../../components/Layout/Header/Header";
+import Footer from "../../components/Layout/Footer/Footer";
 import dynamic from "next/dynamic";
 
 const DynamicComponent = dynamic(() =>

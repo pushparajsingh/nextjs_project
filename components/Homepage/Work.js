@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "./Homepage.module.css";
-import Title from "../common/Titles/Titles";
+import Title from "../Layout/Titles/Titles";
 import Planning from "../../assets/images/Planning.svg";
 import Research from "../../assets/images/Research.svg";
 import Design from "../../assets/images/Design.svg";

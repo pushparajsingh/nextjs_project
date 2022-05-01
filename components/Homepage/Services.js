@@ -4,7 +4,7 @@ import styles from "./Homepage.module.css";
 import Image from "next/image";
 import { ServiceIcon } from "../Utils/ourServices";
 import { BsArrowRight } from "react-icons/bs";
-import Title from "../common/Titles/Titles";
+import Title from "../Layout/Titles/Titles";
 import ServiceModal from "./ServiceModal";
 const Services = () => {
   const [show, setShow] = useState(false);
