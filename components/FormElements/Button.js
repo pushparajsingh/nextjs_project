@@ -3,7 +3,7 @@ import ReactLoading from "react-loading";
 import { Button as ButtonInput } from "react-bootstrap";
 import styles from "./FormElements.module.scss";
 
-const Button = forwardRef(({ loading, className, children, ...props }, ref) => {
+const Button = ({ loading, className, children, ...props }, ref) => {
   return (
     <ButtonInput
       {...props}
@@ -17,5 +17,5 @@ const Button = forwardRef(({ loading, className, children, ...props }, ref) => {
       )}
     </ButtonInput>
   );
-});
+};
 export default Button;
