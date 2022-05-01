@@ -30,15 +30,15 @@ const Header = () => {
   ];
   useEffect(() => {
     document.addEventListener("scroll", function (e) {
-      var header = document.getElementById("headerNav");
-      var contentBanner = document.getElementById("contentBox");
-      var sticky = header.offsetTop;
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        contentBanner.classList.add("afteFixedHeader");
+      var header = document?.getElementById("headerNav");
+      var contentBanner = document?.getElementById("contentBox");
+      var sticky = header?.offsetTop;
+      if (window?.pageYOffset > sticky) {
+        header?.classList?.add("sticky");
+        contentBanner?.classList.add("afteFixedHeader");
       } else {
-        header.classList.remove("sticky");
-        contentBanner.classList.remove("afteFixedHeader");
+        header?.classList?.remove("sticky");
+        contentBanner?.classList?.remove("afteFixedHeader");
       }
     });
   }, []);
