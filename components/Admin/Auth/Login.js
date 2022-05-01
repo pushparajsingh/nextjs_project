@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import { FormInput } from "../../FormElements/FormInput";
+import FormInput from "../../FormElements/FormInput";
 import { useForm } from "react-hook-form";
 import styles from "./Auth.module.scss";
 import { emailPattern } from "../../../constants";
@@ -24,11 +24,12 @@ const Login = () => {
   console.log(111, allStates);
 
   const onSubmit = (data) => {
-    if (data.email !== "admin@gmail.com" && data.email !== "admin") {
+    if (data.email === "admin@gmail.com" && data.password === "admin") {
+      dispatch(authLogin(data));
+    } else {
       Toast.error("Invalid credentials.");
       return null;
     }
-    dispatch(authLogin(data));
   };
 
   return (

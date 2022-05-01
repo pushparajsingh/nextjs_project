@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
-import { Button } from "../../FormElements/FormInput";
+import Button from "../../FormElements/Button";
 import TableListNotFound from "../NoRocordFound/TableListNotFound";
 import { useRouter } from "next/router";
 

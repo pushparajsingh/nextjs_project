@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Form, Container, Row, Col, Modal, Image } from "react-bootstrap";
+import { Form, Container, Row, Col } from "react-bootstrap";
 import { FaUsers } from "react-icons/fa";
-import { FormInput } from "../../FormElements/FormInput";
+import FormInput from "../../FormElements/FormInput";
 import { useRouter } from "next/router";
 import { emailPattern } from "../../../constants";
 import ActionFooter from "../Utility/ActionFooter";
 import { useNotification } from "../../../contexts/NotificationContext";
 import DeleteConfirmationModal from "../Utility/DeleteConfirmationModal";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 const TeamForm = () => {
   const params = useRouter();

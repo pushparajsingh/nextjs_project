@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Button } from "../../FormElements/FormInput";
+import Button from "../../FormElements/Button";
 import { FaTrashAlt, FaCheck, FaPencilAlt } from "react-icons/fa";
 
 const ActionFooter = ({ setOpenModal, isEdit, setIsEdit }) => {
