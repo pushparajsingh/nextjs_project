@@ -34,7 +34,7 @@ const TeamForm = () => {
 
   useEffect(() => {
     if (id) setIsEdit(true);
-  }, []);
+  }, [id]);
 
   const handleDelete = () => {
     setOpenModal(false);

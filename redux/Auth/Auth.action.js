@@ -27,3 +27,10 @@ export const authLogout = (data) => {
     payload: data,
   };
 };
+
+export const authReset = (data) => {
+  return {
+    type: actionTypes.AUTH_RESET,
+    payload: data,
+  };
+};

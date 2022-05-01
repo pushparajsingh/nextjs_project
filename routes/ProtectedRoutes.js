@@ -7,17 +7,29 @@ import { useSelector } from "react-redux";
 const isBrowser = () => typeof window !== "undefined";
 
 const ProtectedRoutes = ({ children }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const { isAuthenticated } = useSelector((state) => ({
+  const { isAuthenticated, logout } = useSelector((state) => ({
     isAuthenticated: state?.auth?.authToken,
+    logout: state?.auth?.logout,
   }));
 
   useEffect(() => {
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 800);
-  }, []);
+    setTimeout(() => {
+      setLoading(false);
+    }, 800);
+  }, [loading]);
+
+  useEffect(() => {
+    setLoading(true);
+    handleLoader();
+  }, [logout]);
+
+  const handleLoader = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 800);
+  };
 
   let unprotectedRoutes = [
     appRoutes.HOME_PAGE,

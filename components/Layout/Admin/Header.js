@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Logo from "../../../assets/images/yuvasoft-logo.png";
 import styles from "./Admin.module.scss";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { authLogout } from "../../../redux/Auth/Auth.action";
+import { useDispatch, useSelector } from "react-redux";
+import { authLogout, authReset } from "../../../redux/Auth/Auth.action";
 
 const Header = () => {
   const dispatch = useDispatch();
+
+  const { logout } = useSelector((state) => ({
+    logout: state?.auth?.logout,
+  }));
+
+  useEffect(() => {
+    if (logout) {
+      dispatch(authReset());
+    }
+  }, [logout]);
+
   return (
     <Navbar
       collapseOnSelect

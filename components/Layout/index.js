@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import AdminLayout from "./Admin";
+import { Children } from "react";
 const Layout = ({ children }) => {
   const { isAuthenticated } = useSelector((state) => ({
     isAuthenticated: state?.auth?.authToken,
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
   };
 
   return isAuthenticated ? (
-    <AdminLayout children={children} />
+    <AdminLayout>{children}</AdminLayout>
   ) : (
     _renderWebSiteLayout()
   );

@@ -63,6 +63,7 @@ const TeamList = () => {
                     roundedCircle
                     height="40"
                     width="40"
+                    alt="user"
                   />
                   <span className="ms-2">Gulshan singh</span>
                 </td>

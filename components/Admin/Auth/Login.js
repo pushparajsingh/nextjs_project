@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FormInput from "../../FormElements/FormInput";
@@ -11,6 +11,7 @@ import { authLogin } from "../../../redux/Auth/Auth.action";
 const Login = () => {
   const dispatch = useDispatch();
   const { Toast } = useNotification();
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,7 +23,15 @@ const Login = () => {
   }));
 
   const onSubmit = (data) => {
-    if (data.email === "admin@gmail.com" && data.password === "admin") {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 200);
+    if (
+      data.email === "admin@gmail.com" &&
+      data.password === "admin" &&
+      !loading
+    ) {
       dispatch(authLogin(data));
     } else {
       Toast.error("Invalid credentials.");

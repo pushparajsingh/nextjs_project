@@ -12,7 +12,9 @@ const auth = (state = initialState, action) => {
       return { ...state, authToken: token };
     case actionTypes.AUTH_LOGOUT:
       localStorage.clear();
-      return { ...state, authToken: null };
+      return { ...state, authToken: null, logout: true };
+    case actionTypes.AUTH_RESET:
+      return {};
     default:
       return state;
   }
