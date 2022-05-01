@@ -10,7 +10,7 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
       <ul>
         <li>
-          <Link href="/home">
+          <Link href="/admin/dashboard">
             <a>
               <FaHome />
               Dashboard
@@ -18,17 +18,9 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/home">
+          <Link href="/admin/team">
             <a>
               <FaUsers />
-              Team
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/home">
-            <a>
-              <FaNetworkWired />
               Team
             </a>
           </Link>

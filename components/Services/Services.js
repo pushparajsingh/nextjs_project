@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Head from "next/head";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Slider from "react-slick";
 import Title from "../Layout/Titles/Titles";
@@ -8,7 +7,6 @@ import {
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
 import styles from "./Services.module.scss";
-import Link from "next/link";
 import Image from "next/image";
 import { ServiceIcon, serviceDetail } from "../Utils/ourServices";
 
@@ -59,10 +57,6 @@ const ServicesPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Yuvasoft Solutions - Services</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
       <section className={styles.serviceWrapper}>
         <Container className={styles.serviceHead}>
           <Row className="justify-content-between align-items-end">

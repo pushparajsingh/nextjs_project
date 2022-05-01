@@ -23,7 +23,6 @@ const TeamForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(111, data);
     let message = "Team Added successfully.";
     if (id) message = "Team Updated successfully.";
     Toast.success(message);
@@ -50,7 +49,7 @@ const TeamForm = () => {
             <FaUsers />
             <div className="content">
               <h2>{id ? "Update" : "Create"} Team</h2>
-              <p>Manage your Team</p>
+              <p>Manage your team</p>
             </div>
           </div>
         </Col>

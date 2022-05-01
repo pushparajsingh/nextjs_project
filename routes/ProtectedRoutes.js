@@ -44,6 +44,8 @@ const ProtectedRoutes = ({ children }) => {
   ];
 
   let protectedRoutes = [
+    appRoutes.PROFILE,
+    appRoutes.DASHBOARD,
     appRoutes.TEAM_LIST,
     appRoutes.TEAM_CREATE,
     appRoutes.TEAM_UPDATE,
@@ -65,7 +67,7 @@ const ProtectedRoutes = ({ children }) => {
   if (isBrowser() && !isAuthenticated && pathIsUnProtected) {
     router.push(appRoutes.HOME_PAGE);
   } else if (isBrowser() && isAuthenticated && pathIsProtected) {
-    router.push(appRoutes.TEAM_LIST);
+    router.push(appRoutes.DASHBOARD);
   }
   return children;
 };

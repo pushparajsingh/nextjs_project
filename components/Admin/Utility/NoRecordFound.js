@@ -1,7 +1,7 @@
 import React from "react";
 import { ListingLoading } from "../../Loading/Loading";
 
-const TableListNotFound = ({ colSpan, loading }) => {
+export const TableListNotFound = ({ colSpan, loading }) => {
   return (
     <tr>
       <td colSpan={colSpan} className="text-center">
@@ -10,4 +10,3 @@ const TableListNotFound = ({ colSpan, loading }) => {
     </tr>
   );
 };
-export default TableListNotFound;

@@ -2,6 +2,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from "./Contact.module.scss";
 import { MdOutlineLocationCity } from "react-icons/md";
 import Title from "../Layout/Titles/Titles";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -27,16 +28,35 @@ const Contact = () => {
                   <MdOutlineLocationCity className={styles.contactIcons} />
                   <div className={styles.infoText}>
                     <h6>OUR MAILBOX:</h6>
-                    <p>info@yuvasoftech.com</p>
+                    <p>
+                      <Link href="mailto:info@yuvasoftech.com">
+                        <a>info@yuvasoftech.com</a>
+                      </Link>
+                    </p>
                   </div>
                 </div>
                 <div className={styles.contactInfo}>
                   <MdOutlineLocationCity className={styles.contactIcons} />
                   <div className={styles.infoText}>
                     <h6>OUR PHONES:</h6>
-                    <p>Phone: +91 (0) 731 4227200</p>
-                    <p>Mobile: +91 (0) 999 3351929</p>
-                    <p>Mobile: +91 (0) 990 7286003</p>
+                    <p>
+                      Phone:{" "}
+                      <Link href="tel:+91 (0) 731 4227200">
+                        <a>+91 (0) 731 4227200</a>
+                      </Link>
+                    </p>
+                    <p>
+                      Mobile:{" "}
+                      <Link href="tel:+91 (0) 999 3351929">
+                        <a>+91 (0) 999 3351929</a>
+                      </Link>
+                    </p>
+                    <p>
+                      Mobile:{" "}
+                      <Link href="tel:+91 (0) 990 7286003">
+                        <a>+91 (0) 990 7286003</a>
+                      </Link>
+                    </p>
                   </div>
                 </div>
               </div>

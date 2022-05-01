@@ -2,4 +2,7 @@
   svg {
     margin: 0 5px;
   }
+  &:focus {
+    box-shadow: none;
+  }
 }

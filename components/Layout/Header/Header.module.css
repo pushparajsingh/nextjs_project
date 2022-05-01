@@ -22,22 +22,22 @@
   color: var(--primary);
 }
 
-.topHeader{
+.topHeader {
   background-color: var(--primary);
   padding: 10px;
 }
-.topHeader a{
+.topHeader a {
   color: var(--white);
   text-decoration: none;
 }
-.topHeader ul{
+.topHeader ul {
   list-style: none;
   padding: 0 0 0 10px;
   display: flex;
   margin: 0;
   /* border-left: 1px solid rgba(255,255,255,.3); */
 }
-.headerMenu{
+.headerMenu {
   margin-right: 10px;
 }
 /* .topHeader ul li{
@@ -49,38 +49,47 @@
     border-radius: 50%;
     padding: 7px;
 } */
-.topHeader ul li a{
-    width: 35px;
-    margin-right: 20px;
-    transition: all .3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.topHeader ul li a {
+  width: 35px;
+  margin-right: 20px;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topHeaderleft{
+.topHeaderleft {
   display: flex;
   align-items: center;
   height: 100%;
 }
-.topHeaderRight{
+.topHeaderleft a:hover {
+  color: #fff;
+}
+.topHeaderRight {
   display: flex;
   color: var(--white);
   justify-content: flex-end;
 }
-.menuBox{
+.menuBox {
   margin: 0 15px;
   display: flex;
   align-items: center;
 }
-.Icon{
+.menuBox a {
+  color: #fff;
+}
+.menuBox a:hover {
+  color: #fff;
+}
+.Icon {
   font-size: 18px;
   margin-right: 10px;
 }
 
 /* Responsive CSS */
 @media screen and (max-width: 991px) {
-  .topHeader{
+  .topHeader {
     display: none;
   }
 }
@@ -88,5 +97,4 @@
   .logo img {
     max-width: 170px !important;
   }
-  
 }

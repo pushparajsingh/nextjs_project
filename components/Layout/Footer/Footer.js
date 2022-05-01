@@ -17,6 +17,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { useRouter } from "next/router";
+import { socialLinks } from "../../../constants";
 
 const Footer = () => {
   const router = useRouter();
@@ -128,13 +129,21 @@ const Footer = () => {
                 </li>
                 <li>
                   <FiMail className={styles.Icon} />
-                  <span>info@yuvasoftech.com</span>
+                  <Link href="mailto:info@yuvasoftech.com">
+                    info@yuvasoftech.com
+                  </Link>
                   <h4 className={styles.addressTitle}>Our Mailbox</h4>
                 </li>
                 <li>
                   <BsTelephoneOutbound className={styles.Icon} />
                   <span>
-                    +91 (0) 731 4227200 <br /> +91 (0) 999 3351929
+                    <Link href="tel:+91 (0) 731 4227200">
+                      +91 (0) 731 4227200
+                    </Link>
+                    <br />
+                    <Link href="tel:+91 (0) 999 3351929">
+                      +91 (0) 999 3351929
+                    </Link>
                   </span>
                   <h4 className={styles.addressTitle}>Our Phone</h4>
                 </li>
@@ -144,22 +153,25 @@ const Footer = () => {
                   <Link href="/">
                     <a>Home</a>
                   </Link>
-                  <Link href="http://www.yuvasoftech.com/about">
-                    <a target="_blank">About</a>
+                  <Link href="/about">
+                    <a>About</a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/services">
                     <a>Services</a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/portfolio">
                     <a>Portfolio</a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/teams">
                     <a>Team</a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/gallery">
+                    <a>Gallery</a>
+                  </Link>
+                  <Link href="/career">
                     <a>Career</a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/contact">
                     <a>Contact</a>
                   </Link>
                   <Link href="/">
@@ -168,26 +180,26 @@ const Footer = () => {
                 </li>
               </ul>
               <p className={styles.copyright}>
-                &#169; 2017 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
+                &#169; 2021 Yuvasoft Solutions PVT. LTD. | All Rights Reserved
               </p>
               <ul className={styles.footerSocials}>
                 <li>
-                  <Link href="https://www.facebook.com/YuvaSoftSolutions">
+                  <Link href={socialLinks.facebook}>
                     <a target="_blank" className={styles.facebook}>
                       <FaFacebookF className={styles.icon} />
                     </a>
                   </Link>
-                  <Link href="https://twitter.com/yuvasoftech">
+                  <Link href={socialLinks.twitter}>
                     <a target="_blank" className={styles.twitter}>
                       <FaTwitter className={styles.icon} />
                     </a>
                   </Link>
-                  <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
+                  <Link href={socialLinks.linkedin}>
                     <a target="_blank" className={styles.linkedin}>
                       <FaLinkedinIn className={styles.icon} />
                     </a>
                   </Link>
-                  <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
+                  <Link href={socialLinks.instagram}>
                     <a target="_blank" className={styles.instagram}>
                       <FaInstagram className={styles.icon} />
                     </a>

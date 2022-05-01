@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
 import FormInput from "../../FormElements/FormInput";
 import { useForm } from "react-hook-form";
 import styles from "./Auth.module.scss";
 import { emailPattern } from "../../../constants";
 import { useNotification } from "../../../contexts/NotificationContext";
 import { authLogin } from "../../../redux/Auth/Auth.action";
+import Button from "../../FormElements/Button";
 
 const Login = () => {
   const dispatch = useDispatch();

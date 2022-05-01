@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
-import TableListNotFound from "../NoRocordFound/TableListNotFound";
+import { TableListNotFound } from "../Utility/NoRecordFound";
 import { useRouter } from "next/router";
 
 const userList = [1, 2, 3, 4, 5, 6, 7, 8, 9];

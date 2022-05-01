@@ -13,6 +13,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { socialLinks } from "../../../constants";
 
 const Header = () => {
   const router = useRouter();
@@ -27,20 +28,20 @@ const Header = () => {
     { name: "Career", path: "/career" },
     { name: "Contact", path: "/contact" },
   ];
-  // useEffect(() => {
-  //   document.addEventListener("scroll", function (e) {
-  //     var header = document.getElementById("headerNav");
-  //     var contentBanner = document.getElementById("contentBox");
-  //     var sticky = header.offsetTop;
-  //     if (window.pageYOffset > sticky) {
-  //       header.classList.add("sticky");
-  //       contentBanner.classList.add("afteFixedHeader");
-  //     } else {
-  //       header.classList.remove("sticky");
-  //       contentBanner.classList.remove("afteFixedHeader");
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    document.addEventListener("scroll", function (e) {
+      var header = document.getElementById("headerNav");
+      var contentBanner = document.getElementById("contentBox");
+      var sticky = header.offsetTop;
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        contentBanner.classList.add("afteFixedHeader");
+      } else {
+        header.classList.remove("sticky");
+        contentBanner.classList.remove("afteFixedHeader");
+      }
+    });
+  }, []);
 
   return (
     <div>
@@ -52,28 +53,28 @@ const Header = () => {
                 {/* <a href="#" className={styles.headerMenu}>About</a> */}
                 <ul>
                   <li>
-                    <Link href="https://www.facebook.com/YuvaSoftSolutions">
+                    <Link href={socialLinks.facebook}>
                       <a target="_blank" className={styles.facebook}>
                         <FaFacebookF className={styles.icon} />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://twitter.com/yuvasoftech">
+                    <Link href={socialLinks.twitter}>
                       <a target="_blank" className={styles.twitter}>
                         <FaTwitter className={styles.icon} />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://in.linkedin.com/company/yuvasoft-solutions-pvt-ltd">
+                    <Link href={socialLinks.linkedin}>
                       <a target="_blank" className={styles.linkedin}>
                         <FaLinkedinIn className={styles.icon} />
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://www.instagram.com/yuvasoftsolutions/?hl=en">
+                    <Link href={socialLinks.instagram}>
                       <a target="_blank" className={styles.instagram}>
                         <FaInstagram className={styles.icon} />
                       </a>
@@ -84,17 +85,21 @@ const Header = () => {
             </Col>
             <Col lg={8}>
               <div className={styles.topHeaderRight}>
-                {/* <div className={styles.menuBox}>
-                                    <BiHome className={styles.Icon} />
-                                    715-7th Floor, Pukhraj Corporate, Navlakha Square
-                                </div> */}
                 <div className={styles.menuBox}>
-                  <FiMail className={styles.Icon} />
-                  info@yuvasoftech.com
+                  <Link href="mailto:info@yuvasoftech.com">
+                    <a>
+                      <FiMail className={styles.Icon} />
+                      info@yuvasoftech.com
+                    </a>
+                  </Link>
                 </div>
                 <div className={styles.menuBox}>
-                  <BsTelephoneOutbound className={styles.Icon} />
-                  +91 (0) 999 3351929
+                  <Link href="tel:+91 (0) 999 3351929">
+                    <a>
+                      <BsTelephoneOutbound className={styles.Icon} />
+                      +91 (0) 999 3351929
+                    </a>
+                  </Link>
                 </div>
               </div>
             </Col>
@@ -103,13 +108,17 @@ const Header = () => {
       </div>
       <Navbar className={styles.HeaderPrimary} expand="lg" id="headerNav">
         <Container>
-          <Navbar.Brand href="/" className={styles.logo} passHref>
-            <Image
-              src={Logo}
-              className="img-fluid header-logo"
-              alt="Yuvasoft Logo"
-            />
-          </Navbar.Brand>
+          <Link href="/">
+            <a>
+              <div className={`navbar-brand ${styles.logo}`}>
+                <Image
+                  src={Logo}
+                  className="img-fluid header-logo"
+                  alt="Yuvasoft Logo"
+                />
+              </div>
+            </a>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto ">

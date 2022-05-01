@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Button from "../../FormElements/Button";
 import { FaTrashAlt, FaCheck, FaPencilAlt } from "react-icons/fa";
 
-const ActionFooter = ({ setOpenModal, isEdit, setIsEdit }) => {
+const ActionFooter = ({ setOpenModal, isEdit, setIsEdit, isHideDelete }) => {
   const params = useRouter();
   const { id } = params.query;
 
@@ -43,7 +43,7 @@ const ActionFooter = ({ setOpenModal, isEdit, setIsEdit }) => {
         </Button>
       )}
 
-      {id && !isEdit && (
+      {!isHideDelete && id && !isEdit && (
         <Button variant="danger" onClick={() => setOpenModal(true)}>
           Delete
           <FaTrashAlt />

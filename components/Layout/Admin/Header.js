@@ -5,10 +5,12 @@ import styles from "./Admin.module.scss";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { authLogout, authReset } from "../../../redux/Auth/Auth.action";
+import { useRouter } from "next/router";
+import { FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
   const dispatch = useDispatch();
-
+  const router = useRouter();
   const { logout } = useSelector((state) => ({
     logout: state?.auth?.logout,
   }));
@@ -38,13 +40,18 @@ const Header = () => {
             id="collasible-nav-dropdown"
             className={styles.profileDropdown}
           >
-            <div className="dropdown-item">Action</div>
+            <div
+              className="dropdown-item"
+              onClick={() => router.push("/admin/profile")}
+            >
+              <FaUserAlt /> Profile
+            </div>
             <NavDropdown.Divider />
             <div
               className="dropdown-item"
               onClick={() => dispatch(authLogout())}
             >
-              Logout
+              <FaSignOutAlt /> Logout
             </div>
           </NavDropdown>
         </Nav>
