@@ -3,9 +3,9 @@ import ReactLoading from "react-loading";
 import styles from "./Loading.module.scss";
 
 const color = "#ed3237";
-export const FullPageLoading = () => {
+export const FullPageLoading = ({ position }) => {
   return (
-    <div className={styles.fullPageLoading}>
+    <div className={`${styles.fullPageLoading}`}>
       <ReactLoading type="bars" color={color} height="50px" width="50px" />
     </div>
   );
