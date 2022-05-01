@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { Form } from "react-bootstrap";
 import styles from "./FormElements.module.scss";
 
-const FormInput = ({ errors, name, label, ...props }, ref) => {
+const FormInput = forwardRef(({ errors, name, label, ...props }, ref) => {
   return (
     <div className="mb-3">
       <Form.Label>{label}</Form.Label>
@@ -19,5 +19,5 @@ const FormInput = ({ errors, name, label, ...props }, ref) => {
       )}
     </div>
   );
-};
+});
 export default FormInput;

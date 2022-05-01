@@ -5,12 +5,6 @@ import Link from "next/link";
 import Logo from "../../../assets/images/yuvasoft-logo.png";
 import styles from "./Header.module.css";
 import { useRouter } from "next/router";
-import FooterLogo from "../../../assets/images/yuvasoft-logo-white.png";
-import Facebook from "../../../assets/images/footer/facebook.png";
-import Linkedin from "../../../assets/images/footer/linkedin.png";
-import Twitter from "../../../assets/images/footer/twitter.png";
-import Instagram from "../../../assets/images/footer/instagram.png";
-import { BiHome } from "react-icons/bi";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import {
@@ -33,20 +27,20 @@ const Header = () => {
     { name: "Career", path: "/career" },
     { name: "Contact", path: "/contact" },
   ];
-  useEffect(() => {
-    document.addEventListener("scroll", function (e) {
-      var header = document.getElementById("headerNav");
-      var contentBanner = document.getElementById("contentBox");
-      var sticky = header.offsetTop;
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        contentBanner.classList.add("afteFixedHeader");
-      } else {
-        header.classList.remove("sticky");
-        contentBanner.classList.remove("afteFixedHeader");
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("scroll", function (e) {
+  //     var header = document.getElementById("headerNav");
+  //     var contentBanner = document.getElementById("contentBox");
+  //     var sticky = header.offsetTop;
+  //     if (window.pageYOffset > sticky) {
+  //       header.classList.add("sticky");
+  //       contentBanner.classList.add("afteFixedHeader");
+  //     } else {
+  //       header.classList.remove("sticky");
+  //       contentBanner.classList.remove("afteFixedHeader");
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div>

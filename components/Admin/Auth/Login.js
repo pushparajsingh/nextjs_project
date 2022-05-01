@@ -21,8 +21,6 @@ const Login = () => {
     allStates: state,
   }));
 
-  console.log(111, allStates);
-
   const onSubmit = (data) => {
     if (data.email === "admin@gmail.com" && data.password === "admin") {
       dispatch(authLogin(data));

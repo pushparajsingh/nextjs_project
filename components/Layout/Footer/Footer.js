@@ -16,8 +16,10 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { useRouter } from "next/router";
 
-const Footer = ({ router }) => {
+const Footer = () => {
+  const router = useRouter();
   const settings = {
     dots: false,
     infinite: true,
@@ -54,7 +56,7 @@ const Footer = ({ router }) => {
   };
   return (
     <section>
-      {router?.pathname !== "/login" && (
+      {router?.pathname !== "/admin/login" && (
         <div className={styles.reviewsWrapper}>
           <Container>
             <Row className="align-items-center">

@@ -3,25 +3,20 @@ import { appRoutes } from "../constants";
 import { FullPageLoading } from "../components/Loading/Loading";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-// import { useAuthContext } from "../contexts";
 
-//check if you are on the client (browser) or server
 const isBrowser = () => typeof window !== "undefined";
 
 const ProtectedRoutes = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { isAuthenticated } = useSelector((state) => ({
     isAuthenticated: state?.auth?.authToken,
   }));
-  //Identify authenticated user
-  //   const { user } = useAuthContext();
-  //   const isAuthenticated = user.isLoggedIn;
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 800);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 800);
   }, []);
 
   let unprotectedRoutes = [
