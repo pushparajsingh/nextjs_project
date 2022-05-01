@@ -18,4 +18,5 @@ const Button = forwardRef(({ loading, className, children, ...props }, ref) => {
     </ButtonInput>
   );
 });
+Button.displayName = "Button";
 export default Button;
