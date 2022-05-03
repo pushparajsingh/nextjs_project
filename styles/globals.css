@@ -63,6 +63,11 @@ a {
   border-radius: 30px !important;
   padding: 15px 30px !important;
 }
+.themeButton:focus,
+.themeButton:active,
+.themeButton:hover{
+  box-shadow: none !important;
+}
 .theme-padding {
   padding: 120px 0px;
 }
@@ -71,16 +76,14 @@ a {
   top: 0;
   width: 100%;
   z-index: 999;
+  padding: 5px 0 !important;
 }
 .afteFixedHeader {
   padding-top: 120px;
 }
-.sticky {
-  padding: 10px 0 !important;
-}
-.navbar-brand img {
+/* .navbar-brand img {
   transition: all 1s ease-in-out;
-}
+} */
 .sticky .navbar-brand img {
   max-width: 200px !important;
   width: 200px !important;

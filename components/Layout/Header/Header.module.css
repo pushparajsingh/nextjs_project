@@ -24,7 +24,7 @@
 
 .topHeader {
   background-color: var(--primary);
-  padding: 10px;
+  padding: 5px;
 }
 .topHeader a {
   color: var(--white);
