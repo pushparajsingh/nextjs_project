@@ -52,6 +52,8 @@ const WhyChooseUs = () => {
                           value={percentage}
                           text={`${percentage}%`}
                           styles={buildStyles({
+                            textSize: '14px',
+                            fontWeight: 800,
                             trailColor: "#fff",
                             fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
                             pathTransition:

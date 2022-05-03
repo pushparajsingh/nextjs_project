@@ -57,7 +57,7 @@ const Services = () => {
           </Row>
           <Row>
             <Col lg={12}>
-              <Button className="themeButton">View more</Button>
+              <Button className={`${styles.servicesViewBtn} themeButton`}>View more</Button>
             </Col>
           </Row>
         </Container>

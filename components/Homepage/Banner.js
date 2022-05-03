@@ -29,15 +29,15 @@ const Banner = () => {
             {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
 
             <div>
-                <Slider {...settings} className={styles.mainBanner}>
+                <Slider {...settings} className={styles.mainBanner} fade>
                     <div>
                         <div className={styles.bannerSliderBox}>
                            <Container>
                                <Row>
                                    <Col lg={6}>
                                         <div className={styles.bannerTitle}>
-                                            <h3>The #1 SEO Services Company <br/>  with 200+ Case Studies</h3>
-                                            <p>We help you succeed online with proven SEO methods.</p>
+                                            <h3>We are a team of Developers, Designers, Innovators...</h3>
+                                            <p>We are Yuvasoft. A journey to innovation!</p>
                                             <Button className={styles.bannerBtn}>
                                                 More Details
                                             </Button>
@@ -54,8 +54,8 @@ const Banner = () => {
                                <Row>
                                    <Col lg={6}>
                                         <div className={styles.bannerTitle}>
-                                            <h3>The #1 SEO Services Company <br/>  with 200+ Case Studies</h3>
-                                            <p>We help you succeed online with proven SEO methods.</p>
+                                        <h3>We Build Products for <br/> next generation</h3>
+                                            <p>We are dedicated to building innovative app for Mobile and Web.</p>
                                             <Button className={styles.bannerBtn}>
                                                 More Details
                                             </Button>
@@ -72,8 +72,8 @@ const Banner = () => {
                                <Row>
                                    <Col lg={6}>
                                         <div className={styles.bannerTitle}>
-                                            <h3>The #1 SEO Services Company <br/>  with 200+ Case Studies</h3>
-                                            <p>We help you succeed online with proven SEO methods.</p>
+                                            <h3>We Ensure Your Growth And Success</h3>
+                                            <p>We are a leading software development company providing industry-specific solutions.</p>
                                             <Button className={styles.bannerBtn}>
                                                 More Details
                                             </Button>
@@ -92,8 +92,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg1}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceFirst}`}>01</div>
                                 <div className={styles.contentBox}>
-                                    <h5>Radical Integrity</h5>
-                                    <p>Our people truly care for our work and for each other.</p>
+                                    <h5>Providing All The Expertise That You Need</h5>
+                                    <p>You can rely on our team of designers and developers to produce the product you are looking for across a range of platforms and devices.</p>
                                 </div>
                             </div>
                         </Col>
@@ -101,8 +101,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg2}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceSecond}`}>02</div>
                                 <div className={styles.contentBox}>
-                                    <h5>People First</h5>
-                                    <p>We believe that a culture will build a thriving company.</p>
+                                    <h5>Trust Our Team Of Professionals</h5>
+                                    <p>We keeps its words and will complete your project according to your specifications. We can help if you feel trapped by your current developer.</p>
                                 </div>
                             </div>
                         </Col>
@@ -110,8 +110,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg3}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceThird}`}>03</div>
                                 <div className={styles.contentBox}>
-                                    <h5>Process Perfection</h5>
-                                    <p>We are driven to becoming the best version of ourselves.</p>
+                                    <h5>Providing All The Services That You Need</h5>
+                                    <p>Our words are our actions. Our team will work with you to define your scope of work and ensure it is fulfilled, making changes according to your approval.</p>
                                 </div>
                             </div>
                         </Col>
