@@ -18,6 +18,22 @@ const WhatWeDo = () => {
     adaptiveHeight: true,
     centerPadding: "200px",
     bool: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
   const gotoNext = () => {
     customeSlider.current.slickNext();
@@ -32,14 +48,14 @@ const WhatWeDo = () => {
       <div className={styles.whatWeDoWrapper}>
         <Container>
           <Row>
-            <Col lg={6}>
-              <Title value="what we do" span="what" subTitle="do we do?" />
+            <Col lg={6} md={8}>
+              <Title value="what we do" span="what" subTitle="we do?" />
               <p className={styles.titleParagraph}>
                 Our design and development team knows very well what it takes to
                 successfully develop web products across multiple domains.
               </p>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} md={4}>
               <div className={styles.whatweDoSliderControl}>
                 <Button onClick={() => gotoNext()}>
                   <HiOutlineArrowLeft />

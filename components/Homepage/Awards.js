@@ -17,6 +17,22 @@ const Achievements = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     bool: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
   // const gotoNext = () => {
   //     customeSlider.current.slickNext()
