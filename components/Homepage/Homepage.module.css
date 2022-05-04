@@ -94,11 +94,11 @@
 }
 
 .aboutUsSec {
-  background-image: url(../../assets/images/whyYuvasoftImg.png);
-  background-repeat: no-repeat;
+  /* background-image: url(../../assets/images/whyYuvasoftImg.png);
+  background-repeat: no-repeat; */
   margin-bottom: 0;
   padding: 100px 0;
-  background-position: right;
+  /* background-position: right; */
 }
 
 .themeTitleCenter h4 {
