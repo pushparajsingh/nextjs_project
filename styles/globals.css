@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Poppins:wght@200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 html,
 body {
   padding: 0;
@@ -28,7 +29,7 @@ a {
   --linkedin: #0077b5;
   --instagram: linear-gradient(to right, #feb80a, #a329a7);
   --primary-font: "Poppins", sans-serif;
-  --secondary-font: "Frank Ruhl Libre", serif;
+  --secondary-font: 'Manrope', sans-serif;
 }
 .themeTitle {
   display: flex;
@@ -49,7 +50,7 @@ a {
   color: var(--light-black);
   text-transform: capitalize;
   font-family: var(--secondary-font);
-  font-weight: 900;
+  font-weight: 800;
   font-size: 45px;
   margin-bottom: 30px;
 }
