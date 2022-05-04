@@ -32,6 +32,7 @@ const ClientTestimonial = () => {
         <Container>
           <Row>
             <Col lg={4}>
+              <div className={styles.clientTestimonialHeader}>
               <div className={styles.clientTestimonialTitle}>
                 <Title value="CLIENTS REVIEW" subTitle="Clients Testimonials" />
               </div>
@@ -42,6 +43,7 @@ const ClientTestimonial = () => {
                 <Button onClick={() => gotoPrev()}>
                   <HiOutlineArrowRight />
                 </Button>
+              </div>
               </div>
             </Col>
             <Col lg={8} className={styles.clientTestimonialSlider}>

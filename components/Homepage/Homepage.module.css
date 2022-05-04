@@ -33,10 +33,12 @@
   min-height: 167px;
   position: relative;
 }
-.servicesViewBtn{
+
+.servicesViewBtn {
   display: block;
   margin: 0 auto;
 }
+
 .serviceIcon img {
   max-width: 58px;
   margin-bottom: 10px;
@@ -497,11 +499,14 @@
 
 .achieventContent h3 {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
 }
-.achieventContent h3 span{
+
+.achieventContent h3 span {
   font-size: 30px;
 }
+
 .achieventContent p {
   margin-bottom: 0;
   text-transform: capitalize;
@@ -520,6 +525,12 @@
   text-align: center;
 }
 
+.skillsHeading {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px 0;
+}
 
 /* Banner css Start */
 .mainBanner {
@@ -542,12 +553,14 @@
   display: flex;
   align-items: center;
 }
-.bannerTitle{
+
+.bannerTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
 }
+
 .bannerTitle h3 {
   font-weight: 900;
   color: rgb(255, 255, 255);
@@ -578,13 +591,15 @@
   border: none;
   box-shadow: none !important;
 }
+
 .bannerBtn:hover,
 .bannerBtn:focus,
-.bannerBtn:active{
+.bannerBtn:active {
   box-shadow: none !important;
   color: #000;
   background: var(--white);
 }
+
 .homeService {
   margin-top: -80px;
   margin-bottom: 0;
@@ -605,7 +620,9 @@
   -o-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  height: 100%;
 }
+
 .serviceBoxSmall .numberBox {
   float: left;
   width: 50px;
@@ -621,48 +638,106 @@
   -moz-border-radius: 50%;
   background: rgba(0, 195, 255, 0.15);
 }
+
 .serviceBoxSmall .contentBox {
   padding-left: calc(15px + 50px);
 }
-.contentBox h5{
+
+.contentBox h5 {
   text-transform: capitalize;
   font-size: 21px;
 }
-.contentBox p{
+
+.contentBox p {
   margin-bottom: 0;
   font-size: 16px;
 }
+
 .numberBox.serviceSecond {
   color: #0160e7;
-  background-color: rgba(1,96,231,.152);
+  background-color: rgba(1, 96, 231, .152);
 }
-.numberBox.serviceThird{
+
+.numberBox.serviceThird {
   color: #fe4c1c;
-  background-color: rgba(254,76,28,.154);
+  background-color: rgba(254, 76, 28, .154);
 }
+
 .serviceBoxbg1 {
   background-image: url(/images/bg-service1-1.png);
   background-position: top right;
   background-repeat: no-repeat;
 }
+
 .serviceBoxbg2 {
   background-image: url(/images/bg-service2-1.png);
   background-position: bottom right;
   background-repeat: no-repeat;
 }
+
 .serviceBoxbg3 {
   background-image: url(/images/bg-service3-1.png);
   background-position: top right;
   background-repeat: no-repeat;
 }
-.mainBanner [class~="slick-arrow"]{
+
+.mainBanner [class~="slick-arrow"] {
   display: none !important;
 }
+.clientTestimonialHeader{
+  display: flex;
+  flex-direction: column;
+}
 /* Bannner css End */
+@media only screen and (max-width:1440px) {
+  .serviceBoxSmall .numberBox {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+  }
+
+  .serviceBoxSmall .contentBox {
+    padding-left: 50px;
+  }
+
+  .serviceBoxSmall {
+    padding: 15px 30px 15px 15px;
+  }
+
+  .weDoInfoBox {
+    max-width: 240px;
+  }
+
+  .serviceBoxSmall {
+    overflow: auto;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
 
 @media only screen and (max-width: 991px) {
-
+  .serviceCard{
+    padding: 20px;
+  }
   .workflowWrapper {
     background-image: none;
+  }
+  .clientTestimonialHeader{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .serviceCard{
+    min-height: auto;
+  }
+  .whatweDoSliderControl{
+    margin: 20px 0;
+  }
+  .achievementcontainer{
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }

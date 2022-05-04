@@ -29,7 +29,7 @@ const Services = () => {
           <Row className="justify-content-md-center" xl={6} lg={4} md={4}>
             {ServiceIcon?.map((value, index) => {
               return (
-                <Col key={index}>
+                <Col key={index} xs={6}>
                   <div className={styles.serviceCard}>
                     <div className={styles.serviceIcon}>
                       <Image
