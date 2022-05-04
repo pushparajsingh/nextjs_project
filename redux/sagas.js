@@ -1,6 +1,7 @@
 import { all } from "redux-saga/effects";
 import authSagas from "./Auth/Auth.saga";
+import teamSagas from "./Team/Team.saga";
 
 export default function* rootSagas() {
-  yield all([authSagas()]);
+  yield all([authSagas(), teamSagas()]);
 }

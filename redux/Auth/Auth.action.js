@@ -1,36 +1,36 @@
 import { actionTypes } from "./Auth.constant";
 
-export const authSuccess = (data) => {
+export const authSuccess = (payload) => {
   return {
     type: actionTypes.SUCCESS,
-    payload: data,
+    payload,
   };
 };
 
-export const authError = (data) => {
+export const authError = (payload) => {
   return {
     type: actionTypes.ERROR,
-    payload: data,
+    payload,
   };
 };
 
-export const authLogin = (data) => {
+export const authLogin = (payload) => {
   return {
     type: actionTypes.AUTH_LOGIN,
-    payload: data,
+    payload,
   };
 };
 
-export const authLogout = (data) => {
+export const authLogout = (payload) => {
   return {
     type: actionTypes.AUTH_LOGOUT,
-    payload: data,
+    payload,
   };
 };
 
-export const authReset = (data) => {
+export const authReset = (payload) => {
   return {
     type: actionTypes.AUTH_RESET,
-    payload: data,
+    payload,
   };
 };

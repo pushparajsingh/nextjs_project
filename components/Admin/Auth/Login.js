@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Row, Col, Form } from "react-bootstrap";
 import FormInput from "../../FormElements/FormInput";
@@ -22,6 +22,8 @@ const Login = () => {
   const { allStates } = useSelector((state) => ({
     allStates: state,
   }));
+
+  console.log(898989, allStates);
 
   const onSubmit = (data) => {
     setLoading(true);

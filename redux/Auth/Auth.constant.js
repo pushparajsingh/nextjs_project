@@ -1,7 +1,7 @@
 export const actionTypes = {
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
   AUTH_LOGIN: "AUTH_LOGIN",
   AUTH_LOGOUT: "AUTH_LOGOUT",
   AUTH_RESET: "AUTH_RESET",
-  SUCCESS: "SUCCESS",
-  ERROR: "ERROR",
 };

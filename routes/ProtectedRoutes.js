@@ -36,6 +36,7 @@ const ProtectedRoutes = ({ children }) => {
     appRoutes.ABOUT_US_PAGE,
     appRoutes.SERVICE_PAGE,
     appRoutes.PORTFOLIO_PAGE,
+    appRoutes.PORTFOLIO_DETAILS_PAGE,
     appRoutes.TEAM_PAGE,
     appRoutes.GALLERY_PAGE,
     appRoutes.CAREER_PAGE,
