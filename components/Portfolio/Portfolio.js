@@ -41,7 +41,12 @@ const Portfolio = () => {
                         data-aos-duration="1000"
                       >
                         <Card className={styles.portfolioCard}>
-                          <Link href="/portfolioDetails">
+                          <Link
+                            href={`/portfolio/${item.title?.replaceAll(
+                              " ",
+                              "-"
+                            )}`}
+                          >
                             <a>
                               <div className={styles.portfolioThumb}>
                                 <Image src={item.thumb} alt={item.title} />
@@ -68,7 +73,12 @@ const Portfolio = () => {
                       return (
                         <Col lg={4} key={index}>
                           <Card className={styles.portfolioCard}>
-                            <Link href="/portfolioDetails">
+                            <Link
+                              href={`/portfolio/${item.title?.replaceAll(
+                                " ",
+                                "-"
+                              )}`}
+                            >
                               <a>
                                 <div className={styles.portfolioThumb}>
                                   <Image src={item.thumb} alt={item.title} />
@@ -95,7 +105,12 @@ const Portfolio = () => {
                       return (
                         <Col lg={4} key={index}>
                           <Card className={styles.portfolioCard}>
-                            <Link href="/portfolioDetails">
+                            <Link
+                              href={`/portfolio/${item.title?.replaceAll(
+                                " ",
+                                "-"
+                              )}`}
+                            >
                               <a>
                                 <div className={styles.portfolioThumb}>
                                   <Image src={item.thumb} alt={item.title} />

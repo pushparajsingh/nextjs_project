@@ -2,7 +2,12 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import Button from "../../FormElements/Button";
 
-const DeleteConfirmationModal = ({ openModal, setOpenModal, handleDelete }) => {
+const DeleteConfirmationModal = ({
+  openModal,
+  setOpenModal,
+  handleDelete,
+  deleteLoading,
+}) => {
   return (
     <Modal show={openModal} centered>
       <Modal.Header>
@@ -13,7 +18,11 @@ const DeleteConfirmationModal = ({ openModal, setOpenModal, handleDelete }) => {
         <Button variant="secondary" onClick={() => setOpenModal(false)}>
           No
         </Button>
-        <Button variant="primary" onClick={handleDelete}>
+        <Button
+          variant="primary"
+          onClick={handleDelete}
+          loading={deleteLoading}
+        >
           Yes
         </Button>
       </Modal.Footer>

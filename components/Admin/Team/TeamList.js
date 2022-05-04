@@ -4,19 +4,21 @@ import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { TableListNotFound } from "../Utility/NoRecordFound";
 import { useRouter } from "next/router";
-
-const userList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+import { teamList } from "../../../redux/Team/Team.action";
+import { useSelector, useDispatch } from "react-redux";
+import { dateTimeFormat } from "../../../constants";
 
 const TeamList = () => {
-  const [loading, setLoading] = useState(true);
-  const [list, setList] = useState([]);
+  const dispatch = useDispatch();
   const params = useRouter();
 
+  const { list, listLoading } = useSelector((state) => ({
+    list: state?.team?.list,
+    listLoading: state?.team?.listLoading,
+  }));
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      setList([...userList]);
-    }, 900);
+    dispatch(teamList());
   }, []);
 
   return (
@@ -47,14 +49,16 @@ const TeamList = () => {
             <th>#</th>
             <th>Name</th>
             <th>Designation</th>
+            <th>Email</th>
+            <th>Create At</th>
           </tr>
         </thead>
         <tbody>
-          {list?.map((user, index) => {
+          {list?.data?.map((team, index) => {
             return (
               <tr
                 key={index}
-                onClick={() => params.push(`/admin/team/${index}`)}
+                onClick={() => params.push(`/admin/team/${team.id}`)}
               >
                 <td>{index + 1}</td>
                 <td>
@@ -65,14 +69,16 @@ const TeamList = () => {
                     width="40"
                     alt="user"
                   />
-                  <span className="ms-2">Gulshan singh</span>
+                  <span className="ms-2">{team?.first_name}</span>
                 </td>
-                <td>Otto</td>
+                <td>{team?.designation ? team?.designation : "-"}</td>
+                <td>{team?.email ? team?.email : "-"}</td>
+                <td>{dateTimeFormat(team?.created_at)}</td>
               </tr>
             );
           })}
-          {list?.length === 0 && (
-            <TableListNotFound colSpan={3} loading={loading} />
+          {!list?.data?.length && (
+            <TableListNotFound colSpan={5} loading={listLoading} />
           )}
         </tbody>
       </Table>

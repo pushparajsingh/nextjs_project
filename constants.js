@@ -1,6 +1,13 @@
 import Head from "next/head";
+import { format } from "date-fns";
 export const emailPattern =
   /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+export const dateTimeFormat = (date, fmt) => {
+  let dateFormat = "MM/dd/yyyy hh:mm:ss a";
+  if (fmt) dateFormat = fmt;
+  return format(new Date(date), dateFormat);
+};
 
 export const appRoutes = {
   /**
@@ -10,6 +17,8 @@ export const appRoutes = {
   ABOUT_US_PAGE: "/about",
   SERVICE_PAGE: "/services",
   PORTFOLIO_PAGE: "/portfolio",
+  PORTFOLIO_DETAILS_PAGE: "/portfolio/[id]",
+
   TEAM_PAGE: "/teams",
   GALLERY_PAGE: "/gallery",
   CAREER_PAGE: "/career",
