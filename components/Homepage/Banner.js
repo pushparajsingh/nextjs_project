@@ -34,7 +34,7 @@ const Banner = () => {
                         <div className={styles.bannerSliderBox}>
                            <Container>
                                <Row>
-                                   <Col lg={6}>
+                                   <Col lg={6} md={8}>
                                         <div className={styles.bannerTitle}>
                                             <h3>We are a team of Developers, Designers, Innovators...</h3>
                                             <p>We are Yuvasoft. A journey to innovation!</p>
@@ -52,7 +52,7 @@ const Banner = () => {
                         <div className={styles.bannerSliderBox}>
                            <Container>
                                <Row>
-                                   <Col lg={6}>
+                                   <Col lg={6} md={8}>
                                         <div className={styles.bannerTitle}>
                                         <h3>We Build Products for <br/> next generation</h3>
                                             <p>We are dedicated to building innovative app for Mobile and Web.</p>
@@ -70,7 +70,7 @@ const Banner = () => {
                         <div className={styles.bannerSliderBox}>
                            <Container>
                                <Row>
-                                   <Col lg={6}>
+                                   <Col lg={6} md={8}>
                                         <div className={styles.bannerTitle}>
                                             <h3>We Ensure Your Growth And Success</h3>
                                             <p>We are a leading software development company providing industry-specific solutions.</p>
@@ -88,7 +88,7 @@ const Banner = () => {
                 <section className={styles.homeService}>
                 <Container>
                     <Row className="justify-content-center">
-                        <Col lg={4}>
+                        <Col lg={4} md={6}>
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg1}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceFirst}`}>01</div>
                                 <div className={styles.contentBox}>
@@ -97,7 +97,7 @@ const Banner = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={4}>
+                        <Col lg={4} md={6}>
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg2}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceSecond}`}>02</div>
                                 <div className={styles.contentBox}>
@@ -106,7 +106,7 @@ const Banner = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={4}>
+                        <Col lg={4} md={6}>
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg3}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceThird}`}>03</div>
                                 <div className={styles.contentBox}>

@@ -17,7 +17,7 @@ const WorkFlow = () => {
                 <Title value="Flow" span="our" subTitle="Work Flow" />
               </div>
             </Col>
-            <Col lg={3} md={6}>
+            <Col lg={3} md={6} xs={6}>
               <Card className={styles.workCard}>
                 <Card.Body>
                   <Image src={Planning} className="img-fluid" alt="planning" />
@@ -25,7 +25,7 @@ const WorkFlow = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col lg={3} md={6}>
+            <Col lg={3} md={6} xs={6}>
               <Card className={styles.workCard}>
                 <Card.Body>
                   <Image src={Research} className="img-fluid" alt="research" />
@@ -33,7 +33,7 @@ const WorkFlow = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col lg={3} md={6}>
+            <Col lg={3} md={6} xs={6}>
               <Card className={styles.workCard}>
                 <Card.Body>
                   <Image src={Design} className="img-fluid" alt="design" />
@@ -41,7 +41,7 @@ const WorkFlow = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col lg={3} md={6}>
+            <Col lg={3} md={6} xs={6}>
               <Card className={styles.workCard}>
                 <Card.Body>
                   <Image src={Start} className="img-fluid" alt="start" />

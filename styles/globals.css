@@ -63,6 +63,7 @@ a {
   border: none !important;
   border-radius: 30px !important;
   padding: 15px 30px !important;
+  text-transform: capitalize;
 }
 .themeButton:focus,
 .themeButton:active,

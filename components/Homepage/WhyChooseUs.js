@@ -9,17 +9,25 @@ import {
 import VisibilitySensor from "react-visibility-sensor";
 import CountUp from "react-countup";
 import { useState } from "react";
+import { skillsProgress } from "../Utils/ourSkillsProgress";
 
 const WhyChooseUs = () => {
   const [percentage, setPercentage] = useState(0);
-  const skillsCounts = [1, 2, 3, 4, 5, 6];
-  const handleChange = (isVisible) => {
-    if (isVisible) {
-      setPercentage(66);
+  const [visble, setVisible] = useState(false)
+  const handleValue = (value) => {
+    if (visble) {
+     return value ;
     } else {
-      setPercentage(0);
+      return 0
     }
   };
+
+  const handleChange=(isVisible)=>{
+    if(isVisible && !visble ){
+      setVisible(isVisible)
+    }
+    
+  }
   return (
     <>
       <div className={styles.whyUsContainer}>
@@ -39,28 +47,33 @@ const WhyChooseUs = () => {
               </div>
             </Col>
             <div className="clearfix"></div>
-            {skillsCounts.map((value, index) => {
+            {skillsProgress.map((value, index) => {
               return (
-                <Col lg={2} md={4} key={index}>
+                <Col lg={2} md={4} sm={6} key={value.id}>
                   <div className={styles.progressBarContainer}>
                     <VisibilitySensor
                       delayedCall={true}
+                      offset={{top:200,bottom:200}}
                       onChange={(isVisible) => handleChange(isVisible)}
                     >
                       <>
                         <CircularProgressbarWithChildren
-                          value={percentage}
-                          text={`${percentage}%`}
-                          styles={buildStyles({
-                            textSize: '14px',
-                            fontWeight: 800,
-                            trailColor: "#fff",
-                            fill: "linear-gradient(90deg, rgba(240,35,52,1) 0%, rgba(255,59,75,1) 100%)",
+                          value={handleValue(value.progress)}
+                          text={`${value.progress}%`}
+                          styles={{
+                            text: {
+                              fill: 'var(--primary)',
+                              fontSize: '16px',
+                              fontWeight: 700
+                            },
+                            trail: {
+                              stroke: '#fff',
+                            },
                             pathTransition:
                               percentage === 0
                                 ? "none"
                                 : "stroke-dashoffset 2s ease 0s",
-                          })}
+                          }}
                         >
                           <div style={{ width: "60%" }}>
                             <CircularProgressbar
@@ -68,18 +81,23 @@ const WhyChooseUs = () => {
                               strokeWidth={15}
                               styles={buildStyles({
                                 pathColor: "#F0F6FF",
+
                               })}
                             />
                           </div>
                         </CircularProgressbarWithChildren>
                       </>
                     </VisibilitySensor>
+                    <div className={styles.skillsHeading}>
+                      {value.skills}
+                    </div>
                   </div>
                 </Col>
               );
             })}
-
+           
             {/* Achievement Section Start */}
+            <Col lg={12}>
             <div className={styles.achievementSection}>
               <div className={styles.achievementcontainer}>
                 <CountUp end={60} redraw={true}>
@@ -132,6 +150,7 @@ const WhyChooseUs = () => {
                 </CountUp>
               </div>
             </div>
+            </Col>
             {/* Achievement Section End */}
           </Row>
         </Container>
