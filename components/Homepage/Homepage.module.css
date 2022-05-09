@@ -203,7 +203,10 @@
 .weDoSliderImage {
   border-radius: 15px;
 }
-
+.weDoSliderImage img {
+  max-height: 300px !important;
+  border-radius: 20px;
+}
 .weDoSliderImage span {
   width: 100% !important;
 }
@@ -292,6 +295,10 @@
 }
 
 .whatweDoSliderControl [class~="slick-arrow"] {
+  display: none !important;
+}
+
+.whatweDoSlider [class~=slick-slider] [class~="slick-arrow"] {
   display: none !important;
 }
 
@@ -520,7 +527,9 @@
 .awardsSection {
   padding-bottom: 100px;
 }
-
+.awardsSlider [class~=slick-slider] [class~=slick-arrow]{
+  display: none !important;
+}
 .awardsSliderBox {
   text-align: center;
 }

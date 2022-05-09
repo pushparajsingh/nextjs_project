@@ -17,6 +17,9 @@ const ClientTestimonial = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     bool: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    bool: true,
   };
   const gotoNext = () => {
     customeSlider.current.slickNext();

@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
             <div className="clearfix"></div>
             {skillsProgress.map((value, index) => {
               return (
-                <Col lg={2} md={4} sm={6} key={value.id}>
+                <Col lg={2} md={4} sm={6} xs={6} key={value.id}>
                   <div className={styles.progressBarContainer}>
                     <VisibilitySensor
                       delayedCall={true}
