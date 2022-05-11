@@ -17,6 +17,8 @@ const Achievements = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     bool: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
     responsive: [
       {
         breakpoint: 991,
