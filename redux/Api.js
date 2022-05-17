@@ -1,5 +1,7 @@
 import axios from "axios";
-const baseURL = "https://yuvasoftapi1.herokuapp.com";
+//const baseURL = "https://yuvasoftapi1.herokuapp.com";
+
+ const baseURL="https://yuvasoftapi3.herokuapp.com"
 const Api = axios.create({
   baseURL: `${baseURL}/api/v1/`,
   headers: {
