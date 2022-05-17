@@ -1,26 +1,62 @@
 import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col, Image } from "react-bootstrap";
+import { Table, Container, Row, Col, Image, Pagination } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { TableListNotFound } from "../Utility/NoRecordFound";
 import { useRouter } from "next/router";
-import { teamList } from "../../../redux/Team/Team.action";
+import { teamList, teamPage } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
 import { dateTimeFormat } from "../../../constants";
+import DesignationsList from "../Designation/DesignationsList";
+import { RiUser3Fill } from "react-icons/ri";
+import { designationsList } from "../../../redux/Designations/Designations.action";
+import ReactPaginate from "react-paginate"
+import { siblingDirection } from "react-slick/lib/utils/innerSliderUtils";
 
 const TeamList = () => {
   const dispatch = useDispatch();
-  const params = useRouter();
 
-  const { list, listLoading } = useSelector((state) => ({
+  const [modalShow, setModalShow] = useState(false);
+  const params = useRouter();
+  //const [pageCount, setPageCount] = useState();
+
+  
+  const { list, listLoading,page, pageLoading} = useSelector((state) => ({
     list: state?.team?.list,
     listLoading: state?.team?.listLoading,
-  }));
+    page: state?.team?.page,
+    pageLoading:  state?.team?.pageLoading,
+}));
+ 
+ 
+  const handleModal = () => {
+    setModalShow(true);
+    dispatch(designationsList());
+  };
 
   useEffect(() => {
+   
     dispatch(teamList());
   }, []);
+  // useEffect(()=>{
+  //   var items=list?.pagination?.total_pages
+  //   setPageCount(Math.ceil(items))
 
+  // },[list])
+  
+  const handlePageClick = (event) => {
+  // console.log("hh",list)
+  // const page_no=list.pagination.total_entries
+// var links = Math.ceil(dataListings.length / pagesize); 
+// for(var i = 0; i < links; i++){
+//     var pagnm = i+1;
+// }
+  const data=event.selected+1
+  console.log("HH",event.selected+1)
+  dispatch(teamPage(data))
+  
+		
+	};
   return (
     <Container fluid>
       <Row className="mb-4">
@@ -29,7 +65,7 @@ const TeamList = () => {
             <FaUsers />
             <div className="content">
               <h2>Team</h2>
-              <p>Manage your Team</p>
+              <p>Manage Your Team</p>
             </div>
           </div>
         </Col>
@@ -42,19 +78,28 @@ const TeamList = () => {
             <FaPlus />
           </Button>
         </Col>
+        <Col md={6}>
+          <Button variant="primary" onClick={() => handleModal()}>
+            Designations
+            <RiUser3Fill />
+          </Button>
+        </Col>
       </Row>
+      <DesignationsList show={modalShow} onHide={() => setModalShow(false)} />
+
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Last_Name</th>
             <th>Designation</th>
             <th>Email</th>
             <th>Create At</th>
           </tr>
         </thead>
         <tbody>
-          {list?.data?.map((team, index) => {
+          {page?.map((team, index) => {
             return (
               <tr
                 key={index}
@@ -71,17 +116,38 @@ const TeamList = () => {
                   />
                   <span className="ms-2">{team?.first_name}</span>
                 </td>
-                <td>{team?.designation ? team?.designation : "-"}</td>
+                <td>{team?.last_name}</td>
+                <td>{team?.designation ? team?.description : "-"}</td>
                 <td>{team?.email ? team?.email : "-"}</td>
                 <td>{dateTimeFormat(team?.created_at)}</td>
               </tr>
             );
           })}
-          {!list?.data?.length && (
-            <TableListNotFound colSpan={5} loading={listLoading} />
+          {!page?.length && (
+            <TableListNotFound colSpan={5} loading={pageLoading} />
           )}
         </tbody>
       </Table>
+      <ReactPaginate
+        breakLabel={"..."}
+        nextLabel={"Next"}
+        previousLabel={"previous"}
+        pageRangeDisplayed={5}
+        pageCount={10}
+        containerClassName={"pagination justify-content-center"}
+        pageLinkClassName={'page-link'}
+        pageClassName={'page-item'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        breakClassName={'page-item'}
+        breakLinkClassName={'page-link'}
+        onPageChange={handlePageClick}
+        activeClassName={'active'}
+        
+        
+      />
     </Container>
   );
 };

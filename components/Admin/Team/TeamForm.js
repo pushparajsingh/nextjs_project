@@ -23,6 +23,7 @@ const TeamForm = () => {
   const params = useRouter();
   const { id } = params.query;
   const dispatch = useDispatch();
+  
   const [openModal, setOpenModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const { Toast } = useNotification();
@@ -60,8 +61,10 @@ const TeamForm = () => {
   useEffect(() => {
     if (id) dispatch(teamDetails(id));
   }, []);
+       
 
   useEffect(() => {
+
     if (details) {
       setValue("first_name", details?.first_name);
       setValue("last_name", details?.last_name);
@@ -70,7 +73,7 @@ const TeamForm = () => {
       setValue("id", details?.id);
       dispatch(teamReset());
     }
-
+      
     if (deleteTeam || create) {
       let message = "Team Added successfully.";
       if (deleteTeam) message = "Team deleted successfully.";
@@ -79,10 +82,11 @@ const TeamForm = () => {
       dispatch(teamReset());
       params.push("/admin/team");
     }
-
+     
     if (update) {
       Toast.success("Team updated successfully.");
       dispatch(teamReset());
+      params.push("/admin/team");
     }
   }, [create, update, details, deleteTeam]);
 
@@ -90,7 +94,7 @@ const TeamForm = () => {
 
   const onSubmit = (data) => {
     if (id) {
-      dispatch(teamUpdate(data));
+      dispatch(teamUpdate(id));
     } else {
       dispatch(teamCreate(data));
     }
@@ -186,11 +190,11 @@ const TeamForm = () => {
         <FormSelect
           name="designation"
           label="Designation"
-          aria-label="Select one"
+           aria-label="Select one"
           errors={errors}
           disabled={isEdit}
           {...register("designation", {
-            required: true,
+            // required: true,
           })}
           options={[
             { text: "select one", value: "" },
