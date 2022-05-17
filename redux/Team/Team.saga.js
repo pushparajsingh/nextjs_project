@@ -37,7 +37,7 @@ function* teamCreate({ payload }) {
 
 function* teamUpdate({ payload }) {
   try {
-    const res = yield call(Api.post, apiRoutes.team, payload);
+    const res = yield call(Api.put, `${apiRoutes.team}/${payload}`);
     yield put(teamSuccess({ type: actionTypes.TEAM_UPDATE, data: res?.data }));
   } catch (error) {
     yield put(teamError({ type: actionTypes.TEAM_UPDATE, data: res }));
@@ -53,10 +53,23 @@ function* teamDelete({ payload }) {
   }
 }
 
+
+function* teamPage({payload}){
+    try{
+      const res=yield call (Api.get,`${apiRoutes.team}/${payload}`);
+      yield put (
+        teamSuccess({type:actionTypes.TEAM_PAGE,data:res?.data?.data})
+      )} catch (error) {
+        yield put(teamError({ type: actionTypes.TEAM_PAGE, data: res }));
+     }
+     
+   
+   }
 export default function* teamSagas() {
   yield takeLatest(actionTypes.TEAM_LIST, teamList);
   yield takeLatest(actionTypes.TEAM_DETAILS, teamDetails);
   yield takeLatest(actionTypes.TEAM_CREATE, teamCreate);
   yield takeLatest(actionTypes.TEAM_UPDATE, teamUpdate);
   yield takeLatest(actionTypes.TEAM_DELETE, teamDelete);
+  yield takeLatest(actionTypes.TEAM_PAGE,teamPage)
 }

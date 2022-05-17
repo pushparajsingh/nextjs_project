@@ -15,6 +15,7 @@ export const teamError = (payload) => {
 };
 
 export const teamList = (payload) => {
+
   return {
     type: actionTypes.TEAM_LIST,
     payload,
@@ -49,6 +50,13 @@ export const teamDelete = (payload) => {
   };
 };
 
+
+export const teamPage=(payload)=>{
+   return{
+    type:actionTypes.TEAM_PAGE,
+      payload,
+    }
+   }
 export const teamReset = (payload) => {
   return {
     type: actionTypes.TEAM_RESET,

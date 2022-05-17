@@ -63,7 +63,7 @@ const TeamForm = () => {
 
   useEffect(() => {
     if (details) {
-      setValue("first_name", details?.first_name);
+      setValue("name", details?.name);
       setValue("last_name", details?.last_name);
       setValue("email", details?.email);
       setValue("contact", details?.contact);
@@ -83,6 +83,8 @@ const TeamForm = () => {
     if (update) {
       Toast.success("Team updated successfully.");
       dispatch(teamReset());
+      params.push("/admin/team");
+
     }
   }, [create, update, details, deleteTeam]);
 
@@ -90,7 +92,7 @@ const TeamForm = () => {
 
   const onSubmit = (data) => {
     if (id) {
-      dispatch(teamUpdate(data));
+      dispatch(teamUpdate(id));
     } else {
       dispatch(teamCreate(data));
     }
@@ -109,7 +111,7 @@ const TeamForm = () => {
       <Row className="mb-4">
         <Col md={12}>
           <div className="list-header">
-            <FaUsers />
+            <FaUsers/>
             <div className="content">
               <h2>{id ? "Update" : "Create"} Team</h2>
               <p>Manage your team</p>
@@ -182,7 +184,7 @@ const TeamForm = () => {
             />
           </Col>
         </Row>
-        {console.log(1111, errors)}
+        * {console.log(1111, errors)}
         <FormSelect
           name="designation"
           label="Designation"
@@ -190,7 +192,7 @@ const TeamForm = () => {
           errors={errors}
           disabled={isEdit}
           {...register("designation", {
-            required: true,
+            // required: true,
           })}
           options={[
             { text: "select one", value: "" },

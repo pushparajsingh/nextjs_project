@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaHome, FaUsers, FaNetworkWired } from "react-icons/fa";
+import { MdReviews } from 'react-icons/md'
 import styles from "./Admin.module.scss";
 import { useRouter } from "next/router";
 
@@ -22,6 +23,14 @@ const Sidebar = () => {
             <a>
               <FaUsers />
               Team
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin/client">
+            <a>
+              <MdReviews/>
+              Clientstetimonials
             </a>
           </Link>
         </li>

@@ -50,6 +50,9 @@ const ProtectedRoutes = ({ children }) => {
     appRoutes.TEAM_LIST,
     appRoutes.TEAM_CREATE,
     appRoutes.TEAM_UPDATE,
+    appRoutes.CLIENT_LIST,
+    appRoutes.CLIENT_CREATE,
+    appRoutes.CLIENT_UPDATE,
   ];
 
   /**

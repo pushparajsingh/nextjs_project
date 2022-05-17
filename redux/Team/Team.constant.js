@@ -7,4 +7,5 @@ export const actionTypes = {
   TEAM_CREATE: "TEAM_CREATE",
   TEAM_UPDATE: "TEAM_UPDATE",
   TEAM_DELETE: "TEAM_DELETE",
+  TEAM_PAGE: "TEAM_PAGE"
 };

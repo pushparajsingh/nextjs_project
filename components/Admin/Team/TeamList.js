@@ -7,10 +7,13 @@ import { useRouter } from "next/router";
 import { teamList } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
 import { dateTimeFormat } from "../../../constants";
+import ReactPaginate from 'react-paginate'
 
 const TeamList = () => {
   const dispatch = useDispatch();
   const params = useRouter();
+  //const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  //const [page,setPage] = useState()
 
   const { list, listLoading } = useSelector((state) => ({
     list: state?.team?.list,
@@ -21,12 +24,18 @@ const TeamList = () => {
     dispatch(teamList());
   }, []);
 
+  const onpageClick=()=>{
+  //  let count=page+1
+    // setPage(count)
+  }
+ 
+
   return (
     <Container fluid>
       <Row className="mb-4">
         <Col md={6}>
           <div className="list-header">
-            <FaUsers />
+            <FaUsers/>
             <div className="content">
               <h2>Team</h2>
               <p>Manage your Team</p>
@@ -36,10 +45,9 @@ const TeamList = () => {
         <Col md={6} className="text-right">
           <Button
             variant="primary"
-            onClick={() => params.push("/admin/team/create")}
-          >
+            onClick={() => params.push("/admin/team/create")}>
             Create
-            <FaPlus />
+            <FaPlus/>
           </Button>
         </Col>
       </Row>
@@ -56,10 +64,8 @@ const TeamList = () => {
         <tbody>
           {list?.data?.map((team, index) => {
             return (
-              <tr
-                key={index}
-                onClick={() => params.push(`/admin/team/${team.id}`)}
-              >
+              <tr key={index}
+                onClick={() => params.push(`/admin/team/${team.id}`)}>
                 <td>{index + 1}</td>
                 <td>
                   <Image
@@ -78,10 +84,29 @@ const TeamList = () => {
             );
           })}
           {!list?.data?.length && (
-            <TableListNotFound colSpan={5} loading={listLoading} />
+            <TableListNotFound colSpan={5} loading={listLoading}/>
           )}
         </tbody>
       </Table>
+      <ReactPaginate
+        breakLabel={"..."}
+        nextLabel={"Next"}
+        previousLabel={"previous"}
+        pageRangeDisplayed={5}
+        pageCount={10}
+        marginPagesDisplayed={2}
+        containerClassName={"pagination justify-content-center"}
+        pageLinkClassName={'page-link'}
+        pageClassName={'page-item'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        breakClassName={'page-item'}
+        breakLinkClassName={'page-link'}
+        onPageChange={onpageClick()}
+        activeClassName={'active'}
+      />
     </Container>
   );
 };
