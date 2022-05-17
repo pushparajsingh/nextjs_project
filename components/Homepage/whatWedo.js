@@ -14,9 +14,11 @@ const WhatWeDo = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     adaptiveHeight: true,
     centerPadding: "200px",
+    // autoplay: true,
+    autoplaySpeed: 1500,
     bool: true,
     responsive: [
       {
@@ -75,14 +77,13 @@ const WhatWeDo = () => {
                       <div className={styles.weDoSliderBox}>
                         <div className={styles.weDoSliderImage}>
                           {/* <Image src={item.thumb} alt="WebDesigning" /> */}
-                          <Image src={WebDesigning} alt="WebDesigning" />
+                          <Image src={item.thumb} alt="WebDesigning" />
                         </div>
                         <div className={styles.weDoInfoBox}>
                           <div className={styles.weDoInfoInfoInner}>
-                            <h5>Web Design</h5>
+                            <h5>{item.category}</h5>
                             <p className={styles.portfolioCates}>
-                              The web is the most popular and far-reaching
-                              application...
+                            {item.title}
                             </p>
                           </div>
                         </div>

@@ -21,6 +21,22 @@ const About = () => {
     slidesToShow: 3,
     slidesToScroll: 2,
     bool: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
   const gotoNext = () => {
     customeSlider.current.slickNext();

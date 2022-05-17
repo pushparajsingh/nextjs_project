@@ -93,6 +93,11 @@
   border: none;
 }
 
+.serviceAction:active:focus {
+  box-shadow: none;
+  border: none;
+}
+
 .aboutUsSec {
   /* background-image: url(../../assets/images/whyYuvasoftImg.png);
   background-repeat: no-repeat; */
@@ -151,6 +156,10 @@
   box-shadow: none;
 }
 
+.accordionCard [class~="accordion-body"] {
+  padding: 0 20px 15px;
+}
+
 .workflowWrapper {
   padding: 100px 0;
 }
@@ -203,10 +212,12 @@
 .weDoSliderImage {
   border-radius: 15px;
 }
+
 .weDoSliderImage img {
   max-height: 300px !important;
   border-radius: 20px;
 }
+
 .weDoSliderImage span {
   width: 100% !important;
 }
@@ -285,6 +296,10 @@
   border: none;
 }
 
+.whatweDoSliderControl button:focus,
+.whatweDoSliderControl button:active:focus {
+  box-shadow: none;
+}
 
 .whatweDoSliderControl button:nth-child(1) {
   background-color: var(--light-black);
@@ -527,9 +542,11 @@
 .awardsSection {
   padding-bottom: 100px;
 }
-.awardsSlider [class~=slick-slider] [class~=slick-arrow]{
+
+.awardsSlider [class~=slick-slider] [class~=slick-arrow] {
   display: none !important;
 }
+
 .awardsSliderBox {
   text-align: center;
 }
@@ -693,12 +710,42 @@
 .mainBanner [class~="slick-arrow"] {
   display: none !important;
 }
-.clientTestimonialHeader{
+
+.clientTestimonialHeader {
   display: flex;
   flex-direction: column;
 }
+
 /* Bannner css End */
 @media only screen and (max-width:1440px) {
+  .servicesContainerBg {
+    padding: 50px 0;
+  }
+
+  .aboutUsSec {
+    padding: 50px 0;
+  }
+
+  .workflowWrapper {
+    padding: 50px 0;
+  }
+
+  .whatWeDoWrapper {
+    padding: 50px 0 70px;
+  }
+
+  .testimonialWrapper {
+    padding: 50px 0;
+  }
+
+  .whyUsContainer {
+    padding: 50px 0;
+  }
+
+  .awardsSection {
+    padding: 50px 0;
+  }
+
   .serviceBoxSmall .numberBox {
     width: 35px;
     height: 35px;
@@ -721,32 +768,84 @@
   .serviceBoxSmall {
     overflow: auto;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .serviceBoxbg3{
+    margin-bottom: 0;
+  }
+
+  .weDoSliderImage img {
+    max-height: 250px !important;
   }
 }
 
+@media only screen and (max-width:1200px) {
+  .serviceBoxSmall {
+    padding: 15px;
+  }
+
+  .clientTestimonialSlider [class~="slick-dots"] {
+    bottom: -50px;
+  }
+
+  .weDoSliderImage img {
+    max-height: 204px !important;
+  }
+  .aboutUsSec{
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  /* .aboutUsSec img{
+    max-width: 600px;
+  } */
+}
+
 @media only screen and (max-width: 991px) {
-  .serviceCard{
+  .serviceCard {
     padding: 20px;
   }
+
   .workflowWrapper {
     background-image: none;
   }
-  .clientTestimonialHeader{
+
+  .clientTestimonialHeader {
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .serviceCard{
+  .serviceCard {
     min-height: auto;
   }
-  .whatweDoSliderControl{
+
+  .whatweDoSliderControl {
     margin: 20px 0;
   }
-  .achievementcontainer{
+
+  .achievementcontainer {
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  .weDoSliderImage img {
+    max-height: auto !important;
+  }
+  .whatweDoSlider [class~="slick-list"]{
+    height: 100% !important;
+  }
+  .weDoSliderImage img {
+    max-height: 300px !important;
+  }
+  .clientTestimonialSliderControl button{
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+  }
+  .serviceCard{
+    height: calc(100% - 40px);
   }
 }

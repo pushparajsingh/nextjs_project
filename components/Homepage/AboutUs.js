@@ -6,7 +6,7 @@ import whyYuvasoft from "../../assets/images/homepage/why-choose-graphic.svg"
 const AboutUs = () => {
 	return (
 		<>
-			<div className={styles.aboutUsSec}>
+			<div className={`themeSectionPadding ${styles.aboutUsSec}`}>
 				<Container>
 					<Row className="justify-content-between align-items-center">
 						<Col 

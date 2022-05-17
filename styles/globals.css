@@ -70,6 +70,9 @@ a {
 .themeButton:hover{
   box-shadow: none !important;
 }
+.themeSectionPadding{
+  padding: 100px 0;
+}
 .theme-padding {
   padding: 120px 0px;
 }
@@ -136,4 +139,11 @@ a {
   text-align: right;
   box-shadow: 0px 0px 0px 1px #f0f0f0;
   width: calc(100% - 220px);
+}
+
+@media only screen and (max-width: 1200px){
+  .themeTitle h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 }

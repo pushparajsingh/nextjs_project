@@ -84,7 +84,7 @@ const Banner = () => {
                            </Container>
                         </div>
                     </div>
-                </Slider>.
+                </Slider>
                 <section className={styles.homeService}>
                 <Container>
                     <Row className="justify-content-center">
@@ -92,8 +92,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg1}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceFirst}`}>01</div>
                                 <div className={styles.contentBox}>
-                                    <h5>Providing All The Expertise That You Need</h5>
-                                    <p>You can rely on our team of designers and developers to produce the product you are looking for across a range of platforms and devices.</p>
+                                    <h5>Providing The Expertise</h5>
+                                    <p>You can rely on our team to produce the product you are looking for across a range of platforms and devices.</p>
                                 </div>
                             </div>
                         </Col>
@@ -101,8 +101,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg2}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceSecond}`}>02</div>
                                 <div className={styles.contentBox}>
-                                    <h5>Trust Our Team Of Professionals</h5>
-                                    <p>We keeps its words and will complete your project according to your specifications. We can help if you feel trapped by your current developer.</p>
+                                    <h5>Trust Our Professionals</h5>
+                                    <p>We will complete your project according to your specifications. We can help if you feel trapped by your current developer.</p>
                                 </div>
                             </div>
                         </Col>
@@ -110,8 +110,8 @@ const Banner = () => {
                             <div className={`${styles.serviceBoxSmall} ${styles.serviceBoxbg3}`}>
                                 <div className={`${styles.numberBox} ${styles.serviceThird}`}>03</div>
                                 <div className={styles.contentBox}>
-                                    <h5>Providing All The Services That You Need</h5>
-                                    <p>Our words are our actions. Our team will work with you to define your scope of work and ensure it is fulfilled, making changes according to your approval.</p>
+                                    <h5>Providing all Services</h5>
+                                    <p>Our team will work with you to define scope of work and ensure it is fulfilled, make changes according to requirement.</p>
                                 </div>
                             </div>
                         </Col>
