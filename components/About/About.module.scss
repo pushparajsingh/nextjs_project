@@ -39,6 +39,12 @@
             display: flex;
             align-items: center;
 
+            @media screen and (max-width: 767px) {
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
             .btnInner {
                 .btnPlay {
                     background-color: var(--primary);
@@ -56,7 +62,7 @@
                         top: 0;
                         left: 0;
                         width: 100%;
-                        height: 100%;
+                        height: 100%; 
                         // border: 1px solid rgba(255, 255, 255, 0.8);
                         border: 1px solid var(--primary);
                         z-index: -1;
@@ -95,7 +101,6 @@
                             }
                         }
                     }
-
                 }
             }
 
@@ -123,6 +128,11 @@
             display: flex;
             justify-content: space-around;
 
+            @media screen and (max-width: 767px) {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
             .achieventContent {
                 color: var(--white);
 
@@ -131,12 +141,15 @@
                 }
             }
         }
-
     }
 
     .whatweDoSliderControl {
         display: flex;
         justify-content: flex-end;
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+        }
 
         button {
             border-radius: 50%;
@@ -156,62 +169,69 @@
             &:nth-child(2) {
                 background-color: var(--primary);
             }
-            &:hover{
+
+            &:hover {
                 box-shadow: none;
                 border: none;
             }
-            &:active{
+
+            &:active {
                 box-shadow: none;
                 border: none;
             }
-            &:focus{
+
+            &:focus {
                 box-shadow: none;
                 border: none;
             }
-            &:active:focus{
+
+            &:active:focus {
                 box-shadow: none;
                 border: none;
             }
         }
 
-        // [class~="slick-arrow"] {
-        //     display: none !important;
-        // }
-          
-
+        // [class~="slick-arrow"] {        //     display: none !important;        // }          
     }
-    .whatweDoSlider{
+
+    .whatweDoSlider {
         margin-bottom: 20px;
-        button{
-            &:hover{
+
+        button {
+            &:hover {
                 box-shadow: none;
                 border: none;
             }
-            &:active{
+
+            &:active {
                 box-shadow: none;
                 border: none;
             }
-            &:focus{
+
+            &:focus {
                 box-shadow: none;
                 border: none;
             }
-            &:active:focus{
+
+            &:active:focus {
                 box-shadow: none;
                 border: none;
             }
         }
+
         [class~="slick-dots"] {
             margin-bottom: 25px;
             bottom: -60px;
 
             li {
-                &[class~="slick-active"]{
+                &[class~="slick-active"] {
                     button {
-                        &::before{
-                            color: var(--primary); 
+                        &::before {
+                            color: var(--primary);
                         }
-                    } 
+                    }
                 }
+
                 button {
                     &::before {
                         font-size: 18px;
@@ -220,5 +240,6 @@
                     }
                 }
             }
-        }}
+        }
+    }
 }

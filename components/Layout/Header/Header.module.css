@@ -88,6 +88,12 @@
 }
 
 /* Responsive CSS */
+@media only screen and (max-width: 1200px){
+  .logo img {
+    max-width: 220px !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .topHeader {
     display: none;
