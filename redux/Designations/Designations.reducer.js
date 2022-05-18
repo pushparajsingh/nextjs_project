@@ -8,7 +8,7 @@ const designations = (state = initialState, action) => {
     case actionTypes.DESIGNATIONS_DETAILS:
       return { ...state, detailsLoading: true };
     case actionTypes.DESIGNATIONS_PAGE:
-      return{...state,pageLoading:true}
+      return { ...state, pageLoading: true };
     case actionTypes.DESIGNATIONS_CREATE:
       return { ...state, createLoading: true };
     case actionTypes.DESIGNATIONS_UPDATE:
@@ -25,15 +25,13 @@ const designations = (state = initialState, action) => {
             ...state,
             detailsLoading: false,
             details: action?.payload?.data,
-            //id:action?.payload?.data?.id
           };
         case actionTypes.DESIGNATIONS_PAGE:
-         
-          return{
+          return {
             ...state,
-            pageLoading:false,
-            page:action.payload?.data,
-          }
+            pageLoading: false,
+            page: action.payload?.data,
+          };
         case actionTypes.DESIGNATIONS_CREATE:
           return {
             ...state,
@@ -66,11 +64,11 @@ const designations = (state = initialState, action) => {
             error: action?.payload?.data,
           };
         case actionTypes.DESIGNATIONS_PAGE:
-          return{
+          return {
             ...state,
-            pageLoading:false,
-            error:action?.payload?.data
-          }
+            pageLoading: false,
+            error: action?.payload?.data,
+          };
         case actionTypes.DESIGNATIONS_CREATE:
           return {
             ...state,

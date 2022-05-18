@@ -8,55 +8,46 @@ import { teamList, teamPage } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
 import { dateTimeFormat } from "../../../constants";
 import DesignationsList from "../Designation/DesignationsList";
-import { RiUser3Fill } from "react-icons/ri";
+import { RiArrowDownSLine } from "react-icons/ri";
 import { designationsList } from "../../../redux/Designations/Designations.action";
-import ReactPaginate from "react-paginate"
-import { siblingDirection } from "react-slick/lib/utils/innerSliderUtils";
-
+import ReactPaginate from "react-paginate";
+//import { normalizeRepeatedSlashes } from "next/dist/shared/lib/utils";
 const TeamList = () => {
   const dispatch = useDispatch();
-
   const [modalShow, setModalShow] = useState(false);
+  const [pages, setpages] = useState(0);
+  const [pageno, setpageno] = useState(1);
   const params = useRouter();
-  //const [pageCount, setPageCount] = useState();
-
-  
-  const { list, listLoading,page, pageLoading} = useSelector((state) => ({
+  const { list, listLoading, page, pageLoading } = useSelector((state) => ({
     list: state?.team?.list,
     listLoading: state?.team?.listLoading,
     page: state?.team?.page,
-    pageLoading:  state?.team?.pageLoading,
-}));
- 
- 
+    pageLoading: state?.team?.pageLoading,
+  }));
   const handleModal = () => {
     setModalShow(true);
     dispatch(designationsList());
   };
 
   useEffect(() => {
-   
     dispatch(teamList());
+    // if(list){
+    dispatch(teamPage(pageno));
+    // }
   }, []);
-  // useEffect(()=>{
-  //   var items=list?.pagination?.total_pages
-  //   setPageCount(Math.ceil(items))
+  useEffect(() => {
+    console.log("list", list);
+    var items = list?.pagination?.total_entries;
+  
+    var data = (items / 5);
+    setpages(data);
+  }, [list]);
 
-  // },[list])
-  
   const handlePageClick = (event) => {
-  // console.log("hh",list)
-  // const page_no=list.pagination.total_entries
-// var links = Math.ceil(dataListings.length / pagesize); 
-// for(var i = 0; i < links; i++){
-//     var pagnm = i+1;
-// }
-  const data=event.selected+1
-  console.log("HH",event.selected+1)
-  dispatch(teamPage(data))
-  
-		
-	};
+    const data = event.selected + 1;
+    setpageno(data);
+    dispatch(teamPage(data));
+  };
   return (
     <Container fluid>
       <Row className="mb-4">
@@ -81,7 +72,7 @@ const TeamList = () => {
         <Col md={6}>
           <Button variant="primary" onClick={() => handleModal()}>
             Designations
-            <RiUser3Fill />
+            <RiArrowDownSLine />
           </Button>
         </Col>
       </Row>
@@ -130,23 +121,22 @@ const TeamList = () => {
       </Table>
       <ReactPaginate
         breakLabel={"..."}
-        nextLabel={"Next"}
-        previousLabel={"previous"}
-        pageRangeDisplayed={5}
-        pageCount={10}
+        nextLabel={">>"}
+        previousLabel={"<<"}
+        pageRangeDisplayed={2}
+        pageCount={pages}
+        marginPagesDisplayed={2}
         containerClassName={"pagination justify-content-center"}
-        pageLinkClassName={'page-link'}
-        pageClassName={'page-item'}
-        previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
-        nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
-        breakClassName={'page-item'}
-        breakLinkClassName={'page-link'}
+        pageLinkClassName={"page-link"}
+        pageClassName={"page-item"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
         onPageChange={handlePageClick}
-        activeClassName={'active'}
-        
-        
+        activeClassName={"active"}
       />
     </Container>
   );

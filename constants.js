@@ -32,6 +32,11 @@ export const appRoutes = {
   TEAM_LIST: "/admin/team",
   TEAM_CREATE: "/admin/team/create",
   TEAM_UPDATE: "/admin/team/[id]",
+  CLIENT_LIST: "/admin/client",
+  CLIENT_CREATE: "/admin/client/create",
+  CLIENT_UPDATE: "/admin/client/[id]",
+
+
 };
 
 export const metaTags = {

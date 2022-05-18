@@ -1,86 +1,82 @@
-import { actionTypes } from "./Team.constant";
+import { actionTypes} from "./Client.constant"
 
 const initialState = {};
-const team = (state = initialState, action) => {
+const client = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.TEAM_LIST:
+    case actionTypes.CLIENT_LIST:
       return { ...state, listLoading: true };
-    case actionTypes.TEAM_DETAILS:
+    case actionTypes.CLIENT_DETAILS:
       return { ...state, detailsLoading: true };
-    case actionTypes.TEAM_CREATE:
+    case actionTypes.CLIENT_CREATE:
       return { ...state, createLoading: true };
-    case actionTypes.TEAM_UPDATE:
+    case actionTypes.CLIENT_UPDATE:
       return { ...state, updateLoading: true };
-    case actionTypes.TEAM_DELETE:
+    case actionTypes.CLIENT_DELETE:
       return { ...state, deleteLoading: true };
-      case actionTypes.TEAM_PAGE:
-        return{ ...state,pageLoading: true};
-        
+      case actionTypes .CLIENT_PAGE:
+        return{...state,pageLoading: true};
+
     case actionTypes.SUCCESS:
       switch (action.payload.type) {
-        case actionTypes.TEAM_LIST:
+        case actionTypes.CLIENT_LIST:
           return { ...state, list: action?.payload?.data, listLoading: false };
-        case actionTypes.TEAM_DETAILS:
+        case actionTypes.CLIENT_DETAILS:
           return {
             ...state,
             detailsLoading: false,
             details: action?.payload?.data,
           };
-          case actionTypes.TEAM_PAGE:
-            console.log("34343",action.payload)
-         
-            return{...state,page: action?.payload?.data,pageLoading: false};
-        case actionTypes.TEAM_CREATE:
-          return {
+        case actionTypes.CLIENT_CREATE:
+        return {
             ...state,
             createLoading: false,
             create: action?.payload?.data,
           };
-        case actionTypes.TEAM_UPDATE:
+        case actionTypes.CLIENT_UPDATE: 
           return {
             ...state,
             updateLoading: false,
             update: action?.payload?.data,
           };
-        case actionTypes.TEAM_DELETE:
+        case actionTypes.CLIENT_DELETE:
           return {
             ...state,
             deleteLoading: false,
             delete: action?.payload?.data,
           };
+          case actionTypes.CLIENT_PAGE:
+            return{
+              ...state,
+              pageLoading: false,
+              page: action?.payload?.data
+
+            }  
         default:
           return state;
       }
     case actionTypes.ERROR:
       switch (action.payload.type) {
-        case actionTypes.TEAM_LIST:
+        case actionTypes.CLIENT_LIST:
           return { ...state, listLoading: false, error: action?.payload?.data };
-        case actionTypes.TEAM_DETAILS:
+        case actionTypes.CLIENT_DETAILS:
           return {
             ...state,
             detailsLoading: false,
             error: action?.payload?.data,
           };
-        case actionTypes.TEAM_PAGE:
-          return{
-            ...state,
-            pageLoading: false,
-            error: action?.payload?.data,
-          }
-
-        case actionTypes.TEAM_CREATE:
+        case actionTypes.CLIENT_CREATE:
           return {
             ...state,
             createLoading: false,
             error: action?.payload?.data,
           };
-        case actionTypes.TEAM_UPDATE:
+        case actionTypes.CLIENT_UPDATE:
           return {
             ...state,
             updateLoading: false,
             error: action?.payload?.data,
           };
-        case actionTypes.TEAM_DELETE:
+        case actionTypes.CLIENT_DELETE:
           return {
             ...state,
             deleteLoading: false,
@@ -89,10 +85,51 @@ const team = (state = initialState, action) => {
         default:
           return state;
       }
-    case actionTypes.TEAM_RESET:
+      case actionTypes.CLIENT_PAGE:
+        return{
+          ...state,
+          pageLoading: false,
+          error: action?.payload?.data,
+        }
+
+ case actionTypes.CLIENT_RESET:
       return initialState;
     default:
       return { ...state };
   }
 };
-export default team;
+export default client;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

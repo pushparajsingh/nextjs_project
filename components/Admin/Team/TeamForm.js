@@ -113,7 +113,7 @@ const TeamForm = () => {
       <Row className="mb-4">
         <Col md={12}>
           <div className="list-header">
-            <FaUsers />
+            <FaUsers/>
             <div className="content">
               <h2>{id ? "Update" : "Create"} Team</h2>
               <p>Manage your team</p>
@@ -186,7 +186,7 @@ const TeamForm = () => {
             />
           </Col>
         </Row>
-        {console.log(1111, errors)}
+        * {console.log(1111, errors)}
         <FormSelect
           name="designation"
           label="Designation"
