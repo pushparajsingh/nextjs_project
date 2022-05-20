@@ -129,6 +129,15 @@ a {
 .text-right {
   text-align: right;
 }
+.text-rights{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.text-rights button:nth-child(2) {
+  margin-left: 15px;
+}
 
 .action-footer {
   position: fixed;

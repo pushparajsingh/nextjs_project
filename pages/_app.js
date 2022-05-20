@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-circular-progressbar/dist/styles.css";
+import "react-datepicker/dist/react-datepicker.css";
 import "../assets/slider.css";
 import "aos/dist/aos.css";
 import yuvasoftLogo from "../assets/images/yuvasoft-logo.png";

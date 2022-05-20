@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col, Image, Pagination } from "react-bootstrap";
+import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { TableListNotFound } from "../Utility/NoRecordFound";
@@ -8,16 +8,17 @@ import { teamList, teamPage } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
 import { dateTimeFormat } from "../../../constants";
 import DesignationsList from "../Designation/DesignationsList";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { BsChevronDoubleDown } from "react-icons/bs";
 import { designationsList } from "../../../redux/Designations/Designations.action";
 import ReactPaginate from "react-paginate";
 //import { normalizeRepeatedSlashes } from "next/dist/shared/lib/utils";
 const TeamList = () => {
   const dispatch = useDispatch();
+  const params = useRouter();
   const [modalShow, setModalShow] = useState(false);
   const [pages, setpages] = useState(0);
   const [pageno, setpageno] = useState(1);
-  const params = useRouter();
+
   const { list, listLoading, page, pageLoading } = useSelector((state) => ({
     list: state?.team?.list,
     listLoading: state?.team?.listLoading,
@@ -28,26 +29,21 @@ const TeamList = () => {
     setModalShow(true);
     dispatch(designationsList());
   };
-
-  useEffect(() => {
-    dispatch(teamList());
-    // if(list){
-    dispatch(teamPage(pageno));
-    // }
-  }, []);
-  useEffect(() => {
-    console.log("list", list);
-    var items = list?.pagination?.total_entries;
-  
-    var data = (items / 5);
-    setpages(data);
-  }, [list]);
-
   const handlePageClick = (event) => {
     const data = event.selected + 1;
     setpageno(data);
     dispatch(teamPage(data));
   };
+  useEffect(() => {
+    dispatch(teamList());
+    dispatch(teamPage(pageno));
+  }, []);
+  useEffect(() => {
+    var items = list?.pagination?.total_entries;
+    var data = items / 5;
+    setpages(data);
+  }, [list]);
+
   return (
     <Container fluid>
       <Row className="mb-4">
@@ -60,20 +56,20 @@ const TeamList = () => {
             </div>
           </div>
         </Col>
-        <Col md={6} className="text-right">
-          <Button
-            variant="primary"
-            onClick={() => params.push("/admin/team/create")}
-          >
-            Create
-            <FaPlus />
-          </Button>
-        </Col>
         <Col md={6}>
-          <Button variant="primary" onClick={() => handleModal()}>
-            Designations
-            <RiArrowDownSLine />
-          </Button>
+          <div className="text-rights">
+            <Button variant="primary" onClick={() => handleModal()}>
+              Designations
+              <BsChevronDoubleDown />
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => params.push("/admin/team/create")}
+            >
+              Create
+              <FaPlus />
+            </Button>
+          </div>
         </Col>
       </Row>
       <DesignationsList show={modalShow} onHide={() => setModalShow(false)} />
@@ -84,9 +80,11 @@ const TeamList = () => {
             <th>#</th>
             <th>Name</th>
             <th>Last_Name</th>
-            <th>Designation</th>
+            <th>Description</th>
             <th>Email</th>
-            <th>Create At</th>
+            <th>Contact</th>
+            <th>Create_At</th>
+            <th>Updated_At</th>
           </tr>
         </thead>
         <tbody>
@@ -108,9 +106,11 @@ const TeamList = () => {
                   <span className="ms-2">{team?.first_name}</span>
                 </td>
                 <td>{team?.last_name}</td>
-                <td>{team?.designation ? team?.description : "-"}</td>
+                <td>{team?.description}</td>
                 <td>{team?.email ? team?.email : "-"}</td>
+                <td>{team?.contact}</td>
                 <td>{dateTimeFormat(team?.created_at)}</td>
+                <td>{dateTimeFormat(team?.updated_at)}</td>
               </tr>
             );
           })}
@@ -121,8 +121,8 @@ const TeamList = () => {
       </Table>
       <ReactPaginate
         breakLabel={"..."}
-        nextLabel={">>"}
-        previousLabel={"<<"}
+        nextLabel={"next"}
+        previousLabel={"previous"}
         pageRangeDisplayed={2}
         pageCount={pages}
         marginPagesDisplayed={2}

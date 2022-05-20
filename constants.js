@@ -32,10 +32,21 @@ export const appRoutes = {
   TEAM_LIST: "/admin/team",
   TEAM_CREATE: "/admin/team/create",
   TEAM_UPDATE: "/admin/team/[id]",
+  CAREERS_LIST: "/admin/careers",
+  CAREERS_CREATE: "/admin/careers/create",
+  CAREERS_UPDATE: "/admin/careers/[id]",
   CLIENT_LIST: "/admin/client",
   CLIENT_CREATE: "/admin/client/create",
   CLIENT_UPDATE: "/admin/client/[id]",
-
+  CATEGORIES_LIST:"/admin/categories",
+  CATEGORIES_CREATE:"/admin/categories/create",
+  CATEGORIES_UPDATE:"/admin/categories/[id]",
+  BLOGS_LIST:"/admin/blogs",
+  BLOGS_CREATE:"/admin/blogs/create",
+  BLOGS_UPDATE:"/admin/blogs/[id]",
+  COMPANY_EVENT_LIST:"/admin/companyevent",
+  COMPANY_EVENT_CREATE:"/admin/companyevent/create",
+  COMPANY_EVENT_UPDATE:"/admin/companyevent/[id]"
 
 };
 

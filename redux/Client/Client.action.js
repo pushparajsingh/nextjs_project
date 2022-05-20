@@ -7,14 +7,14 @@ export const clientList = (payload) => {
       payload,
     };
   };
-  export const clintSuccess = (payload) => {
+  export const clientSuccess = (payload) => {
     return {
       type: actionTypes.SUCCESS,
       payload,
     };
   };
   
-  export const clintError = (payload) => {
+  export const clientError = (payload) => {
     return {
       type: actionTypes.ERROR,
       payload,
@@ -34,13 +34,13 @@ export const clientList = (payload) => {
       payload,
     };
   };
-  export const clintDetails = (payload) => {
+  export const clientDetails = (payload) => {
     return {
       type: actionTypes.CLIENT_DETAILS,
       payload,
     };
   };
-  export const clintDelete = (payload) => {
+  export const clientDelete = (payload) => {
     
     return {
       type: actionTypes.CLIENT_DELETE,
@@ -53,7 +53,7 @@ export const clientList = (payload) => {
       payload,
     };
   };
-   export const clintpage = (payload) =>{
+   export const clientPage = (payload) =>{
      return{
        type: actionTypes.CLIENT_PAGE,
       payload,

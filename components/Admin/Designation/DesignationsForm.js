@@ -7,6 +7,8 @@ import { BsCheckSquareFill } from "react-icons/bs";
 import { CgCloseR } from "react-icons/cg";
 import { useNotification } from "../../../contexts/NotificationContext";
 
+
+
 const DesignationsForm = (props) => {
   
   const [ids,setids]=useState()
@@ -53,12 +55,14 @@ const DesignationsForm = (props) => {
       const record=details?.id
       setids(record)
       setValue("name", details?.name);
+      setValue("id",details?.id)
      dispatch(designationReset());
      dispatch(designationsList());
     }
     if (update) {
-      Toast.success("Team updated successfully.");
+      Toast.success("Designation updated successfully.");
       dispatch(designationReset());
+      dispatch(designationsList());
     }
 
 

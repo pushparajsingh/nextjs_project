@@ -1,8 +1,7 @@
 import React from "react";
-//import TeamForm from "../../../components/Admin/Team/TeamForm";
-import ClinentForm from "../../../components/Admin/Client/ClinentForm"
+import ClientsForm from "../../../components/Admin/Client/ClinentForm";
 
-const TeamList = () => {
-  return <ClinentForm />;
+const ClientList = () => {
+  return <ClientsForm />;
 };
-export default TeamList;
+export default ClientList;

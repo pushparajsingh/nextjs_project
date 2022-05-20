@@ -13,9 +13,9 @@ const team = (state = initialState, action) => {
       return { ...state, updateLoading: true };
     case actionTypes.TEAM_DELETE:
       return { ...state, deleteLoading: true };
-      case actionTypes.TEAM_PAGE:
-        return{ ...state,pageLoading: true};
-        
+    case actionTypes.TEAM_PAGE:
+      return { ...state, pageLoading: true };
+
     case actionTypes.SUCCESS:
       switch (action.payload.type) {
         case actionTypes.TEAM_LIST:
@@ -26,10 +26,8 @@ const team = (state = initialState, action) => {
             detailsLoading: false,
             details: action?.payload?.data,
           };
-          case actionTypes.TEAM_PAGE:
-            console.log("34343",action.payload)
-         
-            return{...state,page: action?.payload?.data,pageLoading: false};
+        case actionTypes.TEAM_PAGE:
+          return { ...state, page: action?.payload?.data, pageLoading: false };
         case actionTypes.TEAM_CREATE:
           return {
             ...state,
@@ -62,11 +60,11 @@ const team = (state = initialState, action) => {
             error: action?.payload?.data,
           };
         case actionTypes.TEAM_PAGE:
-          return{
+          return {
             ...state,
             pageLoading: false,
             error: action?.payload?.data,
-          }
+          };
 
         case actionTypes.TEAM_CREATE:
           return {

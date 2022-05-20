@@ -40,7 +40,7 @@ const DesignationsList = (props) => {
   const handleForm = () => {
     setShow(true);
   };
-  console.log("page", page);
+  
   const handleDelete = (id) => {
     dispatch(designationDelete(id));
   };
@@ -54,18 +54,16 @@ const DesignationsList = (props) => {
   useEffect(() => {
     dispatch(designationPage(pageno));
     if (deleteDesignations || create) {
-      let message = "Team Added successfully.";
-      if (deleteDesignations) message = "Team deleted successfully.";
+      let message = "Designation Added successfully.";
+      if (deleteDesignations) message = "Designation deleted successfully.";
       Toast.success(message);
       dispatch(designationReset());
-      dispatch(designationsList());
+      //dispatch(designationsList());
     }
   }, [deleteDesignations, create]);
 
   useEffect(() => {
-    console.log("list", list);
     var items = list?.pagination?.total_entries;
-  
     var data = (items / 5);
     setpages(data);
   }, [list]);
@@ -110,7 +108,7 @@ const DesignationsList = (props) => {
                 return (
                   <tr
                     key={index}
-                    // onClick={() => params.push(`/admin/team/${team.id}`)}
+                    
                   >
                     <td>{index + 1}</td>
                     <td>

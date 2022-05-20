@@ -1,38 +1,40 @@
-import React ,{useEffect}from 'react';
+import React ,{useEffect, useState}from 'react';
 import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { useRouter } from "next/router";
-import {clientList,clintpage} from "../../../redux/Client/Client.action"
+import {clientList,clientPage} from "../../../redux/Client/Client.action"
 import { useSelector, useDispatch } from "react-redux";
 import { TableListNotFound } from "../Utility/NoRecordFound";
 import { dateTimeFormat } from "../../../constants";
 import ReactPaginate from 'react-paginate'
 
-const ClinentList = () => {
- // const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+const ClientsList  = () => {
+ 
     const dispatch = useDispatch();
     const params = useRouter();
-  
+    const [pages,setpages]=useState(0)
+    const [pageno,setpageno]=useState(1)
     const { list, listLoading ,pageLoading,page} = useSelector((state) => ({
     list: state?.client?.list,
        listLoading: state?.client?.listLoading,
        page: state?.client?.page,
        pageLoading: state?.client?.pageLoading,
      }));
-     console.log("gg",list)
-  
-    useEffect(() => {
-       dispatch(clientList());
-    }, []);
-
-
+    useEffect(()=>{
+      dispatch(clientList())
+      dispatch(clientPage(pageno))
+    },[])
+    useEffect(()=>{
+    var items = list?.pagination?.total_entries;
+    var data = (items / 5);
+    setpages(data);
+    }, [list]);
     const onpageClick = (event) =>{
-      const data = event.selected
-     // debugger
-    dispatch(clintpage(data))
+      const data = event.selected + 1;
+          setpageno(data);
+      dispatch(clientPage(data))
     }
-  
   return (
     <Container fluid>
       <Row className="mb-4">
@@ -66,8 +68,6 @@ const ClinentList = () => {
           </tr>
         </thead>
           <tbody>
-            
-            
             {page?.map((client, index) => {
             return (
                 <tr key={index}
@@ -98,9 +98,7 @@ const ClinentList = () => {
         breakLabel={"..."}
         nextLabel={"Next"}
         previousLabel={"previous"}
-        // pageRangeDisplayed={5}
-        pageCount={20}
-        // marginPagesDisplayed={2}
+        pageCount={pages}
         containerClassName={"pagination justify-content-center"}
         pageLinkClassName={'page-link'}
         pageClassName={'page-item'}
@@ -121,4 +119,4 @@ const ClinentList = () => {
   );
 };
 
-export default ClinentList;
+export default ClientsList ;

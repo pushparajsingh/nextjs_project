@@ -1,14 +1,12 @@
-import React from 'react'
-//import Clinents from '../../../components/Admin/Clientstetimonials/ClinentList'
+import React from 'react';
 import List from "../../../components/Admin/Client/ClinentList";
 
-const index = () => {
+const ClientList = () => {
   return (
     <div>
-      <List/>
-      {/* <Clinents/> */}
+     <List/>
     </div>
   )
 }
 
-export default index
+export default ClientList;

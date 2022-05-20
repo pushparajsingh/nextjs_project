@@ -1,14 +1,12 @@
 import React from 'react'
-//import List from "../../../components/Admin/Team/ClinentList";
-import Clinents from '../../../components/Admin/Client/ClinentForm'
+import ClientsForm from '../../../components/Admin/Client/ClinentForm';
 
-const client = () => {
+const ClientCreate = () => {
   return (
     <div>
-      {/* <List/> */}
-      <Clinents/>
+      <ClientsForm/>
     </div>
   )
 }
 
-export default client
+export default ClientCreate;

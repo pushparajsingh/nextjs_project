@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import { Form, Container, Row, Col } from "react-bootstrap";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -8,26 +8,32 @@ import ActionFooter from "../Utility/ActionFooter";
 import DeleteConfirmationModal from "../Utility/DeleteConfirmationModal";
 import { useNotification } from "../../../contexts/NotificationContext";
 import { useSelector, useDispatch } from "react-redux";
-import { clientCreate, clientUpdate, clintDetails, clintDelete,clientReset } from "../../../redux/Client/Client.action"
+import {
+  clientCreate,
+  clientUpdate,
+  clientDetails,
+  clientDelete,
+  clientReset,
+} from "../../../redux/Client/Client.action";
 
-const Clinents = () => {
+const ClientsForm = () => {
   const dispatch = useDispatch();
   const params = useRouter();
   const { id } = params.query;
   const [openModal, setOpenModal] = useState(false);
-  const { control, setValue, register, handleSubmit, formState: { errors }, } = useForm();
   const [isEdit, setIsEdit] = useState(false);
   const { Toast } = useNotification();
-
-  useEffect(() => {
-    if (id) setIsEdit(true);
-  }, [id]);
-
-
+  const {
+    control,
+    setValue,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const {
     create,
     update,
-    deleteTeam,
+    deleteclient,
     details,
     detailsLoading,
     deleteLoading,
@@ -38,80 +44,63 @@ const Clinents = () => {
     create: state?.client?.create,
     update: state?.client?.update,
     details: state?.client?.details,
-    deleteTeam: state?.client?.delete,
+    deleteclient: state?.client?.delete,
     detailsLoading: state?.client?.detailsLoading,
     loading: state?.client?.createLoading || state?.client?.updateLoading,
     deleteLoading: state?.client?.deleteLoading,
   }));
 
-
   const onSubmit = (data) => {
-
-
     if (id) {
-
       dispatch(clientUpdate(id));
-    }
-    else {
+    } else {
       dispatch(clientCreate(data));
     }
   };
-
 
   useEffect(() => {
     if (details) {
       setValue("name", details?.name);
       setValue("city", details?.city);
       setValue("description", details?.description);
-      //setValue("contact", details?.contact);
       setValue("id", details?.id);
       dispatch(clientReset());
     }
 
-    if (deleteTeam || create) {
-      let message = "Team Added successfully.";
-      if (deleteTeam) message = "Team deleted successfully.";
+    if (deleteclient|| create) {
+      let message = "Client Added successfully.";
+      if (deleteclient) message = "Client deleted successfully.";
       Toast.success(message);
       setOpenModal(false);
-       dispatch(clientReset());
+      dispatch(clientReset());
       params.push("/admin/client");
     }
 
     if (update) {
-      Toast.success("Team updated successfully.");
+      Toast.success("Client updated successfully.");
       params.push("/admin/client");
-    dispatch(clientReset());
+      dispatch(clientReset());
     }
-  }, [create, update, details, deleteTeam]);
-
-
-
-
-
-
-
-
+  }, [create, update, details, deleteclient]);
 
   useEffect(() => {
-
-    if (id) dispatch(clintDetails(id));
+    if (id) dispatch(clientDetails(id));
   }, []);
-
-
-
+  useEffect(() => {
+    if (id) setIsEdit(true);
+  }, [id]);
   const handleDelete = () => {
-    dispatch(clintDelete(id));
+    dispatch(clientDelete(id));
   };
 
   return (
-
     <Container fluid>
       <Row className="mb-4">
         <Col md={12}>
           <div className="list-header">
             <FaUsers />
             <div className="content">
-              <h2>{id ? "Update" : "Create"} Team</h2>
+              <h2>{id ? "Update" : "Create"} Client</h2>
               <p>Manage your client</p>
             </div>
           </div>
@@ -149,7 +138,6 @@ const Clinents = () => {
             })}
             errors={errors}
             disabled={isEdit}
-
           />
         </Col>
         <Col md={6}>
@@ -159,7 +147,6 @@ const Clinents = () => {
             placeholder="Type here"
             {...register("description", {
               required: true,
-
             })}
             errors={errors}
             disabled={isEdit}
@@ -179,8 +166,7 @@ const Clinents = () => {
         />
       </Form>
     </Container>
+  );
+};
 
-  )
-}
-
-export default Clinents;
+export default ClientsForm ;
