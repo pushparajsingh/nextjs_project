@@ -40,7 +40,7 @@ const TeamList = () => {
   }, []);
   useEffect(() => {
     var items = list?.pagination?.total_entries;
-    var data = items / 5;
+    var data = items /6;
     setpages(data);
   }, [list]);
 
@@ -65,8 +65,7 @@ const TeamList = () => {
             <Button
               variant="primary"
               onClick={() => params.push("/admin/team/create")}
-            >
-              Create
+            >Create
               <FaPlus />
             </Button>
           </div>
@@ -115,7 +114,7 @@ const TeamList = () => {
             );
           })}
           {!page?.length && (
-            <TableListNotFound colSpan={5} loading={pageLoading} />
+            <TableListNotFound colSpan={8} loading={pageLoading} />
           )}
         </tbody>
       </Table>
@@ -126,7 +125,7 @@ const TeamList = () => {
         pageRangeDisplayed={2}
         pageCount={pages}
         marginPagesDisplayed={2}
-        containerClassName={"pagination justify-content-center"}
+        containerClassName={"pagination  justify-content-end"}
         pageLinkClassName={"page-link"}
         pageClassName={"page-item"}
         previousClassName={"page-item"}

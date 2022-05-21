@@ -27,7 +27,7 @@ function* teamPage({ payload }) {
   try {
     const res = yield call(
       Api.get,
-      `${apiRoutes.team}/?page=${payload}&per_page=5`
+      `${apiRoutes.team}/?page=${payload}&per_page=6`
     );
     yield put(
       teamSuccess({ type: actionTypes.TEAM_PAGE, data: res?.data?.data })

@@ -6,7 +6,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { useRouter } from "next/dist/client/router";
 import { dateTimeFormat } from "../../../constants";
 import ReactPaginate from "react-paginate";
-import {SiEventstore} from "react-icons/si";
+import {MdEventBusy} from "react-icons/md";
 import {MdCreateNewFolder} from "react-icons/md";
 import { companyPage,companyList } from "../../../redux/company_events/company.action";
 
@@ -36,7 +36,7 @@ const CompanyeventList = () => {
   },[])
   useEffect(() => {
     var items = list?.pagination?.total_entries;
-    var data = (items / 5);
+    var data = (items / 6);
     setpages(data);
   }, [list]);
   
@@ -46,10 +46,10 @@ const CompanyeventList = () => {
       <Row className="mb-4">
         <Col md={6}>
           <div className="list-header">
-            <SiEventstore />
+            <MdEventBusy />
             <div className="content">
               <h2>Company</h2>
-              <p>Company_Events</p>
+              <p>Company Events</p>
             </div>
           </div>
         </Col>
@@ -106,7 +106,7 @@ const CompanyeventList = () => {
             );
           })}
           {!page?.length && (
-            <TableListNotFound colSpan={5} loading={pageLoading} />
+            <TableListNotFound colSpan={7} loading={pageLoading} />
           )}
         </tbody> 
       </Table>
@@ -117,7 +117,7 @@ const CompanyeventList = () => {
         pageRangeDisplayed={2}
         pageCount={pages}
         marginPagesDisplayed={2}
-        containerClassName={"pagination justify-content-center"}
+        containerClassName={"pagination justify-content-end"}
         pageLinkClassName={"page-link"}
         pageClassName={"page-item"}
         previousClassName={"page-item"}

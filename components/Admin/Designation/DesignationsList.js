@@ -64,7 +64,7 @@ const DesignationsList = (props) => {
 
   useEffect(() => {
     var items = list?.pagination?.total_entries;
-    var data = (items / 5);
+    var data = (items / 6);
     setpages(data);
   }, [list]);
 
@@ -155,7 +155,7 @@ const DesignationsList = (props) => {
           previousLabel={"previous"}
           pageRangeDisplayed={5}
           pageCount={pages}
-          containerClassName={"pagination justify-content-center"}
+          containerClassName={"pagination justify-content-end"}
           pageLinkClassName={"page-link"}
           pageClassName={"page-item"}
           previousClassName={"page-item"}

@@ -49,7 +49,7 @@ const Sidebar = () => {
           <Link href="/admin/companyevent">
             <a>
               <CgEventbrite/>
-              Companyevent
+              Company event
             </a>
           </Link>
         </li>
@@ -57,7 +57,7 @@ const Sidebar = () => {
           <Link href="/admin/client">
             <a>
               <MdReviews/>
-              Clientstetimonials
+              Clients tetimonials
             </a>
           </Link>
         </li>

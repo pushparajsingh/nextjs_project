@@ -27,7 +27,7 @@ const ClientsList  = () => {
     },[])
     useEffect(()=>{
     var items = list?.pagination?.total_entries;
-    var data = (items / 5);
+    var data = (items / 6);
     setpages(data);
     }, [list]);
     const onpageClick = (event) =>{
@@ -99,7 +99,7 @@ const ClientsList  = () => {
         nextLabel={"Next"}
         previousLabel={"previous"}
         pageCount={pages}
-        containerClassName={"pagination justify-content-center"}
+        containerClassName={"pagination justify-content-end"}
         pageLinkClassName={'page-link'}
         pageClassName={'page-item'}
         previousClassName={'page-item'}

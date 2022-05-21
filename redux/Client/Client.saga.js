@@ -66,7 +66,7 @@ function* clientPage({ payload }) {
   try {
     const res = yield call(
       Api.get,
-      `${apiRoutes.clientstetimonials}?page=${payload}&per_page=5`
+      `${apiRoutes.clientstetimonials}?page=${payload}&per_page=6`
     );
     yield put(
       clientSuccess({ type: actionTypes.CLIENT_PAGE, data: res?.data?.data })

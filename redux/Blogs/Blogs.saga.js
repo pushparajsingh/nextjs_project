@@ -27,7 +27,7 @@ function* blogsPage({ payload }) {
   try {
     const res = yield call(
       Api.get,
-      `${apiRoutes.blogs}/?page=${payload}&per_page=5`
+      `${apiRoutes.blogs}/?page=${payload}&per_page=6`
     );
     yield put(
       blogsSuccess({ type: actionTypes.BLOGS_PAGE, data: res?.data?.data })

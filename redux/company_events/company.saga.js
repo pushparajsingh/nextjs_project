@@ -36,7 +36,7 @@ function* companyPage({ payload }) {
   try {
     const res = yield call(
       Api.get,
-      `${apiRoutes.company_events}/?page=${payload}&per_page=5`
+      `${apiRoutes.company_events}/?page=${payload}&per_page=6`
     );
     yield put(
       companySuccess({

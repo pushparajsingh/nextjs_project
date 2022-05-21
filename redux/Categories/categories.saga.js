@@ -26,7 +26,7 @@ function* categoriesDetails({ payload }) {
 }
 function* categoriesPage({payload}){
   try{
-    const res=yield call (Api.get,`${apiRoutes.categories}/?page=${payload}&per_page=5`);
+    const res=yield call (Api.get,`${apiRoutes.categories}/?page=${payload}&per_page=6`);
     yield put (
       categoriesSuccess({type:actionTypes.CATEGORIES_PAGE,data:res?.data?.data})
     )} catch (error) {

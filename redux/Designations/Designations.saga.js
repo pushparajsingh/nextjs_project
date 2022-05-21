@@ -53,7 +53,7 @@ function* designationCreate({ payload }) {
   }
   function* designationPage({ payload }) {
     try {
-      const res = yield call(Api.get,`${apiRoutes.designations}?page=${payload}&per_page=5`);
+      const res = yield call(Api.get,`${apiRoutes.designations}?page=${payload}&per_page=6`);
       
       yield put(
         designationsSuccess({ type: actionTypes.DESIGNATIONS_PAGE, data: res?.data?.data })

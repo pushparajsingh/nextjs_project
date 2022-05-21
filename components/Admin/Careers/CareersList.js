@@ -34,7 +34,7 @@ const CareersList= () => {
   },[])
   useEffect(()=>{
     var items = list?.pagination?.total_entries;
-    var data = (items / 5);
+    var data = (items / 6);
     setpages(data);
   }, [list]);
   
@@ -109,7 +109,7 @@ const CareersList= () => {
         pageRangeDisplayed={2}
         pageCount={pages}
         marginPagesDisplayed={2}
-        containerClassName={"pagination justify-content-center"}
+        containerClassName={"pagination justify-content-end"}
         pageLinkClassName={"page-link"}
         pageClassName={"page-item"}
         previousClassName={"page-item"}

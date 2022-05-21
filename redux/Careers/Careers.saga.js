@@ -45,7 +45,7 @@ function* careerUpdate({ payload }) {
 }
 function* careerPage({payload}){
   try{
-    const res=yield call (Api.get,`${apiRoutes.careers}/?page=${payload}&per_page=5`);
+    const res=yield call (Api.get,`${apiRoutes.careers}/?page=${payload}&per_page=6`);
     yield put (
       careerSuccess({type:actionTypes.CAREERS_PAGE,data:res?.data?.data})
     )} catch (error) {

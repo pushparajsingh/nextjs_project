@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { Row,Col,Container,Form } from 'react-bootstrap';
-import {GiCompanionCube} from "react-icons/gi";
+import {VscSymbolEvent} from "react-icons/vsc";
 import DeleteConfirmationModal from '../Utility/DeleteConfirmationModal';
 import FormInput from '../../FormElements/FormInput';
 import ActionFooter from '../Utility/ActionFooter';
@@ -56,8 +56,8 @@ const CompanyeventForm = () => {
     }
 
     if (deleteblogs || create) {
-      let message = "Company_events Added successfully.";
-      if (deleteblogs) message = "Company_events deleted successfully.";
+      let message = "Company events Added successfully.";
+      if (deleteblogs) message = "Company events deleted successfully.";
       Toast.success(message);
       setOpenModal(false);
       dispatch(companyReset());
@@ -93,7 +93,7 @@ const CompanyeventForm = () => {
     <Row className="mb-4">
       <Col md={12}>
         <div className="list-header">
-          <GiCompanionCube/>
+          <VscSymbolEvent/>
           <div className="content">
             <h2>{id ? "Update" : "Create"} Company</h2>
             <p>Company</p>
