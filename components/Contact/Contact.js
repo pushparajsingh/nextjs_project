@@ -136,7 +136,7 @@ const Contact = () => {
                     />
                   </Col>
                   <Col lg={12}>
-                    <Form.Control type="text" placeholder="Company Name" {...register("company",{
+                    <Form.Control type="text" placeholder="Message" {...register("Message",{
                       require:true,
 
                     })}

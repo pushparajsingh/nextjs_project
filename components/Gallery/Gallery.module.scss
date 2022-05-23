@@ -67,6 +67,12 @@
             border-radius: 15px;
             overflow: hidden;
             max-height: 320px;
+            @media only screen and (max-width:1399px) {
+                max-height: 260px;                
+            }
+            @media only screen and (max-width:1199px) {
+                max-height: 220px;                
+            }
             img {
                 transition: all 0.3s linear;
             }

@@ -82,9 +82,6 @@ a {
   padding: 100px 0;
 }
 
-.themeSectionPadding {
-  padding: 120px 0px;
-}
 
 .sticky {
   position: fixed !important;
@@ -180,5 +177,8 @@ a {
   .themeTitle h3 {
     font-size: 30px;
     margin-bottom: 20px;
+  }
+  .themeSectionPadding{
+    padding: 50px 0;
   }
 }

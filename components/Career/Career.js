@@ -8,7 +8,7 @@ import Image from "next/image";
 const CareerPage = () => {
 	const series = [1, 2, 3, 4];
 	return (
-		<section className={`${styles.careerPage} theme-padding`}>
+		<section className={`${styles.careerPage} themeSectionPadding`}>
 			<Container>
 				<Row className="align-items-center">
 					<Col md={6}>
@@ -57,9 +57,9 @@ const CareerPage = () => {
 					})}
 				</Row>
 			</Container>
-			<Container fluid>
+			{/* <Container fluid>
 				<Row></Row>
-			</Container>
+			</Container> */}
 		</section>
 	);
 };

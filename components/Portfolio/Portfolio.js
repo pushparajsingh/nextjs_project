@@ -36,6 +36,7 @@ const Portfolio = () => {
                     return (
                       <Col
                         lg={4}
+                        md={6}
                         key={index}
                         data-aos="fade-up"
                         data-aos-duration="1000"
