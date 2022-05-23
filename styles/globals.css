@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Poppins:wght@200;300;400;500;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 html,
 body {
   padding: 0;
@@ -31,10 +32,12 @@ a {
   --primary-font: "Poppins", sans-serif;
   --secondary-font: 'Manrope', sans-serif;
 }
+
 .themeTitle {
   display: flex;
   flex-direction: column;
 }
+
 .themeTitle h4 {
   background-color: var(--primary-10);
   color: var(--primary);
@@ -46,6 +49,7 @@ a {
   margin-bottom: 12px;
   width: fit-content;
 }
+
 .themeTitle h3 {
   color: var(--light-black);
   text-transform: capitalize;
@@ -54,9 +58,11 @@ a {
   font-size: 45px;
   margin-bottom: 30px;
 }
+
 .themeTitle h3 span {
   color: var(--primary);
 }
+
 .themeButton {
   background-color: var(--primary) !important;
   color: var(--white) !important;
@@ -65,17 +71,21 @@ a {
   padding: 15px 30px !important;
   text-transform: capitalize;
 }
+
 .themeButton:focus,
 .themeButton:active,
-.themeButton:hover{
+.themeButton:hover {
   box-shadow: none !important;
 }
-.themeSectionPadding{
+
+.themeSectionPadding {
   padding: 100px 0;
 }
-.theme-padding {
+
+.themeSectionPadding {
   padding: 120px 0px;
 }
+
 .sticky {
   position: fixed !important;
   top: 0;
@@ -83,9 +93,11 @@ a {
   z-index: 999;
   padding: 5px 0 !important;
 }
+
 .afteFixedHeader {
   padding-top: 120px;
 }
+
 /* .navbar-brand img {
   transition: all 1s ease-in-out;
 } */
@@ -94,11 +106,25 @@ a {
   width: 200px !important;
   height: auto !important;
 }
+
 .form-control:focus {
   box-shadow: none !important;
 }
+
 .form-label {
   margin-bottom: 5px !important;
+}
+
+.aboutPageTitle .themeTitle h3{
+      margin-bottom: 10px;  
+}
+.aboutPageTitle p{
+  margin-bottom: 30px;  
+}
+
+.aboutPageTitle p span{
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 /* Admin css */
@@ -150,8 +176,8 @@ a {
   width: calc(100% - 220px);
 }
 
-@media only screen and (max-width: 1200px){
-  .themeTitle h3{
+@media only screen and (max-width: 1200px) {
+  .themeTitle h3 {
     font-size: 30px;
     margin-bottom: 20px;
   }

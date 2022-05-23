@@ -4,6 +4,9 @@
     background-image: linear-gradient(145deg,#f02334 47%,#ff3b4b 100%);
     border-radius: 0px;
     padding: 110px 0px;
+    @media screen and (max-width:768px) {
+        padding: 50px 0;;
+    }
     .serviceHead {
         [class~=themeTitle] {
             h3 {
@@ -45,6 +48,9 @@
             list-style: none;
             padding: 0;
             margin: 40px 0px 0px;
+            @media screen and (max-width: 767px) {
+                margin: 0px;
+            }
             [class~=slick-arrow] {
                 top: -85px;
                 right: 0;
@@ -160,6 +166,9 @@
 
 .serviceDetailWrapper {
     padding: 100px 0px;
+    @media only screen and (max-width: 1200px) {
+        padding: 50px 0;
+    }
     p {
         font-size: 15px;
         line-height: 25px;

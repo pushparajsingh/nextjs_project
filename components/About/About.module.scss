@@ -38,7 +38,9 @@
         .moreDetails {
             display: flex;
             align-items: center;
-
+            @media screen and (max-width: 1199px) {
+                margin-bottom: 20px;
+            }
             @media screen and (max-width: 767px) {
                 justify-content: center;
                 width: 100%;
@@ -100,6 +102,9 @@
                                 }
                             }
                         }
+                    }
+                    &:focus{
+                        box-shadow: none;
                     }
                 }
             }
@@ -196,7 +201,6 @@
 
     .whatweDoSlider {
         margin-bottom: 20px;
-
         button {
             &:hover {
                 box-shadow: none;
@@ -218,7 +222,9 @@
                 border: none;
             }
         }
-
+        [class~="slick-arrow"]{
+            display: none !important;
+        }
         [class~="slick-dots"] {
             margin-bottom: 25px;
             bottom: -60px;
@@ -242,4 +248,9 @@
             }
         }
     }
+    .weDoSliderImage{
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+
 }
