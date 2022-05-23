@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { FaHome, FaUsers, FaNetworkWired } from "react-icons/fa";
+import { FaHome, FaUsers, FaUserGraduate,FaMicroblog } from "react-icons/fa";
+import { MdReviews } from 'react-icons/md'
 import styles from "./Admin.module.scss";
 import { useRouter } from "next/router";
+import {BiCategoryAlt} from "react-icons/bi";
+import {CgEventbrite} from "react-icons/cg"
 
 const Sidebar = () => {
   const params = useRouter();
@@ -14,6 +17,47 @@ const Sidebar = () => {
             <a>
               <FaHome />
               Dashboard
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin/blogs">
+            <a>
+              <FaMicroblog />
+             Blogs
+            </a>
+          </Link>
+        </li>
+        <li>
+        <Link href="/admin/careers">
+            <a>
+            <FaUserGraduate />
+            
+              Careers
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin/categories">
+            <a>
+              <BiCategoryAlt/>
+              Categories
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin/companyevent">
+            <a>
+              <CgEventbrite/>
+              Company event
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin/client">
+            <a>
+              <MdReviews/>
+              Clients tetimonials
             </a>
           </Link>
         </li>

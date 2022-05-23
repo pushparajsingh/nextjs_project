@@ -23,10 +23,11 @@ const TeamForm = () => {
   const params = useRouter();
   const { id } = params.query;
   const dispatch = useDispatch();
-  
+
   const [openModal, setOpenModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const { Toast } = useNotification();
+  
 
   const {
     control,
@@ -61,10 +62,8 @@ const TeamForm = () => {
   useEffect(() => {
     if (id) dispatch(teamDetails(id));
   }, []);
-       
 
   useEffect(() => {
-
     if (details) {
       setValue("first_name", details?.first_name);
       setValue("last_name", details?.last_name);
@@ -73,7 +72,7 @@ const TeamForm = () => {
       setValue("id", details?.id);
       dispatch(teamReset());
     }
-      
+
     if (deleteTeam || create) {
       let message = "Team Added successfully.";
       if (deleteTeam) message = "Team deleted successfully.";
@@ -82,7 +81,7 @@ const TeamForm = () => {
       dispatch(teamReset());
       params.push("/admin/team");
     }
-     
+
     if (update) {
       Toast.success("Team updated successfully.");
       dispatch(teamReset());
@@ -174,11 +173,11 @@ const TeamForm = () => {
           </Col>
           <Col md={6}>
             <FormInput
-              label="Phone"
-              name="phone"
+              label="contact"
+              name="contact"
               type="number"
               placeholder="Type herre"
-              {...register("phone", {
+              {...register("contact", {
                 required: true,
               })}
               errors={errors}
@@ -186,14 +185,14 @@ const TeamForm = () => {
             />
           </Col>
         </Row>
-        {console.log(1111, errors)}
+        * {console.log(1111, errors)}
         <FormSelect
-          name="designation"
-          label="Designation"
-           aria-label="Select one"
+          name="description"
+          label="description"
+          aria-label="Select one"
           errors={errors}
           disabled={isEdit}
-          {...register("designation", {
+          {...register("description", {
             // required: true,
           })}
           options={[

@@ -11,6 +11,8 @@ import { useNotification } from "../../../contexts/NotificationContext";
 
 const DesignationsForm = (props) => {
   
+  const [ids,setids]=useState()
+  
   const {
     details,
     detailsLoading,
@@ -41,21 +43,26 @@ const DesignationsForm = (props) => {
     
   const onSubmit = (data) => {
   
-    // if(ids){
-    //   dispatch(designationUpdate(ids))
-    // }
-    // else{  }
-      dispatch(designationCreate(data));
+    if(ids){
+      dispatch(designationUpdate(ids))
+    }
+    else{ dispatch(designationCreate(data)); }
+      
     };
   useEffect(() => {
     if (details) {
+     
+      const record=details?.id
+      setids(record)
       setValue("name", details?.name);
+      setValue("id",details?.id)
      dispatch(designationReset());
      dispatch(designationsList());
     }
     if (update) {
-      Toast.success("Team updated successfully.");
+      Toast.success("Designation updated successfully.");
       dispatch(designationReset());
+      dispatch(designationsList());
     }
 
 
@@ -80,17 +87,17 @@ const DesignationsForm = (props) => {
                 required: true,
               })}
             />
-            {/* {
+            {
               ids ?
                 <span>
               <Button type="submit">Save</Button>
               <Button type="button" onClick={props.onHide} >Cancel</Button>
             </span>
-            : }*/}
-            <Button  type="submit">
-              Submit
-              <BsCheckSquareFill />
-            </Button>
+            : <Button  type="submit" >
+            Submit
+            <BsCheckSquareFill />
+          </Button>}
+            
             </form>
         </Modal.Body>
         <Modal.Footer>

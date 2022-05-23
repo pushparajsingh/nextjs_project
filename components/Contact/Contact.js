@@ -3,8 +3,21 @@ import styles from "./Contact.module.scss";
 import { MdOutlineLocationCity } from "react-icons/md";
 import Title from "../Layout/Titles/Titles";
 import Link from "next/link";
-
+import {useForm} from "react-hook-form";
+import { emailPattern } from "../../constants";
 const Contact = () => {
+
+  const {
+    control,
+    setValue,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit=(data)=>{
+    console.log("contact-form-data",data)
+  }
   return (
     <section className={styles.contactWrapper}>
       <Container>
@@ -71,20 +84,33 @@ const Contact = () => {
               />
               {/* <p>Tell Me More About Your Details</p> */}
               {/* <h6>Are you Ready for a Better, more Productive Business?</h6>           */}
-              <Form className={styles.contactForm}>
+              <Form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
                 <Row>
                   <Col lg={6}>
                     <Form.Control
                       type="text"
                       placeholder="Name"
                       className="mb-3"
+                      {...register("name", {
+                        required: true,
+                      })}
+                      errors={errors}
                     />
+                    {/* {errors.name && "Last name is required"} */}
                   </Col>
                   <Col lg={6}>
                     <Form.Control
                       type="email"
                       placeholder="name@example.com"
                       className="mb-3"
+                      {...register("email", {
+                        required: true,
+                        pattern: {
+                          value: emailPattern,
+                          message: "Email should be in valid format.",
+                        },
+                      })}
+                      errors={errors}
                     />
                   </Col>
                   <Col lg={6}>
@@ -92,6 +118,10 @@ const Contact = () => {
                       type="number"
                       placeholder="Phone Number"
                       className="mb-3"
+                      {...register("number", {
+                        required: true,
+                      })}
+                      errors={errors}
                     />
                   </Col>
                   <Col lg={6}>
@@ -99,14 +129,22 @@ const Contact = () => {
                       type="text"
                       placeholder="Company Name"
                       className="mb-3"
+                      {...register("companyname", {
+                        required: true,
+                      })}
+                      errors={errors}
                     />
                   </Col>
                   <Col lg={12}>
-                    <Form.Control type="text" placeholder="Company Name" />
+                    <Form.Control type="text" placeholder="Company Name" {...register("company",{
+                      require:true,
+
+                    })}
+                    errors={errors} />
                   </Col>
                   <Col lg={12}>
                     <Button
-                      type="button"
+                      type="submit"
                       className="themeButton btn btn-primary m-0"
                     >
                       Submit

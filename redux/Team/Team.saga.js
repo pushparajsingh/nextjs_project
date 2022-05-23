@@ -3,7 +3,6 @@ import apiRoutes from "../ApiRoutes";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { actionTypes } from "./Team.constant";
 import { teamSuccess, teamError } from "./Team.action";
-import axios from "axios";
 
 function* teamList() {
   try {
@@ -24,17 +23,18 @@ function* teamDetails({ payload }) {
     yield put(teamError({ type: actionTypes.TEAM_DETAILS, data: res }));
   }
 }
-function* teamPage({payload}){
-  try{
-    // const res=yield call (axios.get,`https://yuvasoftapi3.herokuapp.com/api/v1/teams/?page=${payload}&per_page=5`);
-    const res=yield call (Api.get,`${apiRoutes.team}/?page=${payload}&per_page=5`);
-    yield put (
-      teamSuccess({type:actionTypes.TEAM_PAGE,data:res?.data?.data})
-    )} catch (error) {
-      yield put(teamError({ type: actionTypes.TEAM_PAGE, data: res }));
-    }
-    
-  
+function* teamPage({ payload }) {
+  try {
+    const res = yield call(
+      Api.get,
+      `${apiRoutes.team}/?page=${payload}&per_page=6`
+    );
+    yield put(
+      teamSuccess({ type: actionTypes.TEAM_PAGE, data: res?.data?.data })
+    );
+  } catch (error) {
+    yield put(teamError({ type: actionTypes.TEAM_PAGE, data: res }));
+  }
 }
 
 function* teamCreate({ payload }) {
@@ -50,7 +50,7 @@ function* teamCreate({ payload }) {
 
 function* teamUpdate({ payload }) {
   try {
-    const res = yield call(Api.put,`${apiRoutes.team}/${payload}`);
+    const res = yield call(Api.put, `${apiRoutes.team}/${payload}`);
     yield put(teamSuccess({ type: actionTypes.TEAM_UPDATE, data: res?.data }));
   } catch (error) {
     yield put(teamError({ type: actionTypes.TEAM_UPDATE, data: res }));
@@ -72,5 +72,5 @@ export default function* teamSagas() {
   yield takeLatest(actionTypes.TEAM_CREATE, teamCreate);
   yield takeLatest(actionTypes.TEAM_UPDATE, teamUpdate);
   yield takeLatest(actionTypes.TEAM_DELETE, teamDelete);
-  yield takeLatest(actionTypes.TEAM_PAGE,teamPage)
+  yield takeLatest(actionTypes.TEAM_PAGE, teamPage);
 }

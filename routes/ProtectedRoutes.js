@@ -50,6 +50,22 @@ const ProtectedRoutes = ({ children }) => {
     appRoutes.TEAM_LIST,
     appRoutes.TEAM_CREATE,
     appRoutes.TEAM_UPDATE,
+    appRoutes.CAREERS_LIST,
+    appRoutes.CAREERS_CREATE,
+    appRoutes.CAREERS_UPDATE,
+    appRoutes.CLIENT_LIST,
+    appRoutes.CLIENT_CREATE,
+    appRoutes.CLIENT_UPDATE,
+    appRoutes.CATEGORIES_LIST,
+    appRoutes.CATEGORIES_UPDATE,
+    appRoutes.CATEGORIES_CREATE,
+    appRoutes.BLOGS_LIST,
+    appRoutes.BLOGS_CREATE,
+    appRoutes.BLOGS_UPDATE,
+    appRoutes.COMPANY_EVENT_LIST,
+    appRoutes.COMPANY_EVENT_CREATE,
+    appRoutes.COMPANY_EVENT_UPDATE
+
   ];
 
   /**

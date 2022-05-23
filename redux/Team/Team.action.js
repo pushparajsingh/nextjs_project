@@ -15,7 +15,6 @@ export const teamError = (payload) => {
 };               
 
 export const teamPage=(payload)=>{
-   console.log("page",payload)
   return{
     type:actionTypes.TEAM_PAGE,
     payload,

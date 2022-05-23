@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col, Image, Pagination } from "react-bootstrap";
+import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { TableListNotFound } from "../Utility/NoRecordFound";
@@ -8,55 +8,42 @@ import { teamList, teamPage } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
 import { dateTimeFormat } from "../../../constants";
 import DesignationsList from "../Designation/DesignationsList";
-import { RiUser3Fill } from "react-icons/ri";
+import { BsChevronDoubleDown } from "react-icons/bs";
 import { designationsList } from "../../../redux/Designations/Designations.action";
-import ReactPaginate from "react-paginate"
-import { siblingDirection } from "react-slick/lib/utils/innerSliderUtils";
-
+import ReactPaginate from "react-paginate";
+//import { normalizeRepeatedSlashes } from "next/dist/shared/lib/utils";
 const TeamList = () => {
   const dispatch = useDispatch();
-
-  const [modalShow, setModalShow] = useState(false);
   const params = useRouter();
-  //const [pageCount, setPageCount] = useState();
+  const [modalShow, setModalShow] = useState(false);
+  const [pages, setpages] = useState(0);
+  const [pageno, setpageno] = useState(1);
 
-  
-  const { list, listLoading,page, pageLoading} = useSelector((state) => ({
+  const { list, listLoading, page, pageLoading } = useSelector((state) => ({
     list: state?.team?.list,
     listLoading: state?.team?.listLoading,
     page: state?.team?.page,
-    pageLoading:  state?.team?.pageLoading,
-}));
- 
- 
+    pageLoading: state?.team?.pageLoading,
+  }));
   const handleModal = () => {
     setModalShow(true);
     dispatch(designationsList());
   };
-
-  useEffect(() => {
-   
-    dispatch(teamList());
-  }, []);
-  // useEffect(()=>{
-  //   var items=list?.pagination?.total_pages
-  //   setPageCount(Math.ceil(items))
-
-  // },[list])
-  
   const handlePageClick = (event) => {
-  // console.log("hh",list)
-  // const page_no=list.pagination.total_entries
-// var links = Math.ceil(dataListings.length / pagesize); 
-// for(var i = 0; i < links; i++){
-//     var pagnm = i+1;
-// }
-  const data=event.selected+1
-  console.log("HH",event.selected+1)
-  dispatch(teamPage(data))
-  
-		
-	};
+    const data = event.selected + 1;
+    setpageno(data);
+    dispatch(teamPage(data));
+  };
+  useEffect(() => {
+    dispatch(teamList());
+    dispatch(teamPage(pageno));
+  }, []);
+  useEffect(() => {
+    var items = list?.pagination?.total_entries;
+    var data = items /6;
+    setpages(data);
+  }, [list]);
+
   return (
     <Container fluid>
       <Row className="mb-4">
@@ -69,20 +56,19 @@ const TeamList = () => {
             </div>
           </div>
         </Col>
-        <Col md={6} className="text-right">
-          <Button
-            variant="primary"
-            onClick={() => params.push("/admin/team/create")}
-          >
-            Create
-            <FaPlus />
-          </Button>
-        </Col>
         <Col md={6}>
-          <Button variant="primary" onClick={() => handleModal()}>
-            Designations
-            <RiUser3Fill />
-          </Button>
+          <div className="text-rights">
+            <Button variant="primary" onClick={() => handleModal()}>
+              Designations
+              <BsChevronDoubleDown />
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => params.push("/admin/team/create")}
+            >Create
+              <FaPlus />
+            </Button>
+          </div>
         </Col>
       </Row>
       <DesignationsList show={modalShow} onHide={() => setModalShow(false)} />
@@ -93,9 +79,11 @@ const TeamList = () => {
             <th>#</th>
             <th>Name</th>
             <th>Last_Name</th>
-            <th>Designation</th>
+            <th>Description</th>
             <th>Email</th>
-            <th>Create At</th>
+            <th>Contact</th>
+            <th>Create_At</th>
+            <th>Updated_At</th>
           </tr>
         </thead>
         <tbody>
@@ -117,36 +105,37 @@ const TeamList = () => {
                   <span className="ms-2">{team?.first_name}</span>
                 </td>
                 <td>{team?.last_name}</td>
-                <td>{team?.designation ? team?.description : "-"}</td>
+                <td>{team?.description}</td>
                 <td>{team?.email ? team?.email : "-"}</td>
+                <td>{team?.contact}</td>
                 <td>{dateTimeFormat(team?.created_at)}</td>
+                <td>{dateTimeFormat(team?.updated_at)}</td>
               </tr>
             );
           })}
           {!page?.length && (
-            <TableListNotFound colSpan={5} loading={pageLoading} />
+            <TableListNotFound colSpan={8} loading={pageLoading} />
           )}
         </tbody>
       </Table>
       <ReactPaginate
         breakLabel={"..."}
-        nextLabel={"Next"}
+        nextLabel={"next"}
         previousLabel={"previous"}
-        pageRangeDisplayed={5}
-        pageCount={10}
-        containerClassName={"pagination justify-content-center"}
-        pageLinkClassName={'page-link'}
-        pageClassName={'page-item'}
-        previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
-        nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
-        breakClassName={'page-item'}
-        breakLinkClassName={'page-link'}
+        pageRangeDisplayed={2}
+        pageCount={pages}
+        marginPagesDisplayed={2}
+        containerClassName={"pagination  justify-content-end"}
+        pageLinkClassName={"page-link"}
+        pageClassName={"page-item"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
         onPageChange={handlePageClick}
-        activeClassName={'active'}
-        
-        
+        activeClassName={"active"}
       />
     </Container>
   );

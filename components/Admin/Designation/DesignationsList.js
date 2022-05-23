@@ -14,24 +14,24 @@ import {
   designationDetails,
   designationReset,
   designationsList,
-  designationPage
+  designationPage,
 } from "../../../redux/Designations/Designations.action";
 import { useNotification } from "../../../contexts/NotificationContext";
 
 const DesignationsList = (props) => {
-
-  const { list, listLoading, create, deleteDesignations,page,pageLoading} = useSelector(
-    (state) => ({
+  const { list, listLoading, create, deleteDesignations, page, pageLoading } =
+    useSelector((state) => ({
       list: state?.designations?.list,
       listLoading: state?.designations?.listLoading,
       create: state?.designations?.create,
       deleteDesignations: state?.designations?.delete,
-      page:state?.designations?.page,
-      pageLoading:state?.designations?.pageLoading
-    })
-  );
+      page: state?.designations?.page,
+      pageLoading: state?.designations?.pageLoading,
+    }));
 
   const dispatch = useDispatch();
+  const [pages, setpages] = useState(0);
+  const [pageno, setpageno] = useState(1);
 
   const { Toast } = useNotification();
 
@@ -39,9 +39,8 @@ const DesignationsList = (props) => {
 
   const handleForm = () => {
     setShow(true);
-    
   };
-  console.log("page",page)
+  
   const handleDelete = (id) => {
     dispatch(designationDelete(id));
   };
@@ -49,24 +48,31 @@ const DesignationsList = (props) => {
   const handleEdit = (id) => {
     dispatch(designationDetails(id));
     setShow(true);
-    
   };
-  const handlePageClick = (event) => {
-    const data=event.selected+1
-    console.log("HH",event.selected+1)
-    dispatch(designationPage(data))}
+  
 
   useEffect(() => {
-
+    dispatch(designationPage(pageno));
     if (deleteDesignations || create) {
-      let message = "Team Added successfully.";
-      if (deleteDesignations) message = "Team deleted successfully.";
+      let message = "Designation Added successfully.";
+      if (deleteDesignations) message = "Designation deleted successfully.";
       Toast.success(message);
       dispatch(designationReset());
-      dispatch(designationsList());
+      //dispatch(designationsList());
     }
-    
   }, [deleteDesignations, create]);
+
+  useEffect(() => {
+    var items = list?.pagination?.total_entries;
+    var data = (items / 6);
+    setpages(data);
+  }, [list]);
+
+  const handlePageClick = (event) => {
+    const data = event.selected + 1;
+    setpageno(data);
+    dispatch(designationPage(data));
+  };
 
   return (
     <div>
@@ -81,7 +87,7 @@ const DesignationsList = (props) => {
             <FaListOl /> Designation-List
           </Modal.Title>
 
-          <Button variant="primary" onClick={() => handleForm()} >
+          <Button variant="primary" onClick={() => handleForm()}>
             Create
             <IoCreateSharp />
           </Button>
@@ -102,7 +108,7 @@ const DesignationsList = (props) => {
                 return (
                   <tr
                     key={index}
-                    // onClick={() => params.push(`/admin/team/${team.id}`)}
+                    
                   >
                     <td>{index + 1}</td>
                     <td>
@@ -144,30 +150,27 @@ const DesignationsList = (props) => {
           </Button>
         </Modal.Footer>
         <ReactPaginate
-        breakLabel={"..."}
-        nextLabel={"Next"}
-        previousLabel={"previous"}
-        pageRangeDisplayed={5}
-        pageCount={10}
-        containerClassName={"pagination justify-content-center"}
-        pageLinkClassName={'page-link'}
-        pageClassName={'page-item'}
-        previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
-        nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
-        breakClassName={'page-item'}
-        breakLinkClassName={'page-link'}
-        onPageChange={handlePageClick}
-        activeClassName={'active'}/>
+          breakLabel={"..."}
+          nextLabel={"Next"}
+          previousLabel={"previous"}
+          pageRangeDisplayed={5}
+          pageCount={pages}
+          containerClassName={"pagination justify-content-end"}
+          pageLinkClassName={"page-link"}
+          pageClassName={"page-item"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          onPageChange={handlePageClick}
+          activeClassName={"active"}
+        />
       </Modal>
 
       {/*Create-Form */}
       <DesignationsForm show={show} onHide={() => setShow(false)} />
-     
-        
-        
-      
     </div>
   );
 };
