@@ -50,7 +50,9 @@ const AboutUs = () => {
 							data-aos="fade-left"
           					data-aos-duration="1500"
 						>
-							<Image src={whyYuvasoft} alt="why-choose" />
+							<div className={styles.aboutUsImg}>
+								<Image src={whyYuvasoft} alt="why-choose"  />
+							</div>
 						</Col>
 					</Row>
 				</Container>

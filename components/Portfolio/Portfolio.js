@@ -8,7 +8,7 @@ import portfolioData from "../Utils/ourPortfolio";
 
 const Portfolio = () => {
   return (
-    <section className="theme-padding">
+    <section className="themeSectionPadding">
       <Container className={styles.portfolioWrapper}>
         <Row
           className="justify-content-center text-center"

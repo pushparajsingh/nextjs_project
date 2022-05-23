@@ -61,17 +61,13 @@ const About = () => {
                 <h4>who we are</h4>
               </div>
               <div className={styles.aboutHeadingBox}>
-                <p>We are on a Mission to Change Your View of SEO</p>
+                <p>Yuvasoft Helps You to Grow Your Business and Build An Audience.</p>
               </div>
               <p className={styles.aboutMainPara}>
-                Onum is a values-driven SEO agency dedicated to empowering our
-                customers.
+              Preeminent Full Stack Development Company
               </p>
               <p className={styles.aboutSubPara}>
-                Over the years, we have worked with Fortune 500s and brand-new
-                startups. We help ambitious businesses like yours generate more
-                profits by building awareness, driving web traffic, connecting
-                with customers, and growing overall sales. Give us a call.
+              Yuvasoft Solutions Pvt Ltd is a global, software development company, dedicated to building innovative app solutions for Mobile and Web. We are a In-house team that cares deeply about creating great apps for our customers. Yuvasoft Solutions Pvt Ltd was established in January 2011 as a Web Project and Programme Development Company however due to the changing built environment and the growing needs of our Clients; it became necessary to broaden the services that could be provided by Yuvasoft, so as to offer multi-disciplinary under one banner, we now provide services in Project Management & Analysis, Project Architecture, Mobile Apps Development, Designs, Quality Assurance. 
               </p>
               <div className={styles.moreDetails}>
                 <div className={styles.btnInner}>
@@ -139,18 +135,17 @@ const About = () => {
               </div>
             </div>
           </Col>
-          <Col lg={8}>
+          <Col lg={8} md={8} className="aboutPageTitle">
             <Title
               value="Professional Team"
               span="Meet Our"
               subTitle="Leadership Team"
             />
             <p className={styles.titleParagraph}>
-              If we had a &quot; secret sauce &quot; it would be our awesome
-              people. We have only professional team!
+              We do everything with our core values of <span>honesty</span>, hard <span>work</span>, and <span>trust</span>.
             </p>
           </Col>
-          <Col lg={4}>
+          <Col lg={4} md={4}>
             <div className={styles.whatweDoSliderControl}>
               <Button onClick={() => gotoNext()}>
                 <HiOutlineArrowLeft />
