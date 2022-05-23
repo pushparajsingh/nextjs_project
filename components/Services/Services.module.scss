@@ -75,6 +75,9 @@
             }
             [class~=slick-dots] {
                 bottom: -40px;
+                @media screen and (max-width: 383px) {
+                    bottom: -64px;
+                }
                 li {
                     button {
                         border-radius: 50px;

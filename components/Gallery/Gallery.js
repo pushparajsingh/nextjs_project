@@ -4,10 +4,10 @@ import styles from "./Gallery.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import portfolioData from "../Utils/ourPortfolio";
-
+import { ImageViewer } from "react-image-viewer-dv";
 const Gallery = () => {
   return (
-    <section className="theme-padding">
+    <section className="themeSectionPadding">
       <Container className={styles.portfolioWrapper}>
         <Row
           className="justify-content-center text-center"
@@ -34,16 +34,19 @@ const Gallery = () => {
                   {portfolioData.map((item, index) => {
                     return (
                       <Col
-                        lg={4}
+                        lg={4} 
+                        md={6}
                         key={index}
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
+                        // data-aos="fade-up"
+                        // data-aos-duration="1000"
                       >
                         <Card className={styles.portfolioCard}>
                           {/* <Link href="/portfolioDetails">
                                                     <a> */}
                           <div className={styles.portfolioThumb}>
+                          <ImageViewer>
                             <Image src={item.thumb} alt={item.title} />
+                            </ImageViewer>
                           </div>
                           {/* <Card.Body>
                                                             <div className={styles.cardContent}>
@@ -63,12 +66,14 @@ const Gallery = () => {
                 <Row>
                   {portfolioData.slice(1, 2).map((item, index) => {
                     return (
-                      <Col lg={4} key={index}>
+                      <Col lg={4} md={6} key={index}>
                         <Card className={styles.portfolioCard}>
                           {/* <Link href="/portfolioDetails">
                                                     <a> */}
                           <div className={styles.portfolioThumb}>
+                          <ImageViewer>
                             <Image src={item.thumb} alt={item.title} />
+                            </ImageViewer>
                           </div>
                           {/* <Card.Body>
                                                             <div className={styles.cardContent}>
@@ -88,12 +93,14 @@ const Gallery = () => {
                 <Row>
                   {portfolioData.slice(0, 2).map((item, index) => {
                     return (
-                      <Col lg={4} key={index}>
+                      <Col lg={4} md={6} key={index}>
                         <Card className={styles.portfolioCard}>
                           {/* <Link href="/portfolioDetails">
                                                     <a> */}
                           <div className={styles.portfolioThumb}>
+                          <ImageViewer>
                             <Image src={item.thumb} alt={item.title} />
+                            </ImageViewer>
                           </div>
                           {/* <Card.Body>
                                                             <div className={styles.cardContent}>

@@ -1,5 +1,5 @@
 .teamsBgWrapper {
-    padding: 125px 0px;
+    padding: 100px 0px 0;
     background-color: var(--bg-secondary);
     [class~=themeTitle] {
         align-items: center;
@@ -98,6 +98,11 @@
         color: var(--light-black);
         border-bottom: 1px solid rgba(0,0,0,.1);
         padding-bottom: 20px;
+    }
+    [class~="slick-slider"]{
+        [class~="slick-arrow"]{
+            display: none !important;
+        }
     }
     .teamHeadList {
         list-style: none;
