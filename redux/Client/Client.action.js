@@ -59,7 +59,13 @@ export const clientList = (payload) => {
       payload,
     }
   }
-  
+  export const clientPageall = (payload) =>{
+    return{
+      type: actionTypes.CLIENT_PAGE_ALL,
+      payload
+    }
+  }
+   
   
   
 

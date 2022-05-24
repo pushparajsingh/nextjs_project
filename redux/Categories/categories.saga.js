@@ -48,7 +48,7 @@ function* categoriesCreate({ payload }) {
 function* categoriesUpdate({ payload }) {
   
   try {
-    const res = yield call(Api.put,`${apiRoutes.categories}/${payload}`);
+    const res = yield call(Api.put,`${apiRoutes.categories}/${payload.id}`,payload);
     yield put(categoriesSuccess({ type: actionTypes.CATEGORIES_UPDATE, data: res?.data }));
   } catch (error) {
     yield put(categoriesError({ type: actionTypes.CATEGORIES_UPDATE, data: res }));

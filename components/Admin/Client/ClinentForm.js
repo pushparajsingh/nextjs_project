@@ -52,7 +52,7 @@ const ClientsForm = () => {
 
   const onSubmit = (data) => {
     if (id) {
-      dispatch(clientUpdate(id));
+      dispatch(clientUpdate(data));
     } else {
       dispatch(clientCreate(data));
     }

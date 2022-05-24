@@ -11,6 +11,9 @@ import DesignationsList from "../Designation/DesignationsList";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { designationsList } from "../../../redux/Designations/Designations.action";
 import ReactPaginate from "react-paginate";
+import { testimonials } from "../../Utils/ourTestimonials";
+import ClientTestimonial from "../../Homepage/ClientTestimonial";
+
 //import { normalizeRepeatedSlashes } from "next/dist/shared/lib/utils";
 const TeamList = () => {
   const dispatch = useDispatch();
@@ -24,6 +27,7 @@ const TeamList = () => {
     listLoading: state?.team?.listLoading,
     page: state?.team?.page,
     pageLoading: state?.team?.pageLoading,
+    
   }));
   const handleModal = () => {
     setModalShow(true);

@@ -66,6 +66,22 @@ function* teamDelete({ payload }) {
   }
 }
 
+
+
+function* teamPageall({ payload }) {
+  try {
+    const res = yield call(
+      Api.get,
+      `${apiRoutes.team}/?page=${payload}&per=all`
+    );
+    yield put(
+      teamSuccess({ type: actionTypes.TEAM_PAGE_ALL, data: res?.data?.data })
+    );
+  } catch (error) {
+    yield put(teamError({ type: actionTypes.TEAM_PAGE_ALL, data: res }));
+  }
+}
+
 export default function* teamSagas() {
   yield takeLatest(actionTypes.TEAM_LIST, teamList);
   yield takeLatest(actionTypes.TEAM_DETAILS, teamDetails);
@@ -73,4 +89,5 @@ export default function* teamSagas() {
   yield takeLatest(actionTypes.TEAM_UPDATE, teamUpdate);
   yield takeLatest(actionTypes.TEAM_DELETE, teamDelete);
   yield takeLatest(actionTypes.TEAM_PAGE, teamPage);
+  yield takeLatest (actionTypes.TEAM_PAGE_ALL,teamPageall)
 }
