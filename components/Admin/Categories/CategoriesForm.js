@@ -70,7 +70,7 @@ const CategoriesForm = () => {
 
   const onSubmit = (data) => {
     if (id) {
-      dispatch(categoriesUpdate(id))
+      dispatch(categoriesUpdate(data))
     } else {
       dispatch(categoriesCreate(data));
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Slider from "react-slick";
 import Head from "next/head";
 import { Container, Row, Col } from "react-bootstrap";
@@ -10,9 +10,26 @@ import { BsPlusLg, BsTwitter } from "react-icons/bs";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import { teamHeads } from "../Utils/ourTeams";
+import ReactPaginate from "react-paginate";
+import { useSelector, useDispatch } from "react-redux";
+import {teamPageall} from '../../redux/Team/Team.action'
+import Team1 from "../../assets/images/teams/team-1.jpg";
+
 
 const Teams = () => {
+  const dispatch = useDispatch();
   const [buttonActive, setButtonActive] = useState();
+  const [pageno, setpageno] = useState(1);
+  const {   pageallLoading , pageall} = useSelector((state) => ({
+        pageall: state?.team?.pageall,
+      pageallLoading: state?.team?.pageallLoading,
+  }));
+
+  useEffect(() => {
+    
+    dispatch(teamPageall(pageno));
+  }, []);
+
 
   const onCloseButton = () => {
     setButtonActive("test");
@@ -59,6 +76,12 @@ const Teams = () => {
       setButtonActive(value);
     }
   };
+     
+  // const handlePageClick = (event) => {
+  //   const data = event.selected + 1;
+  //  //dispatch(teamPage(data));
+  // };
+
 
   return (
     <div>
@@ -140,22 +163,22 @@ const Teams = () => {
           </Row>
 
           <Row>
-            {ourTeams &&
-              ourTeams.map((value, index) => {
+            {pageall &&
+              pageall.map((value, index) => {
                 return (
                   <Col md={4} key={index}>
                     <div className={styles.TeamCard}>
                       <div className={styles.TeamPic}>
                         <Image
-                          src={value.thumb}
-                          alt={value.thumb}
+                          src={Team1}
+                          alt={Team1}
                           className="img-fluid"
                           // layout='fill'
                         />
                       </div>
                       <div className={styles.TeamInfo}>
-                        <h4 className={styles.TeamName}>{value.name}</h4>
-                        <p className={styles.TeamPost}>{value.post}</p>
+                        <h4 className={styles.TeamName}>{value.first_name}<span>{value.last_name}</span></h4>
+                        <p className={styles.TeamPost}>{value.email}</p>
                         <div
                           className={` ${
                             buttonActive === value.name
@@ -190,6 +213,25 @@ const Teams = () => {
               })}
           </Row>
         </Container>
+        {/* <ReactPaginate
+        breakLabel={"..."}
+        nextLabel={"next"}
+        previousLabel={"previous"}
+        pageRangeDisplayed={2}
+        pageCount={1}
+        marginPagesDisplayed={2}
+        containerClassName={"pagination  justify-content-end"}
+        pageLinkClassName={"page-link"}
+        pageClassName={"page-item"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
+        onPageChange={handlePageClick}
+        activeClassName={"active"}
+      /> */}
       </section>
     </div>
   );

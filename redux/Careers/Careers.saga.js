@@ -36,7 +36,7 @@ function* careerCreate({ payload }) {
 
 function* careerUpdate({ payload }) {
   try {
-    const res = yield call(Api.put,`${apiRoutes.careers}/${payload.id}`);
+    const res = yield call(Api.put,`${apiRoutes.careers}/${payload.id}`,payload);
     debugger
     yield put(careerSuccess({ type: actionTypes.CAREERS_UPDATE, data: res?.data?.data }));
   } catch (error) {

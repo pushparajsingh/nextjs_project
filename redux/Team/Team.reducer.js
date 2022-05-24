@@ -15,6 +15,8 @@ const team = (state = initialState, action) => {
       return { ...state, deleteLoading: true };
     case actionTypes.TEAM_PAGE:
       return { ...state, pageLoading: true };
+      case actionTypes.TEAM_PAGE_ALL:
+          return{...state,pageallLoading: true};
 
     case actionTypes.SUCCESS:
       switch (action.payload.type) {
@@ -46,6 +48,14 @@ const team = (state = initialState, action) => {
             deleteLoading: false,
             delete: action?.payload?.data,
           };
+
+          case actionTypes.TEAM_PAGE_ALL:
+            return{
+              ...state,
+              pageallLoading: false,
+              pageall: action?.payload?.data
+              
+            }
         default:
           return state;
       }
@@ -84,9 +94,17 @@ const team = (state = initialState, action) => {
             deleteLoading: false,
             error: action?.payload?.data,
           };
+          case actionTypes.TEAM_PAGE_ALL:
+          return{
+            ...state,
+            pageallLoading: false,
+            error : action?.payload?.data
+          }
+
         default:
           return state;
       }
+
     case actionTypes.TEAM_RESET:
       return initialState;
     default:

@@ -26,8 +26,7 @@ function* clientUpdate({ payload }) {
   try {
     const res = yield call(
       Api.put,
-      `${apiRoutes.clientstetimonials}/${payload}`
-    );
+      `${apiRoutes.clientstetimonials}/${payload.id}`,payload);
     yield put(
       clientSuccess({ type: actionTypes.CLIENT_UPDATE, data: res?.data?.data })
     );
@@ -77,6 +76,26 @@ function* clientPage({ payload }) {
 }
 
 
+function* clientPageall({ payload }) {
+  try {
+    const res = yield call(
+      Api.get,
+      `${apiRoutes.clientstetimonials}?page=${payload}&per=all`
+    );
+    yield put(
+      clientSuccess({ type: actionTypes.CLIENT_PAGE_ALL, data: res?.data?.data })
+    );
+  } catch (error) {
+    yield put(clientError({ type: actionTypes.CLIENT_PAGE_ALL, data: res }));
+  }
+}
+
+
+
+
+
+
+
 export default function* clientSagas() {
   yield takeLatest(actionTypes.CLIENT_LIST, clientList);
   yield takeLatest(actionTypes.CLIENT_CREATE, clientCreate);
@@ -84,4 +103,5 @@ export default function* clientSagas() {
   yield takeLatest(actionTypes.CLIENT_DETAILS, clientDetails);
   yield takeLatest(actionTypes.CLIENT_DELETE, clientDelete);
   yield takeLatest(actionTypes.CLIENT_PAGE, clientPage);
+  yield takeLatest(actionTypes.CLIENT_PAGE_ALL,clientPageall);
 }

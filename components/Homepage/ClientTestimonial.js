@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Homepage.module.css";
 import Title from "../Layout/Titles/Titles";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
@@ -7,8 +7,26 @@ import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import Image from "next/image";
 import QuoteSign from "../../assets/images/right-quote-sign.svg";
 import { testimonials } from "../Utils/ourTestimonials";
+import { useSelector, useDispatch } from "react-redux";
+import { clientPageall } from "../../redux/Client/Client.action"
+import client1 from "../../assets/images/homepage/client1.png"
+
+
 
 const ClientTestimonial = () => {
+  const dispatch = useDispatch();
+  const [pageno, setpageno] = useState(1);
+  const { pageallLoading, pageall } = useSelector((state) => ({
+    pageall: state?.client?.pageall,
+    pageallLoading: state?.client?.pageallLoading,
+  }));
+
+
+  useEffect(() => {
+    dispatch(clientPageall(pageno))
+  }, [])
+
+
   const customeSlider = useRef();
   var settings = {
     dots: true,
@@ -36,22 +54,22 @@ const ClientTestimonial = () => {
           <Row>
             <Col lg={4}>
               <div className={styles.clientTestimonialHeader}>
-              <div className={styles.clientTestimonialTitle}>
-                <Title value="CLIENTS REVIEW" subTitle="Clients Testimonials" />
-              </div>
-              <div className={styles.clientTestimonialSliderControl}>
-                <Button onClick={() => gotoNext()}>
-                  <HiOutlineArrowLeft />
-                </Button>
-                <Button onClick={() => gotoPrev()}>
-                  <HiOutlineArrowRight />
-                </Button>
-              </div>
+                <div className={styles.clientTestimonialTitle}>
+                  <Title value="CLIENTS REVIEW" subTitle="Clients Testimonials" />
+                </div>
+                <div className={styles.clientTestimonialSliderControl}>
+                  <Button onClick={() => gotoNext()}>
+                    <HiOutlineArrowLeft />
+                  </Button>
+                  <Button onClick={() => gotoPrev()}>
+                    <HiOutlineArrowRight />
+                  </Button>
+                </div>
               </div>
             </Col>
             <Col lg={8} className={styles.clientTestimonialSlider}>
               <Slider {...settings} ref={customeSlider}>
-                {testimonials.map((review, index) => {
+                {pageall?.map((review, index) => {
                   return (
                     <div key={index}>
                       <Card className={styles.clientTestimonialCard}>
@@ -60,14 +78,14 @@ const ClientTestimonial = () => {
                             <div className={styles.clientProfileBox}>
                               <div className={styles.clientProfileImg}>
                                 <Image
-                                  src={review.image}
+                                  src={client1}
                                   alt="ClientProfile"
                                   className="img-fluid"
                                 />
                               </div>
                               <div className={styles.clientDetail}>
                                 <h5>{review.name}</h5>
-                                <p>{review.location}</p>
+                                <p>{review.city}</p>
                               </div>
                             </div>
                             <div className={styles.quoteImgBox}>
@@ -79,7 +97,7 @@ const ClientTestimonial = () => {
                             </div>
                           </div>
                           <div className={styles.clientFeedbackBox}>
-                            {review.feedback}
+                            {review.description}
                           </div>
                         </Card.Body>
                       </Card>

@@ -65,7 +65,7 @@ const CompanyeventForm = () => {
     }
 
     if (update) {
-      Toast.success("Company_events updated successfully.");
+      Toast.success("Company events updated successfully.");
      dispatch(companyReset());
       params.push("/admin/companyevent");
     }
@@ -73,7 +73,7 @@ const CompanyeventForm = () => {
   const onSubmit = (data) => {
     
     if (id) {
-      dispatch(companyUpdate(id));
+      dispatch(companyUpdate(data));
     } else {
       dispatch(companyCreate(data));
     }
