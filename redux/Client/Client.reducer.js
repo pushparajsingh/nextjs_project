@@ -15,6 +15,8 @@ const client = (state = initialState, action) => {
       return { ...state, deleteLoading: true };
       case actionTypes .CLIENT_PAGE:
         return{...state,pageLoading: true};
+        case actionTypes.CLIENT_PAGE_ALL:
+          return{...state,pageallLoading: true};
 
     case actionTypes.SUCCESS:
       switch (action.payload.type) {
@@ -51,7 +53,14 @@ const client = (state = initialState, action) => {
               page: action?.payload?.data
 
             }  
-        default:
+            case actionTypes.CLIENT_PAGE_ALL:
+              return{
+                ...state,
+                pageallLoading: false,
+                pageall: action?.payload?.data
+                
+              }
+          default:
           return state;
       }
     case actionTypes.ERROR:
@@ -92,11 +101,21 @@ const client = (state = initialState, action) => {
           error: action?.payload?.data,
         }
 
+
+        case actionTypes.CLIENT_PAGE_ALL:
+          return{
+            ...state,
+            pageallLoading: false,
+            error : action?.payload?.data
+          }
+
  case actionTypes.CLIENT_RESET:
       return initialState;
     default:
       return { ...state };
   }
+
+  
 };
 export default client;
 

@@ -61,3 +61,9 @@ export const teamReset = (payload) => {
     payload,
   };
 };
+export const teamPageall = (payload)=>{
+  return{
+    type: actionTypes.TEAM_PAGE_ALL,
+    payload,
+  }
+}

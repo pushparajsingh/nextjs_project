@@ -69,7 +69,7 @@ function* companyCreate({ payload }) {
 
 function* companyUpdate({ payload }) {
   try {
-    const res = yield call(Api.put, `${apiRoutes.company_events}/${payload}`);
+    const res = yield call(Api.put, `${apiRoutes.company_events}/${payload.id}`,payload);
     yield put(
       companySuccess({
         type: actionTypes.COMPANY_EVENTS_UPDATE,
