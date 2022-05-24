@@ -93,7 +93,7 @@ const TeamForm = () => {
 
   const onSubmit = (data) => {
     if (id) {
-      dispatch(teamUpdate(id));
+      dispatch(teamUpdate(data));
     } else {
       dispatch(teamCreate(data));
     }

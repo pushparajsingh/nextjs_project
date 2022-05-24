@@ -80,7 +80,7 @@ const BlogsForm = () => {
   const onSubmit = (data) => {
     
     if (id) {
-      dispatch(blogsUpdate(id));
+      dispatch(blogsUpdate(data));
     } else {
       dispatch(blogsCreate(data));
     }

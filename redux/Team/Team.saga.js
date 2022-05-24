@@ -50,7 +50,7 @@ function* teamCreate({ payload }) {
 
 function* teamUpdate({ payload }) {
   try {
-    const res = yield call(Api.put, `${apiRoutes.team}/${payload}`);
+    const res = yield call(Api.put, `${apiRoutes.team}/${payload.id}`,payload);
     yield put(teamSuccess({ type: actionTypes.TEAM_UPDATE, data: res?.data }));
   } catch (error) {
     yield put(teamError({ type: actionTypes.TEAM_UPDATE, data: res }));

@@ -50,7 +50,7 @@ function* blogsCreate({ payload }) {
 
 function* blogsUpdate({ payload }) {
   try {
-    const res = yield call(Api.put, `${apiRoutes.blogs}/${payload}`);
+    const res = yield call(Api.put, `${apiRoutes.blogs}/${payload.id}`,payload);
     yield put(
       blogsSuccess({ type: actionTypes.BLOGS_UPDATE, data: res?.data })
     );

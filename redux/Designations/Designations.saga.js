@@ -43,7 +43,7 @@ function* designationCreate({ payload }) {
   }
   function* designationUpdate({ payload }) {
     try {
-      const res = yield call(Api.put,`${apiRoutes.designations}/${payload}`);
+      const res = yield call(Api.put,`${apiRoutes.designations}/${payload.id}`,payload);
       yield put(
         designationsSuccess({ type: actionTypes.DESIGNATIONS_UPDATE, data: res?.data?.data })
       );
