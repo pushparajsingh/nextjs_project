@@ -41,7 +41,7 @@ const Sidebar = () => {
           <Link href="/admin/categories">
             <a>
               <BiCategoryAlt/>
-              Categories
+              Designations
             </a>
           </Link>
         </li>

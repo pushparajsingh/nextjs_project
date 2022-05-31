@@ -81,7 +81,7 @@ const TeamList = () => {
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Last_Name</th>
+            <th>Last Name</th>
             <th>Description</th>
             <th>Email</th>
             <th>Contact</th>

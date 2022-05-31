@@ -20,7 +20,7 @@ export const clientList = (payload) => {
       payload,
     };
   };
-  
+
   export const clientCreate = (payload) => {
     return {
       type: actionTypes.CLIENT_CREATE,

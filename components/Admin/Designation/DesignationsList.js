@@ -19,9 +19,11 @@ import {
 import { useNotification } from "../../../contexts/NotificationContext";
 
 const DesignationsList = (props) => {
-  const { list, listLoading, create, deleteDesignations, page, pageLoading } =
+  const { list, listLoading, create, deleteDesignations, page, pageLoading,details,update } =
     useSelector((state) => ({
       list: state?.designations?.list,
+      update: state?.designations?.update,
+      details: state?.designations?.details,
       listLoading: state?.designations?.listLoading,
       create: state?.designations?.create,
       deleteDesignations: state?.designations?.delete,
@@ -53,14 +55,15 @@ const DesignationsList = (props) => {
 
   useEffect(() => {
     dispatch(designationPage(pageno));
+    dispatch(designationsList());
     if (deleteDesignations || create) {
       let message = "Designation Added successfully.";
       if (deleteDesignations) message = "Designation deleted successfully.";
       Toast.success(message);
       dispatch(designationReset());
-      //dispatch(designationsList());
+     
     }
-  }, [deleteDesignations, create]);
+  }, [deleteDesignations, create,update,details]);
 
   useEffect(() => {
     var items = list?.pagination?.total_entries;
@@ -98,8 +101,8 @@ const DesignationsList = (props) => {
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Create At</th>
-                <th>Updated At</th>
+                <th>Create_At</th>
+                <th>Updated_At</th>
                 <th colSpan={2}>Action</th>
               </tr>
             </thead>
