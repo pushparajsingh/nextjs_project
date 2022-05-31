@@ -44,7 +44,8 @@ const DesignationsForm = (props) => {
   const onSubmit = (data) => {
   
     if(ids){
-      dispatch(designationUpdate(ids))
+     
+      dispatch(designationUpdate(data))
     }
     else{ dispatch(designationCreate(data)); }
       
@@ -57,16 +58,19 @@ const DesignationsForm = (props) => {
       setValue("name", details?.name);
       setValue("id",details?.id)
      dispatch(designationReset());
-     dispatch(designationsList());
+     
     }
     if (update) {
       Toast.success("Designation updated successfully.");
       dispatch(designationReset());
-      dispatch(designationsList());
+  
     }
 
 
   },[details,update]);
+  useEffect(()=>{
+   dispatch(designationsList())
+  },[])
   return (
     <div>
       <Modal
@@ -90,7 +94,7 @@ const DesignationsForm = (props) => {
             {
               ids ?
                 <span>
-              <Button type="submit">Save</Button>
+              <Button type="submit" >Save</Button>
               <Button type="button" onClick={props.onHide} >Cancel</Button>
             </span>
             : <Button  type="submit" >
