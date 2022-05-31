@@ -1,7 +1,7 @@
 import { all } from "redux-saga/effects";
 import authSagas from "./Auth/Auth.saga";
 import teamSagas from "./Team/Team.saga";
-import clientSagas from "./Client/Client.saga"
+import clientSagas from "./Clientstetimonials/Client.saga"
 import careerSagas from "./Careers/Careers.saga"
 import designationSagas from "./Designations/Designations.saga";
 import categoriesSagas from "./Categories/categories.saga";

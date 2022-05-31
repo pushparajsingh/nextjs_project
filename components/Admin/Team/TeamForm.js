@@ -6,10 +6,12 @@ import FormInput from "../../FormElements/FormInput";
 import { useRouter } from "next/router";
 import { emailPattern } from "../../../constants";
 import ActionFooter from "../Utility/ActionFooter";
+//import Select from "react-select";
 import { useNotification } from "../../../contexts/NotificationContext";
 import DeleteConfirmationModal from "../Utility/DeleteConfirmationModal";
 import { FullPageLoading } from "../../Loading/Loading";
 import FormSelect from "../../FormElements/FormSelect";
+import {categoriesList} from "../../../redux/Categories/categories.action"
 import {
   teamDetails,
   teamCreate,
@@ -18,6 +20,7 @@ import {
   teamReset,
 } from "../../../redux/Team/Team.action";
 import { useSelector, useDispatch } from "react-redux";
+import { designationCreate } from "../../../redux/Designations/Designations.action";
 
 const TeamForm = () => {
   const params = useRouter();
@@ -56,7 +59,10 @@ const TeamForm = () => {
     loading: state?.team?.createLoading || state?.team?.updateLoading,
     deleteLoading: state?.team?.deleteLoading,
   }));
-
+const {list}=useSelector((state)=>({
+  list: state?.categories?.list,
+}))
+console.log("list",list)
   console.log(444, loading);
 
   useEffect(() => {
@@ -98,6 +104,7 @@ const TeamForm = () => {
       dispatch(teamCreate(data));
     }
   };
+ 
 
   useEffect(() => {
     if (id) setIsEdit(true);
@@ -106,6 +113,9 @@ const TeamForm = () => {
   const handleDelete = () => {
     dispatch(teamDelete(id));
   };
+  useEffect(()=>{
+   dispatch(categoriesList());
+  },[])
 
   return (
     <Container fluid>
@@ -176,7 +186,7 @@ const TeamForm = () => {
               label="contact"
               name="contact"
               type="number"
-              placeholder="Type herre"
+              placeholder="Type here"
               {...register("contact", {
                 required: true,
               })}
@@ -184,22 +194,59 @@ const TeamForm = () => {
               disabled={isEdit}
             />
           </Col>
+          <Col md={6}>
+        {/* * {console.log(1111, errors)} */}
+        <FormInput
+              label="description"
+              name="description"
+              type="text"
+              placeholder="Type here"
+              {...register("description", {
+                required: true,
+              })}
+              errors={errors}
+              disabled={isEdit}
+            />
+
+        </Col>
+        <Col md={6}>
+        <FormInput
+              label="image"
+              name="image"
+              type="text"
+              placeholder="Type here"
+              // {...register("image", {
+              //   required: true,
+              // })}
+              errors={errors}
+              disabled={isEdit}
+            />
+
+        </Col>
         </Row>
-        * {console.log(1111, errors)}
         <FormSelect
-          name="description"
-          label="description"
+          name="designation_id"
+          label="designation_id"
           aria-label="Select one"
           errors={errors}
           disabled={isEdit}
-          {...register("description", {
-            // required: true,
-          })}
+           {...register("designation_id", {
+          //   // required: true,
+           })}
           options={[
             { text: "select one", value: "" },
             { text: "React-dev", value: "React-dev" },
           ]}
+        
         />
+       
+        {/* <select>
+         {
+            list?.data?.map((x,y) => 
+              <option key={y}>{x.name}</option> )
+          }
+          </select> */}
+    
         <ActionFooter
           isEdit={isEdit}
           loading={loading}

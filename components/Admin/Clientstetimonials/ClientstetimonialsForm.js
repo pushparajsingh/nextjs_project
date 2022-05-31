@@ -14,9 +14,9 @@ import {
   clientDetails,
   clientDelete,
   clientReset,
-} from "../../../redux/Client/Client.action";
+} from "../../../redux/Clientstetimonials/Client.action.js";
 
-const ClientsForm = () => {
+const ClientstetimonialsForm = () => {
   const dispatch = useDispatch();
   const params = useRouter();
   const { id } = params.query;
@@ -143,6 +143,7 @@ const ClientsForm = () => {
         </Col>
         <Col md={6}>
           <FormInput
+            as="textarea"
             label="Description"
             name="description"
             placeholder="Type here"
@@ -171,4 +172,4 @@ const ClientsForm = () => {
   );
 };
 
-export default ClientsForm ;
+export default ClientstetimonialsForm ;

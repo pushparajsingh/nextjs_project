@@ -8,7 +8,7 @@ import Image from "next/image";
 import QuoteSign from "../../assets/images/right-quote-sign.svg";
 import { testimonials } from "../Utils/ourTestimonials";
 import { useSelector, useDispatch } from "react-redux";
-import { clientPageall } from "../../redux/Client/Client.action"
+import { clientPageall } from "../../redux/Clientstetimonials/Client.action"
 import client1 from "../../assets/images/homepage/client1.png"
 
 

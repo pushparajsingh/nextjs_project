@@ -1,10 +1,10 @@
 import React from 'react'
-import ClientsForm from '../../../components/Admin/Clientstetimonials/ClinentForm';
+import ClientstetimonialsForm from '../../../components/Admin/Clientstetimonials/ClientstetimonialsForm';
 
 const ClientCreate = () => {
   return (
     <div>
-      <ClientsForm/>
+      <ClientstetimonialsForm/>
     </div>
   )
 }

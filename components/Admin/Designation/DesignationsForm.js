@@ -94,10 +94,10 @@ const DesignationsForm = (props) => {
             {
               ids ?
                 <span>
-              <Button type="submit" >Save</Button>
+              <Button type="submit" onClick={props.onHide}  >Save</Button>
               <Button type="button" onClick={props.onHide} >Cancel</Button>
             </span>
-            : <Button  type="submit" >
+            : <Button  type="submit" onClick={props.onHide}>
             Submit
             <BsCheckSquareFill />
           </Button>}

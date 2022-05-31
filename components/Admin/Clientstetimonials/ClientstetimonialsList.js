@@ -3,13 +3,13 @@ import { Table, Container, Row, Col, Image } from "react-bootstrap";
 import { FaUsers, FaPlus } from "react-icons/fa";
 import Button from "../../FormElements/Button";
 import { useRouter } from "next/router";
-import {clientList,clientPage} from "../../../redux/Client/Client.action"
+import {clientList,clientPage} from "../../../redux/Clientstetimonials/Client.action"
 import { useSelector, useDispatch } from "react-redux";
 import { TableListNotFound } from "../Utility/NoRecordFound";
 import { dateTimeFormat } from "../../../constants";
 import ReactPaginate from 'react-paginate'
 
-const ClientsList  = () => {
+const ClientstetimonialsList  = () => {
  
     const dispatch = useDispatch();
     const params = useRouter();
@@ -71,7 +71,7 @@ const ClientsList  = () => {
             {page?.map((client, index) => {
             return (
                 <tr key={index}
-                onClick={() => params.push(`/admin/client/${client.id}`)}>
+                onClick={() => params.push(`/admin/clientstetimonials/${client.id}`)}>
                 <td>{index + 1}</td>
                 <td>
                   <Image
@@ -119,4 +119,4 @@ const ClientsList  = () => {
   );
 };
 
-export default ClientsList ;
+export default ClientstetimonialsList ;

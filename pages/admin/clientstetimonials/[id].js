@@ -1,7 +1,7 @@
 import React from "react";
-import ClientsForm from "../../../components/Admin/Clientstetimonials/ClinentForm";
+import ClientstetimonialsForm from "../../../components/Admin/Clientstetimonials/ClientstetimonialsForm";
 
 const ClientList = () => {
-  return <ClientsForm />;
+  return <ClientstetimonialsForm />;
 };
 export default ClientList;
