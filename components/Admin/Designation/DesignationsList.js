@@ -98,8 +98,8 @@ const DesignationsList = (props) => {
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Create_At</th>
-                <th>Updated_At</th>
+                <th>Create At</th>
+                <th>Updated At</th>
                 <th colSpan={2}>Action</th>
               </tr>
             </thead>

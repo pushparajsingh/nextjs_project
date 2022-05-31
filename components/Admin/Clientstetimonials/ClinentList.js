@@ -42,15 +42,15 @@ const ClientsList  = () => {
           <div className="list-header">
             <FaUsers/>
             <div className="content">
-              <h2>Client</h2>
-              <p>Manage your client</p>
+              <h2>Clientstetimonials</h2>
+              <p>Manage your clientstetimonials</p>
             </div>
           </div>
         </Col>
         <Col md={6} className="text-right">
           <Button
             variant="primary"
-            onClick={() => params.push("/admin/client/create")}
+            onClick={() => params.push("/admin/clientstetimonials/create")}
           >
             Create
             <FaPlus/>
@@ -64,7 +64,7 @@ const ClientsList  = () => {
             <th>Name</th>
             <th>City</th>
             <th>Description</th>
-            <th>created_at</th>
+            <th>created At</th>
           </tr>
         </thead>
           <tbody>
