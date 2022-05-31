@@ -8,7 +8,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/dist/client/router';
 import { useNotification } from '../../../contexts/NotificationContext';
-import { companyCreate ,companyReset,companyDetails,companyUpdate,companyDelete} from '../../../redux/company_events/company.action';
+import { companyCreate ,companyReset,companyDetails,companyUpdate,companyDelete} from '../../../redux/companyevents/company.action';
 
 const CompanyeventForm = () => {
  

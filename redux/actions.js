@@ -5,4 +5,4 @@ export * from "./Designations/Designations.action";
 export * from "./Careers/Careers.action";
 export * from "./Categories/categories.action";
 export * from "./Blogs/Blogs.action";
-export * from "./company_events/company.action"
+export * from "./companyevents/company.action"

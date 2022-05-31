@@ -8,7 +8,7 @@ import { dateTimeFormat } from "../../../constants";
 import ReactPaginate from "react-paginate";
 import {MdEventBusy} from "react-icons/md";
 import {MdCreateNewFolder} from "react-icons/md";
-import { companyPage,companyList } from "../../../redux/company_events/company.action";
+import { companyPage,companyList } from "../../../redux/companyevents/company.action";
 
 const CompanyeventList = () => {
  

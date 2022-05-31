@@ -6,7 +6,7 @@ import careerSagas from "./Careers/Careers.saga"
 import designationSagas from "./Designations/Designations.saga";
 import categoriesSagas from "./Categories/categories.saga";
 import blogSagas from "./Blogs/Blogs.saga";
-import companySagas from "./company_events/company.saga"
+import companySagas from "./companyevents/company.saga"
 
 export default function* rootSagas() {
   yield all([authSagas(), teamSagas(),designationSagas(),clientSagas(),careerSagas(),categoriesSagas(),blogSagas(),companySagas()]);

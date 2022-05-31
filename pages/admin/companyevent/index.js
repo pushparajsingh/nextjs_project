@@ -1,5 +1,5 @@
 import React  from "react";
-import List from "../../../components/Admin/Company_events/companyeventList";
+import List from "../../../components/Admin/Companyevents/CompanyeventList";
 const CompanyeventList=()=>{
     return <List/>
 }

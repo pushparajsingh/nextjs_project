@@ -6,7 +6,7 @@ import client from "./Client/Client.reducer";
 import careers from "./Careers/Careers.reducer"
 import categories from "./Categories/categories.reducer";
 import blogs from "./Blogs/Blogs.reducer";
-import company from "./company_events/company.reducer"
+import company from "./companyevents/company.reducer"
 const rootReducer = combineReducers({
   auth,
   team,
