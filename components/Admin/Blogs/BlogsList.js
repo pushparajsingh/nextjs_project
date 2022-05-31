@@ -71,8 +71,8 @@ const BlogsList = () => {
             <th>Description</th>
             <th>Date</th>
             <th>Title</th>
-            <th>Create_At</th>
-            <th>Updated_At</th>
+            <th>Create At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
          <tbody>

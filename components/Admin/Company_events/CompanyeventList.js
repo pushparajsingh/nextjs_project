@@ -1,37 +1,39 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from "react";
 import { Table, Container, Row, Col, Image } from "react-bootstrap";
-import {MdOutlineCategory,MdCreateNewFolder,MdCategory} from "react-icons/md";
 import Button from "../../FormElements/Button";
 import { TableListNotFound } from "../Utility/NoRecordFound";
-import { useSelector,useDispatch } from 'react-redux';
-import { useRouter } from 'next/dist/client/router';
+import { useDispatch,useSelector } from "react-redux";
+import { useRouter } from "next/dist/client/router";
 import { dateTimeFormat } from "../../../constants";
 import ReactPaginate from "react-paginate";
-import { categoriesList, categoriesPage } from '../../../redux/Categories/categories.action';
+import {MdEventBusy} from "react-icons/md";
+import {MdCreateNewFolder} from "react-icons/md";
+import { companyPage,companyList } from "../../../redux/company_events/company.action";
 
-const CategoriesList = () => {
-
-  const dispatch = useDispatch();
-  const params = useRouter();
-  const [pages, setpages] = useState(0);
-  const [pageno, setpageno] = useState(1);
+const CompanyeventList = () => {
+ 
+  const dispatch=useDispatch();
+  const params=useRouter();
+  const [pages, setpages] =useState(0);
+  const [pageno, setpageno] =useState(1);
 
   const { list, listLoading, page, pageLoading } = useSelector((state) => ({
-    list: state?.categories?.list,
-    listLoading: state?.categories?.listLoading,
-    page: state?.categories?.page,
-    pageLoading: state?.categories?.pageLoading,
+    list: state?.company?.list,
+    listLoading: state?. company?.listLoading,
+    page: state?. company?.page,
+    pageLoading: state?. company?.pageLoading,
   }));
-  useEffect(()=>{
-      dispatch(categoriesList())
-      dispatch(categoriesPage(pageno));
-  },[])
-  const handlePageClick = (event) => {
+
+  const handlePageClick=(event)=>{
     const data = event.selected + 1;
     setpageno(data);
-    dispatch(categoriesPage(data));
-  };
-  
+    dispatch(companyPage(data));
+  }
+  useEffect(()=>{
+    dispatch(companyList());
+    dispatch(companyPage(pageno))
+       
+  },[])
   useEffect(() => {
     var items = list?.pagination?.total_entries;
     var data = (items / 6);
@@ -39,43 +41,49 @@ const CategoriesList = () => {
   }, [list]);
   
   return (
+    
     <Container fluid>
       <Row className="mb-4">
         <Col md={6}>
           <div className="list-header">
-            <MdCategory/>
-            
+            <MdEventBusy />
             <div className="content">
-              <h2>Categories</h2>
-              <p>categories</p>
+              <h2>Company</h2>
+              <p>Company Events</p>
             </div>
           </div>
         </Col>
-        <Col md={6} className="text-right">
-          <Button
-            variant="primary"
-            onClick={() => params.push("/admin/categories/create")}
-          >
-            Create
-            <MdCreateNewFolder />
-          </Button>
+        <Col md={6}>
+          <div className="text-right">
+            <Button
+              variant="primary"
+              onClick={() => params.push("/admin/companyevent/create")}
+            >
+              Create
+              <MdCreateNewFolder />
+            </Button>
+          </div>
         </Col>
-        </Row>
+      </Row>
+
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Location</th>
             <th>Create At</th>
-            <th>Update At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
-        <tbody>
-          {page?.map((categories, index) => {
+          <tbody>
+          {page?.map((company, index) => {
             return (
               <tr
                 key={index}
-                onClick={() => params.push(`/admin/categories/${categories.id}`)}
+                onClick={() => params.push(`/admin/companyevent/${company.id}`)}
               >
                 <td>{index + 1}</td>
                 <td>
@@ -86,17 +94,21 @@ const CategoriesList = () => {
                     width="40"
                     alt="user"
                   />
-                  <span className="ms-2">{categories?.name}</span>
+                  <span className="ms-2">{company?.title}</span>
                 </td>
-                <td>{dateTimeFormat(categories?.created_at)}</td>
-                <td>{dateTimeFormat(categories?.updated_at)}</td>
+                
+                <td>{company?.description}</td>
+                <td>{company?.date}</td>
+               <td>{company.location}</td>
+                <td>{dateTimeFormat(company?.created_at)}</td>
+                <td>{dateTimeFormat(company?.updated_at)}</td>
               </tr>
             );
           })}
           {!page?.length && (
-            <TableListNotFound colSpan={5} loading={pageLoading} />
+            <TableListNotFound colSpan={7} loading={pageLoading} />
           )}
-        </tbody>
+        </tbody> 
       </Table>
       <ReactPaginate
         breakLabel={"..."}
@@ -117,8 +129,8 @@ const CategoriesList = () => {
         onPageChange={handlePageClick}
         activeClassName={"active"}
       />
-     
-      </Container>
+    </Container>
   );
 };
-export default CategoriesList;
+
+export default CompanyeventList;

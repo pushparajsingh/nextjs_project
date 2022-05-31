@@ -70,7 +70,7 @@ const CareersList= () => {
             <th>Name</th>
             <th>Designation</th>
             <th>Create At</th>
-            <th>Updated_At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
         <tbody>

@@ -74,8 +74,8 @@ const CompanyeventList = () => {
             <th>Description</th>
             <th>Date</th>
             <th>Location</th>
-            <th>Create_At</th>
-            <th>Updated_At</th>
+            <th>Create At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
           <tbody>

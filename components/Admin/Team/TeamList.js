@@ -27,8 +27,7 @@ const TeamList = () => {
     listLoading: state?.team?.listLoading,
     page: state?.team?.page,
     pageLoading: state?.team?.pageLoading,
-    
-  }));
+    }));
   const handleModal = () => {
     setModalShow(true);
     dispatch(designationsList());
@@ -70,7 +69,7 @@ const TeamList = () => {
               variant="primary"
               onClick={() => params.push("/admin/team/create")}
             >Create
-              <FaPlus />
+              <FaPlus/>
             </Button>
           </div>
         </Col>
@@ -86,8 +85,8 @@ const TeamList = () => {
             <th>Description</th>
             <th>Email</th>
             <th>Contact</th>
-            <th>Create_At</th>
-            <th>Updated_At</th>
+            <th>Create At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
         <tbody>

@@ -73,12 +73,12 @@ const ClientsForm = () => {
       Toast.success(message);
       setOpenModal(false);
       dispatch(clientReset());
-      params.push("/admin/client");
+      params.push("/admin/clientstetimonials");
     }
 
     if (update) {
       Toast.success("Client updated successfully.");
-      params.push("/admin/client");
+      params.push("/admin/clientstetimonials");
       dispatch(clientReset());
     }
   }, [create, update, details, deleteclient]);
@@ -100,8 +100,8 @@ const ClientsForm = () => {
           <div className="list-header">
             <FaUsers />
             <div className="content">
-              <h2>{id ? "Update" : "Create"} Client</h2>
-              <p>Manage your client</p>
+              <h2>{id ? "Update" : "Create"} Clientstetimonials</h2>
+              <p>Manage your Clientstetimonials</p>
             </div>
           </div>
         </Col>
@@ -116,6 +116,7 @@ const ClientsForm = () => {
             disabled={isEdit}
           />
         )}
+        <Row>
         <Col md={6}>
           <FormInput
             label="First Name"
@@ -152,6 +153,7 @@ const ClientsForm = () => {
             disabled={isEdit}
           />
         </Col>
+        </Row>
         <ActionFooter
           isEdit={isEdit}
           loading={loading}
