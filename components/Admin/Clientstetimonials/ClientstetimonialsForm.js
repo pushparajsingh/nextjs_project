@@ -20,7 +20,7 @@ const ClientstetimonialsForm = () => {
   const dispatch = useDispatch();
   const params = useRouter();
   const { id } = params.query;
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal,  setOpenModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const { Toast } = useNotification();
   const {

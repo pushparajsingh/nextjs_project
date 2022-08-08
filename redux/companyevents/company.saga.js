@@ -4,6 +4,7 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { actionTypes } from "./company.constant";
 import { companySuccess, companyError } from "./company.action";
 
+
 function* companyList() {
   try {
     const res = yield call(Api.get, apiRoutes.company_events);
