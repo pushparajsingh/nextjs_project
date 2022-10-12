@@ -4,9 +4,22 @@ import styles from "./Career.module.scss";
 import careerGraphic from "../../assets/images/careers/career-graphic.webp";
 import jobIcon from "../../assets/images/careers/web-design.png";
 import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import { careerPage } from '../../redux/Careers/Careers.action'
+import { useSelector, useDispatch } from "react-redux";
+
 
 const CareerPage = () => {
+	const dispatch = useDispatch()
 	const series = [1, 2, 3, 4];
+	const [pageno, setpageno] = useState(1);
+	const career = useSelector((state) => state);
+	console.log(333, career?.careers?.page)
+	useEffect(() => {
+
+		dispatch(careerPage(pageno));
+	}, []);
+
 	return (
 		<section className={`${styles.careerPage} themeSectionPadding`}>
 			<Container>
@@ -40,16 +53,16 @@ const CareerPage = () => {
 					</Col>
 				</Row>
 				<Row>
-					{series.map((value) => {
+					{career?.careers?.page?.map((value) => {
 						return (
 							<Col key={value} lg={4}>
 								<div className={styles.jobCard}>
 									<div className={styles.jobIcon}>
 										<Image src={jobIcon} className="img-fluid" alt="icon" />
 									</div>
-									<h2 className={styles.jobTitle}>Web Designer</h2>
+									<h2 className={styles.jobTitle}>{value.name}</h2>
 									<p className={styles.jobDesc}>
-										Some yesy arqr wrwpkp nw iipsun qe lorem text aeqae designs.
+										{value.description}
 									</p>
 								</div>
 							</Col>

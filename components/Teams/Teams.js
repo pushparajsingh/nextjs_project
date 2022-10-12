@@ -24,7 +24,7 @@ const Teams = () => {
         pageall: state?.team?.pageall,
       pageallLoading: state?.team?.pageallLoading,
   }));
-
+console.log(222, pageallLoading)
   useEffect(() => {
     
     dispatch(teamPageall(pageno));

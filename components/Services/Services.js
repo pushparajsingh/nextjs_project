@@ -117,7 +117,7 @@ const ServicesPage = () => {
       </section>
       <section className={styles.serviceDetailWrapper}>
         <Container>
-          {serviceDetail.map((value, index) => {
+          {serviceDetail?.map((value, index) => {
             if (selectOption === value.service) {
               return (
                 <div

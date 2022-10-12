@@ -8,13 +8,19 @@ import Title from "../Layout/Titles/Titles";
 import ServiceModal from "./ServiceModal";
 const Services = () => {
   const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
+  const [data,setData] = useState();
+  const handleShow = (value) => {
+    console.log(12394,value)
+    setShow(true)
+    setData(value)
+  
+  };
 
   return (
     <>
       <div className={styles.servicesContainerBg}>
         <Container>
-          <ServiceModal show={show} setShow={setShow} />
+          <ServiceModal show={show} setShow={setShow} data={data} />
           <Row>
             <Col lg={12}>
               <div className={styles.themeTitleCenter}>
@@ -42,7 +48,7 @@ const Services = () => {
                     </div>
                     <h5>{value.service}</h5>
                     <Button
-                      onClick={handleShow}
+                      onClick={()=>{handleShow(value)}}
                       className={styles.serviceAction}
                     >
                       More Details
